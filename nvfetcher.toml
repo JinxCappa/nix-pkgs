@@ -1,0 +1,26 @@
+# nvfetcher configuration for package sources
+# Run `nvfetcher` or `nix run nixpkgs#nvfetcher` to update _sources/generated.nix
+
+[claude-code]
+src.cmd = "npm view @anthropic-ai/claude-code version"
+fetch.url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-$ver.tgz"
+
+[deploy-rs]
+src.git = "https://github.com/serokell/deploy-rs"
+src.branch = "master"
+fetch.github = "serokell/deploy-rs"
+
+[netbird]
+src.github = "netbirdio/netbird"
+src.include_regex = "^v[0-9]+\\.[0-9]+\\.[0-9]+$"
+fetch.github = "netbirdio/netbird"
+
+[oh-my-zsh]
+src.git = "https://github.com/ohmyzsh/ohmyzsh"
+src.branch = "master"
+fetch.github = "ohmyzsh/ohmyzsh"
+
+[vector]
+src.github = "vectordotdev/vector"
+src.include_regex = "^v[0-9]+\\.[0-9]+\\.[0-9]+$"
+fetch.github = "vectordotdev/vector"
