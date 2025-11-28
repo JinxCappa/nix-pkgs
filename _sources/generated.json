@@ -1,0 +1,122 @@
+{
+    "claude-code": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "claude-code",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-XK+B3oGrcnAi19a7Ttgv2Zpx0+M/nDQenhHQWESumZE=",
+            "type": "url",
+            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.0.55.tgz"
+        },
+        "version": "2.0.55"
+    },
+    "deploy-rs": {
+        "cargoLocks": null,
+        "date": "2025-11-04",
+        "extract": null,
+        "name": "deploy-rs",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "serokell",
+            "repo": "deploy-rs",
+            "rev": "9c870f63e28ec1e83305f7f6cb73c941e699f74f",
+            "sha256": "sha256-9I2H9x5We6Pl+DBYHjR1s3UT8wgwcpAH03kn9CqtdQc=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "9c870f63e28ec1e83305f7f6cb73c941e699f74f"
+    },
+    "netbird": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "netbird",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "netbirdio",
+            "repo": "netbird",
+            "rev": "v0.60.4",
+            "sha256": "sha256-ctdoecBLQMsxqa3weErNc/51uVABoJqJdH1QTiBf/II=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.60.4"
+    },
+    "oh-my-zsh": {
+        "cargoLocks": null,
+        "date": "2025-12-01",
+        "extract": null,
+        "name": "oh-my-zsh",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "ohmyzsh",
+            "repo": "ohmyzsh",
+            "rev": "e9fc134236323ce3ce376715b1e55a54ed6ac7ac",
+            "sha256": "sha256-zOB8dU1dX/sx86YIP3wsJKRY30pYYzoLLQCD334IxJo=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "e9fc134236323ce3ce376715b1e55a54ed6ac7ac"
+    },
+    "rustdesk": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "rustdesk",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "rustdesk",
+            "repo": "rustdesk",
+            "rev": "1.4.4",
+            "sha256": "sha256-Qy0DA84g9xgsMUBT0UEycfjkFkzsjpy0CCzjsziko8k=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "1.4.4"
+    },
+    "vector": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "vector",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "vectordotdev",
+            "repo": "vector",
+            "rev": "v0.51.1",
+            "sha256": "sha256-EjG8FFz4PDAgCPTkHAxJieW+t6RAPx3MTSku8QGXjYg=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.51.1"
+    }
+}

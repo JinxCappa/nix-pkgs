@@ -1,0 +1,61 @@
+name: vector
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - packages/vector/**
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ghcr.io/${{ github.repository }}
+jobs:
+  build:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-24.04
+          - rock5a
+          - macos-15
+          - macos-15-intel
+    permissions:
+      contents: write
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4.2.2
+
+      - name: Install current Bash on macOS
+        if: runner.os == 'macOS'
+        run: |
+          command -v brew && brew install bash || true
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v21
+        if: matrix.os != 'rock5a'
+        with:
+          determinate: false
+
+      - name: Install Attic client
+        run: |
+          nix profile install "nixpkgs#attic-client"
+          echo "$HOME/.nix-profile/bin" >> "$GITHUB_PATH"
+
+      - name: Configure Attic
+        continue-on-error: true
+        run: |
+          export PATH=$HOME/.nix-profile/bin:$PATH
+          attic login --set-default ci "$ATTIC_SERVER" "$ATTIC_TOKEN"
+          attic use "$ATTIC_CACHE"
+          if [ -n "$ATTIC_TOKEN" ]; then
+            echo ATTIC_CACHE=$ATTIC_CACHE >>$GITHUB_ENV
+          fi
+        env:
+          ATTIC_SERVER: ${{ secrets.ATTIC_SERVER }}
+          ATTIC_CACHE: ${{ secrets.ATTIC_CACHE }}
+          ATTIC_TOKEN: ${{ secrets.ATTIC_TOKEN }}
+
+      # TODO: Abstract all of this out, and use `attic push --stdin` (requires #232)
+      - name: Build packages
+        run: |
+          set -euo pipefail
+          export PATH=$HOME/.nix-profile/bin:$PATH
+          nix build --no-link --print-out-paths -L --fallback .#vector | xargs -I {} attic push "ci:$ATTIC_CACHE" {};
