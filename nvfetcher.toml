@@ -1,0 +1,50 @@
+# nvfetcher configuration for package sources
+# Run `nvfetcher` or `nix run nixpkgs#nvfetcher` to update _sources/generated.nix
+
+[claude-code]
+src.cmd = "npm view @anthropic-ai/claude-code version"
+fetch.url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-$ver.tgz"
+
+[deploy-rs]
+src.git = "https://github.com/serokell/deploy-rs"
+src.branch = "master"
+fetch.github = "serokell/deploy-rs"
+
+[netbird]
+src.github = "netbirdio/netbird"
+src.include_regex = "^v[0-9]+\\.[0-9]+\\.[0-9]+$"
+fetch.github = "netbirdio/netbird"
+git.fetchSubmodules = true
+
+[rustdesk]
+src.github = "rustdesk/rustdesk"
+fetch.github = "rustdesk/rustdesk"
+git.fetchSubmodules = true
+
+[oh-my-zsh]
+src.git = "https://github.com/ohmyzsh/ohmyzsh"
+src.branch = "master"
+fetch.github = "ohmyzsh/ohmyzsh"
+
+[vector]
+src.github = "vectordotdev/vector"
+src.include_regex = "^v[0-9]+\\.[0-9]+\\.[0-9]+$"
+fetch.github = "vectordotdev/vector"
+
+[victoriametrics-cluster]
+src.cmd = "git ls-remote --tags https://github.com/VictoriaMetrics/VictoriaMetrics.git | sed -n 's|.*refs/tags/\\(v[0-9]*\\.[0-9]*\\.[0-9]*-cluster\\)$|\\1|p' | sort -V | tail -1"
+fetch.github = "VictoriaMetrics/VictoriaMetrics"
+
+[zabbix74]
+src.cmd = "git ls-remote --tags https://github.com/zabbix/zabbix.git | sed -n 's|.*refs/tags/\\(7\\.4\\.[0-9]*\\)$|\\1|p' | sort -V | tail -1"
+fetch.github = "zabbix/zabbix"
+
+[openbao]
+src.github = "openbao/openbao"
+src.include_regex = "^v[0-9]+\\.[0-9]+\\.[0-9]+$"
+fetch.github = "openbao/openbao"
+
+[vault]
+src.github = "hashicorp/vault"
+src.include_regex = "^v[0-9]+\\.[0-9]+\\.[0-9]+$"
+fetch.github = "hashicorp/vault"

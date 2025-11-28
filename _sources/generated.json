@@ -1,0 +1,206 @@
+{
+    "claude-code": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "claude-code",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-JBarNxtzDn6sdgl5yLPIUgrrUoyDZNjiLqrYVPPpjlo=",
+            "type": "url",
+            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.37.tgz"
+        },
+        "version": "2.1.37"
+    },
+    "deploy-rs": {
+        "cargoLock": null,
+        "date": "2026-02-02",
+        "extract": null,
+        "name": "deploy-rs",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "serokell",
+            "repo": "deploy-rs",
+            "rev": "77c906c0ba56aabdbc72041bf9111b565cdd6171",
+            "sha256": "sha256-hwsYgDnby50JNVpTRYlF3UR/Rrpt01OrxVuryF40CFY=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "77c906c0ba56aabdbc72041bf9111b565cdd6171"
+    },
+    "netbird": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "netbird",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "netbirdio",
+            "repo": "netbird",
+            "rev": "v0.64.5",
+            "sha256": "sha256-v35IS3Yt2wo7Xvmnjiew1daw7KcS+y+BZYbiwyJVuL0=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.64.5"
+    },
+    "oh-my-zsh": {
+        "cargoLock": null,
+        "date": "2026-02-08",
+        "extract": null,
+        "name": "oh-my-zsh",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "ohmyzsh",
+            "repo": "ohmyzsh",
+            "rev": "41c5b9677afaf239268197546cfc8e003a073c97",
+            "sha256": "sha256-au3Er98CqzTcBx5oV1GZiNjL5AQlMS4kEP076V/xM14=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "41c5b9677afaf239268197546cfc8e003a073c97"
+    },
+    "openbao": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "openbao",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "openbao",
+            "repo": "openbao",
+            "rev": "v2.5.0",
+            "sha256": "sha256-4w+CkYhFS/P9ZeHiR2daK+DujqCKzF/aUAZbMcHqvyk=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v2.5.0"
+    },
+    "rustdesk": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "rustdesk",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": true,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "rustdesk",
+            "repo": "rustdesk",
+            "rev": "1.4.5",
+            "sha256": "sha256-FRtYafsIKHnGPV8NaiaHxIHkon8/T2P83uq9taUD1Xc=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "1.4.5"
+    },
+    "vault": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "vault",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "hashicorp",
+            "repo": "vault",
+            "rev": "v1.21.2",
+            "sha256": "sha256-G/6GroX9lBaUxB5mkd+hz53nNX/eF5DAtHryin3hzgU=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v1.21.2"
+    },
+    "vector": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "vector",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "vectordotdev",
+            "repo": "vector",
+            "rev": "v0.53.0",
+            "sha256": "sha256-OFybPI2oppntYBEklJtdEhImZc/m4oaSSWylr2hHUjA=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.53.0"
+    },
+    "victoriametrics-cluster": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "victoriametrics-cluster",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "VictoriaMetrics",
+            "repo": "VictoriaMetrics",
+            "rev": "v1.135.0-cluster",
+            "sha256": "sha256-0VD2+HoYcgX36TC+RxtwOgOlzmwCJgrCCXtjtW9iC+0=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v1.135.0-cluster"
+    },
+    "zabbix74": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "zabbix74",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "zabbix",
+            "repo": "zabbix",
+            "rev": "7.4.6",
+            "sha256": "sha256-5NqTzSSrH0wRXUvBZVK/m/3KaNkg2nan703pvi4a1k8=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "7.4.6"
+    }
+}

@@ -1,0 +1,42 @@
+name: rustdesk
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - packages/rustdesk/**
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ghcr.io/${{ github.repository }}
+jobs:
+  build:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-24.04
+          - ubuntu-22.04-arm
+    permissions:
+      contents: write
+    runs-on: ${{ matrix.os }}
+    env:
+      CELLAR_SERVER: ${{ secrets.CELLAR_SERVER }}
+      CELLAR_TOKEN: ${{ secrets.CELLAR_TOKEN }}
+      CELLAR_CACHE_ID: ${{ secrets.CELLAR_CACHE_ID }}
+    steps:
+      - uses: actions/checkout@v4.2.2
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v21
+        with:
+          determinate: false
+
+      - name: Install cellarctl
+        uses: jinxcappa/cellar-action@v1
+        with:
+          configure-nix: 'true'
+
+      - name: Build and push
+        run: cellarctl push --flake .#rustdesk
+        env:
+          NIXPKGS_ALLOW_UNFREE: 1

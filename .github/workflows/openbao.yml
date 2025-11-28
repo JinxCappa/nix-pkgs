@@ -1,0 +1,96 @@
+name: openbao
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - packages/openbao/**
+      - .github/workflows/openbao.yml
+  pull_request:
+    branches:
+      - main
+    paths:
+      - packages/openbao/**
+      - .github/workflows/openbao.yml
+  workflow_dispatch:
+jobs:
+  # Base and UI variants - all platforms
+  cross-platform:
+    strategy:
+      fail-fast: false
+      matrix:
+        package:
+          - openbao
+          - openbao-ui
+        runner:
+          - ubuntu-24.04
+          - ubuntu-24.04-arm
+          - macos-15
+          - macos-15-intel
+    runs-on: ${{ matrix.runner }}
+    name: ${{ matrix.package }} (${{ matrix.runner }})
+    env:
+      CELLAR_SERVER: ${{ secrets.CELLAR_SERVER }}
+      CELLAR_TOKEN: ${{ secrets.CELLAR_TOKEN }}
+      CELLAR_CACHE_ID: ${{ secrets.CELLAR_CACHE_ID }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install current Bash on macOS
+        if: runner.os == 'macOS'
+        run: |
+          command -v brew && brew install bash || true
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v21
+        if: matrix.runner != 'macos-15-intel'
+        with:
+          determinate: false
+
+      - name: Install Nix (Intel Mac)
+        uses: DeterminateSystems/nix-installer-action@v21
+        if: matrix.runner == 'macos-15-intel'
+        with:
+          determinate: false
+          source-tag: v3.12.2
+
+      - name: Install cellarctl
+        uses: jinxcappa/cellar-action@v1
+        with:
+          configure-nix: 'true'
+
+      - name: Build and push ${{ matrix.package }}
+        run: cellarctl push --flake .#${{ matrix.package }}
+
+  # HSM and Full variants - Linux only
+  linux-only:
+    strategy:
+      fail-fast: false
+      matrix:
+        package:
+          - openbao-hsm
+          - openbao-full
+        runner:
+          - ubuntu-24.04
+          - ubuntu-24.04-arm
+    runs-on: ${{ matrix.runner }}
+    name: ${{ matrix.package }} (${{ matrix.runner }})
+    env:
+      CELLAR_SERVER: ${{ secrets.CELLAR_SERVER }}
+      CELLAR_TOKEN: ${{ secrets.CELLAR_TOKEN }}
+      CELLAR_CACHE_ID: ${{ secrets.CELLAR_CACHE_ID }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v21
+        with:
+          determinate: false
+
+      - name: Install cellarctl
+        uses: jinxcappa/cellar-action@v1
+        with:
+          configure-nix: 'true'
+
+      - name: Build and push ${{ matrix.package }}
+        run: cellarctl push --flake .#${{ matrix.package }}

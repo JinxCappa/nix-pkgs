@@ -1,0 +1,59 @@
+name: vault
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - packages/vault/**
+      - .github/workflows/vault.yml
+  pull_request:
+    branches:
+      - main
+    paths:
+      - packages/vault/**
+      - .github/workflows/vault.yml
+  workflow_dispatch:
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        runner:
+          - ubuntu-24.04
+          - ubuntu-24.04-arm
+          - macos-15
+          - macos-15-intel
+    runs-on: ${{ matrix.runner }}
+    name: vault (${{ matrix.runner }})
+    env:
+      CELLAR_SERVER: ${{ secrets.CELLAR_SERVER }}
+      CELLAR_TOKEN: ${{ secrets.CELLAR_TOKEN }}
+      CELLAR_CACHE_ID: ${{ secrets.CELLAR_CACHE_ID }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install current Bash on macOS
+        if: runner.os == 'macOS'
+        run: |
+          command -v brew && brew install bash || true
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v21
+        if: matrix.runner != 'macos-15-intel'
+        with:
+          determinate: false
+
+      - name: Install Nix (Intel Mac)
+        uses: DeterminateSystems/nix-installer-action@v21
+        if: matrix.runner == 'macos-15-intel'
+        with:
+          determinate: false
+          source-tag: v3.12.2
+
+      - name: Install cellarctl
+        uses: jinxcappa/cellar-action@v1
+        with:
+          configure-nix: 'true'
+
+      - name: Build and push vault
+        run: cellarctl push --flake .#vault

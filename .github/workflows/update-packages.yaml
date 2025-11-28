@@ -1,0 +1,50 @@
+name: Update Packages
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+    # Allow manual triggering from GitHub UI
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4.2.2
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v21
+        with:
+          determinate: false
+
+      - name: Run update script
+        run: nix develop --command ./update.sh
+
+      - name: Commit and push changes
+        run: |
+          # Check if there are any changes
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "No updates found"
+            exit 0
+          fi
+
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Get list of updated packages for commit message
+          UPDATED=$(git diff --name-only | grep -oP 'packages/\K[^/]+' | sort -u | tr '\n' ' ')
+
+          # Stage all changes
+          git add -A
+
+          # Commit with descriptive message
+          git commit -m "chore: update packages" -m "Updated: ${UPDATED}"
+
+          # Push changes
+          git push
