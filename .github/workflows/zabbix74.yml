@@ -1,0 +1,108 @@
+name: zabbix74
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - packages/zabbix74/**
+      - .github/workflows/zabbix74.yml
+  pull_request:
+    branches:
+      - main
+    paths:
+      - packages/zabbix74/**
+      - .github/workflows/zabbix74.yml
+  workflow_dispatch:
+jobs:
+  # Server, proxy, web - Linux only
+  linux:
+    strategy:
+      fail-fast: false
+      matrix:
+        package:
+          - zabbix74.server
+          - zabbix74.proxy-sqlite
+          - zabbix74.proxy-pgsql
+          - zabbix74.web
+        runner:
+          - ubuntu-24.04
+          - ubuntu-24.04-arm
+    runs-on: ${{ matrix.runner }}
+    name: ${{ matrix.package }} (${{ matrix.runner }})
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v21
+        with:
+          determinate: false
+
+      - name: Install Attic client
+        run: |
+          nix profile install "nixpkgs#attic-client"
+          echo "$HOME/.nix-profile/bin" >> "$GITHUB_PATH"
+
+      - name: Configure Attic
+        continue-on-error: true
+        run: |
+          export PATH=$HOME/.nix-profile/bin:$PATH
+          attic login --set-default ci "$ATTIC_SERVER" "$ATTIC_TOKEN"
+          attic use "$ATTIC_CACHE"
+          if [ -n "$ATTIC_TOKEN" ]; then
+            echo ATTIC_CACHE=$ATTIC_CACHE >>$GITHUB_ENV
+          fi
+        env:
+          ATTIC_SERVER: ${{ secrets.ATTIC_SERVER }}
+          ATTIC_CACHE: ${{ secrets.ATTIC_CACHE }}
+          ATTIC_TOKEN: ${{ secrets.ATTIC_TOKEN }}
+
+      - name: Build and push ${{ matrix.package }}
+        run: |
+          set -euo pipefail
+          export PATH=$HOME/.nix-profile/bin:$PATH
+          nix build --no-link --print-out-paths -L --fallback '.#"${{ matrix.package }}"' | xargs -I {} attic push "ci:$ATTIC_CACHE" {}
+
+  # Agent - Linux and macOS
+  agent:
+    strategy:
+      fail-fast: false
+      matrix:
+        runner:
+          - ubuntu-24.04
+          - ubuntu-24.04-arm
+          - macos-15
+          - macos-15-intel
+    runs-on: ${{ matrix.runner }}
+    name: zabbix74.agent2 (${{ matrix.runner }})
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v21
+        with:
+          determinate: false
+
+      - name: Install Attic client
+        run: |
+          nix profile install "nixpkgs#attic-client"
+          echo "$HOME/.nix-profile/bin" >> "$GITHUB_PATH"
+
+      - name: Configure Attic
+        continue-on-error: true
+        run: |
+          export PATH=$HOME/.nix-profile/bin:$PATH
+          attic login --set-default ci "$ATTIC_SERVER" "$ATTIC_TOKEN"
+          attic use "$ATTIC_CACHE"
+          if [ -n "$ATTIC_TOKEN" ]; then
+            echo ATTIC_CACHE=$ATTIC_CACHE >>$GITHUB_ENV
+          fi
+        env:
+          ATTIC_SERVER: ${{ secrets.ATTIC_SERVER }}
+          ATTIC_CACHE: ${{ secrets.ATTIC_CACHE }}
+          ATTIC_TOKEN: ${{ secrets.ATTIC_TOKEN }}
+
+      - name: Build and push zabbix74.agent2
+        run: |
+          set -euo pipefail
+          export PATH=$HOME/.nix-profile/bin:$PATH
+          nix build --no-link --print-out-paths -L --fallback '.#"zabbix74.agent2"' | xargs -I {} attic push "ci:$ATTIC_CACHE" {}

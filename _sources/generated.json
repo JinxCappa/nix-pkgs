@@ -1,0 +1,164 @@
+{
+    "claude-code": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "claude-code",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-/KOZNv+OkxDI5MaDPWRVNBuSrNkjF3hfD3c+50ORudk=",
+            "type": "url",
+            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.0.76.tgz"
+        },
+        "version": "2.0.76"
+    },
+    "deploy-rs": {
+        "cargoLocks": null,
+        "date": "2025-12-18",
+        "extract": null,
+        "name": "deploy-rs",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "serokell",
+            "repo": "deploy-rs",
+            "rev": "d5eff7f948535b9c723d60cd8239f8f11ddc90fa",
+            "sha256": "sha256-znKOwPXQnt3o7lDb3hdf19oDo0BLP4MfBOYiWkEHoik=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "d5eff7f948535b9c723d60cd8239f8f11ddc90fa"
+    },
+    "netbird": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "netbird",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "netbirdio",
+            "repo": "netbird",
+            "rev": "v0.61.0",
+            "sha256": "sha256-hMg7KrD6vkpEEMQButhoVE8crEODUU01Pz+ifdQ10C4=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.61.0"
+    },
+    "oh-my-zsh": {
+        "cargoLocks": null,
+        "date": "2025-12-30",
+        "extract": null,
+        "name": "oh-my-zsh",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "ohmyzsh",
+            "repo": "ohmyzsh",
+            "rev": "a79b37b95461ea2be32578957473375954ab31ff",
+            "sha256": "sha256-zkk+8BhoXPJcelJ0nua6Gpa603pg4cWWX0OurOxeElQ=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "a79b37b95461ea2be32578957473375954ab31ff"
+    },
+    "rustdesk": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "rustdesk",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": true,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "rustdesk",
+            "repo": "rustdesk",
+            "rev": "1.4.4",
+            "sha256": "sha256-o7jsVWiCkHaKFpAu27r/Lr1Q9g7uR/OYJdwsiQeDJUA=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "1.4.4"
+    },
+    "vector": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "vector",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "vectordotdev",
+            "repo": "vector",
+            "rev": "v0.52.0",
+            "sha256": "sha256-jwEJ+myovZYcohvxH1VvvOW8xok3HSLvhtMsLC2M3KY=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.52.0"
+    },
+    "victoriametrics-cluster": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "victoriametrics-cluster",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "VictoriaMetrics",
+            "repo": "VictoriaMetrics",
+            "rev": "v1.132.0-cluster",
+            "sha256": "sha256-RJTpLUa0h4dnr29qJ10ivdNkyoLZv7dZUunHJvs+WiI=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v1.132.0-cluster"
+    },
+    "zabbix74": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "zabbix74",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "zabbix",
+            "repo": "zabbix",
+            "rev": "7.4.6",
+            "sha256": "sha256-5NqTzSSrH0wRXUvBZVK/m/3KaNkg2nan703pvi4a1k8=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "7.4.6"
+    }
+}

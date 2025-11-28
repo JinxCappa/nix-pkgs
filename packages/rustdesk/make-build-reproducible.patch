@@ -1,0 +1,11 @@
+--- a/libs/hbb_common/src/lib.rs
++++ b/libs/hbb_common/src/lib.rs
+@@ -231,7 +231,7 @@
+         }
+     }
+     // generate build date
+-    let build_date = format!("{}", chrono::Local::now().format("%Y-%m-%d %H:%M"));
++    let build_date = "1970-01-01 00:00";
+     file.write_all(
+         format!("#[allow(dead_code)]\npub const BUILD_DATE: &str = \"{build_date}\";\n").as_bytes(),
+     )
