@@ -30,9 +30,16 @@ jobs:
 
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v21
-        if: matrix.os != 'rock5a'
+        if: matrix.os != 'rock5a' && matrix.os != 'macos-15-intel'
         with:
           determinate: false
+
+      - name: Install Nix (Intel Mac)
+        uses: DeterminateSystems/nix-installer-action@v21
+        if: matrix.os == 'macos-15-intel'
+        with:
+          determinate: false
+          source-tag: v3.12.2
 
       - name: Install Attic client
         run: |
