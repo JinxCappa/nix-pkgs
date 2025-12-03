@@ -8,9 +8,13 @@ on:
 jobs:
   update:
     runs-on: ubuntu-24.04
+    permissions:
+      contents: write
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v21
