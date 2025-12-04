@@ -4,7 +4,7 @@ on:
     branches:
       - main
     paths:
-      - packages/netbird-ui/**
+      - packages/netbird/**
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ghcr.io/${{ github.repository }}
