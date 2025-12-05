@@ -34,15 +34,15 @@
   };
   oh-my-zsh = {
     pname = "oh-my-zsh";
-    version = "e9fc134236323ce3ce376715b1e55a54ed6ac7ac";
+    version = "a98a9f7122d583a9547e9a8b2ab8c14570fc6e54";
     src = fetchFromGitHub {
       owner = "ohmyzsh";
       repo = "ohmyzsh";
-      rev = "e9fc134236323ce3ce376715b1e55a54ed6ac7ac";
+      rev = "a98a9f7122d583a9547e9a8b2ab8c14570fc6e54";
       fetchSubmodules = false;
-      sha256 = "sha256-zOB8dU1dX/sx86YIP3wsJKRY30pYYzoLLQCD334IxJo=";
+      sha256 = "sha256-leoNUXGNq2WHSzeTsEX0EcazW/Ue0dQCKj+XvnBYneo=";
     };
-    date = "2025-12-01";
+    date = "2025-12-05";
   };
   rustdesk = {
     pname = "rustdesk";
