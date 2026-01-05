@@ -46,9 +46,8 @@
         lib.overlays.cached = [
           # First: add packages under jinx namespace
           (final: prev: { jinx = lib.packagesBySystem.${prev.stdenv.hostPlatform.system} or {}; })
-          # Second: hoist jinx packages to top-level using explicit list
-          (final: prev: builtins.listToAttrs
-            (map (n: { name = n; value = prev.jinx.${n}; }) lib.packageNames))
+          # Second: hoist jinx packages to top-level (uses actual attr names, not just directory names)
+          (final: prev: prev.jinx)
         ];
 
         # Overlay that provides all packages under a 'jinx' namespace

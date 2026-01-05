@@ -23,26 +23,37 @@
   };
   netbird = {
     pname = "netbird";
-    version = "v0.61.0";
+    version = "v0.61.2";
     src = fetchFromGitHub {
       owner = "netbirdio";
       repo = "netbird";
-      rev = "v0.61.0";
-      fetchSubmodules = true;
-      sha256 = "sha256-hMg7KrD6vkpEEMQButhoVE8crEODUU01Pz+ifdQ10C4=";
+      rev = "v0.61.2";
+      fetchSubmodules = false;
+      sha256 = "sha256-Yf+a4BFjOy/ytErtem9A85I5KajqotQnG6in2udvE00=";
     };
   };
   oh-my-zsh = {
     pname = "oh-my-zsh";
-    version = "a79b37b95461ea2be32578957473375954ab31ff";
+    version = "d23d3ea69fdb839088e6e5589557cce77b34aaf8";
     src = fetchFromGitHub {
       owner = "ohmyzsh";
       repo = "ohmyzsh";
-      rev = "a79b37b95461ea2be32578957473375954ab31ff";
+      rev = "d23d3ea69fdb839088e6e5589557cce77b34aaf8";
       fetchSubmodules = false;
-      sha256 = "sha256-zkk+8BhoXPJcelJ0nua6Gpa603pg4cWWX0OurOxeElQ=";
+      sha256 = "sha256-KwpFChGgkR9g+wQsjqHsML7uRA+l3PuqscG5xAgx+Qo=";
     };
-    date = "2025-12-30";
+    date = "2026-01-04";
+  };
+  openbao = {
+    pname = "openbao";
+    version = "v2.4.4";
+    src = fetchFromGitHub {
+      owner = "openbao";
+      repo = "openbao";
+      rev = "v2.4.4";
+      fetchSubmodules = false;
+      sha256 = "sha256-V3lYm+FWqy0x7dTIE/Ii6W29BlspwBLlFFVIyohZzE8=";
+    };
   };
   rustdesk = {
     pname = "rustdesk";
