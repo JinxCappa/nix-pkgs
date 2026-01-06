@@ -28,7 +28,7 @@
       owner = "netbirdio";
       repo = "netbird";
       rev = "v0.61.2";
-      fetchSubmodules = false;
+      fetchSubmodules = true;
       sha256 = "sha256-Yf+a4BFjOy/ytErtem9A85I5KajqotQnG6in2udvE00=";
     };
   };
