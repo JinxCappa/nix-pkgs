@@ -34,15 +34,15 @@
   };
   oh-my-zsh = {
     pname = "oh-my-zsh";
-    version = "d23d3ea69fdb839088e6e5589557cce77b34aaf8";
+    version = "2daffdf101f21575f7904d92b29c16bcb448aa10";
     src = fetchFromGitHub {
       owner = "ohmyzsh";
       repo = "ohmyzsh";
-      rev = "d23d3ea69fdb839088e6e5589557cce77b34aaf8";
+      rev = "2daffdf101f21575f7904d92b29c16bcb448aa10";
       fetchSubmodules = false;
-      sha256 = "sha256-KwpFChGgkR9g+wQsjqHsML7uRA+l3PuqscG5xAgx+Qo=";
+      sha256 = "sha256-tv7WH+S81Rg2JanVXgjESIxZSuY8ePvq57HaNCOWck0=";
     };
-    date = "2026-01-04";
+    date = "2026-01-05";
   };
   openbao = {
     pname = "openbao";
@@ -66,6 +66,17 @@
       sha256 = "sha256-o7jsVWiCkHaKFpAu27r/Lr1Q9g7uR/OYJdwsiQeDJUA=";
     };
   };
+  vault = {
+    pname = "vault";
+    version = "v1.21.1";
+    src = fetchFromGitHub {
+      owner = "hashicorp";
+      repo = "vault";
+      rev = "v1.21.1";
+      fetchSubmodules = false;
+      sha256 = "sha256-Vkn3l4blbUhT2D1ParNacVwwt/aDQlm12peoHvPNbk4=";
+    };
+  };
   vector = {
     pname = "vector";
     version = "v0.52.0";
@@ -79,13 +90,13 @@
   };
   victoriametrics-cluster = {
     pname = "victoriametrics-cluster";
-    version = "v1.132.0-cluster";
+    version = "v1.133.0-cluster";
     src = fetchFromGitHub {
       owner = "VictoriaMetrics";
       repo = "VictoriaMetrics";
-      rev = "v1.132.0-cluster";
+      rev = "v1.133.0-cluster";
       fetchSubmodules = false;
-      sha256 = "sha256-RJTpLUa0h4dnr29qJ10ivdNkyoLZv7dZUunHJvs+WiI=";
+      sha256 = "sha256-rdn7JHUEimRs4ayI7TILxgr8jtjf2MZM5Y8iI5lcjkc=";
     };
   };
   zabbix74 = {

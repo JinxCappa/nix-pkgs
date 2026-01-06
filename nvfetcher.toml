@@ -42,3 +42,8 @@ fetch.github = "zabbix/zabbix"
 src.github = "openbao/openbao"
 src.include_regex = "^v[0-9]+\\.[0-9]+\\.[0-9]+$"
 fetch.github = "openbao/openbao"
+
+[vault]
+src.github = "hashicorp/vault"
+src.include_regex = "^v[0-9]+\\.[0-9]+\\.[0-9]+$"
+fetch.github = "hashicorp/vault"
