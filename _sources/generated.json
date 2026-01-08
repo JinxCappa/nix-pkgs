@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-/KOZNv+OkxDI5MaDPWRVNBuSrNkjF3hfD3c+50ORudk=",
+            "sha256": "sha256-oMmivRpTwwRAP/m+A5zniU7PgWeLsPr/Z427VRtAFus=",
             "type": "url",
-            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.0.76.tgz"
+            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.1.tgz"
         },
-        "version": "2.0.76"
+        "version": "2.1.1"
     },
     "deploy-rs": {
         "cargoLocks": null,
@@ -49,12 +49,12 @@
             "name": null,
             "owner": "netbirdio",
             "repo": "netbird",
-            "rev": "v0.61.2",
-            "sha256": "sha256-Yf+a4BFjOy/ytErtem9A85I5KajqotQnG6in2udvE00=",
+            "rev": "v0.62.0",
+            "sha256": "sha256-awj9bcDs8r6fVTlwrGlh8tyg37G4pu3Z3oM/AdFxN94=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.61.2"
+        "version": "v0.62.0"
     },
     "oh-my-zsh": {
         "cargoLocks": null,
@@ -133,12 +133,12 @@
             "name": null,
             "owner": "hashicorp",
             "repo": "vault",
-            "rev": "v1.21.1",
-            "sha256": "sha256-Vkn3l4blbUhT2D1ParNacVwwt/aDQlm12peoHvPNbk4=",
+            "rev": "v1.21.2",
+            "sha256": "sha256-G/6GroX9lBaUxB5mkd+hz53nNX/eF5DAtHryin3hzgU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v1.21.1"
+        "version": "v1.21.2"
     },
     "vector": {
         "cargoLocks": null,
