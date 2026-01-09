@@ -42,7 +42,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
 
   inherit (sources.rustdesk) src;
 
-  cargoHash = "sha256-gd2vS+p+1QtOWZcRWJWahFGo5rFG+soqxx3vJYSYJUo=";
+  cargoHash = "sha256-mEtTo1ony5w/dzJcHieG9WywHirBoQ/C0WpiAr7pUVc=";
 
   patches = [
     ./make-build-reproducible.patch
