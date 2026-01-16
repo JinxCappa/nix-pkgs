@@ -70,7 +70,7 @@ buildGoModule (finalAttrs: {
 
   # vendorHash needs to be updated when source changes
   # Build will fail with correct hash if outdated
-  vendorHash = "sha256-8yPrM96MllC9IAub5FJmNsGsya5cps+v6JS35XBQqBI=";
+  vendorHash = "sha256-iTfwu6CsYQYwyfCax2y/DbMFsnfGZE7TlWE/0Fokvy4=";
 
   nativeBuildInputs = [ installShellFiles ] ++ lib.optional (componentName == "ui") pkg-config;
 
