@@ -58,7 +58,7 @@
     },
     "oh-my-zsh": {
         "cargoLocks": null,
-        "date": "2026-01-20",
+        "date": "2026-01-25",
         "extract": null,
         "name": "oh-my-zsh",
         "passthru": null,
@@ -70,12 +70,12 @@
             "name": null,
             "owner": "ohmyzsh",
             "repo": "ohmyzsh",
-            "rev": "e0766905519fbc7982a590a195ee7c3e8bb594e8",
-            "sha256": "sha256-6sTLyZ4UztU2PDpyiAZx1Q5smY+vrZdGbgVRNmek7nM=",
+            "rev": "db66764f46104be3c8bd10ddf50bf38c3c885027",
+            "sha256": "sha256-KoJQjifnvbBKtxIjTbkDDRyqk9nVp/4zitVDwMAmZno=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "e0766905519fbc7982a590a195ee7c3e8bb594e8"
+        "version": "db66764f46104be3c8bd10ddf50bf38c3c885027"
     },
     "openbao": {
         "cargoLocks": null,
