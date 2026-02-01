@@ -1,6 +1,6 @@
 {
     "claude-code": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "claude-code",
@@ -8,14 +8,14 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-MLZQiT1sLlylxXImft7aC4hBL94v31bW1Qeebnfftps=",
+            "sha256": "sha256-Hod4uRcDr5s7AmLUaBlkXDWDzwMjVmYIfaTq+9r3/2A=",
             "type": "url",
-            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.27.tgz"
+            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.29.tgz"
         },
-        "version": "2.1.27"
+        "version": "2.1.29"
     },
     "deploy-rs": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-12-18",
         "extract": null,
         "name": "deploy-rs",
@@ -36,7 +36,7 @@
         "version": "d5eff7f948535b9c723d60cd8239f8f11ddc90fa"
     },
     "netbird": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "netbird",
@@ -57,7 +57,7 @@
         "version": "v0.64.3"
     },
     "oh-my-zsh": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2026-01-26",
         "extract": null,
         "name": "oh-my-zsh",
@@ -78,7 +78,7 @@
         "version": "67cd8c4673512d08238461f7ce00715da01665d4"
     },
     "openbao": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "openbao",
@@ -99,7 +99,7 @@
         "version": "v2.4.4"
     },
     "rustdesk": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "rustdesk",
@@ -120,7 +120,7 @@
         "version": "1.4.5"
     },
     "vault": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "vault",
@@ -141,7 +141,7 @@
         "version": "v1.21.2"
     },
     "vector": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "vector",
@@ -162,7 +162,7 @@
         "version": "v0.53.0"
     },
     "victoriametrics-cluster": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "victoriametrics-cluster",
@@ -183,7 +183,7 @@
         "version": "v1.134.0-cluster"
     },
     "zabbix74": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "zabbix74",
