@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-JBarNxtzDn6sdgl5yLPIUgrrUoyDZNjiLqrYVPPpjlo=",
+            "sha256": "sha256-iJB/LuXYACOu6Y5czpP7eGFdrvZTbVUeK7K8pBmjxvY=",
             "type": "url",
-            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.37.tgz"
+            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.39.tgz"
         },
-        "version": "2.1.37"
+        "version": "2.1.39"
     },
     "deploy-rs": {
         "cargoLock": null,
@@ -44,7 +44,7 @@
         "pinned": false,
         "src": {
             "deepClone": false,
-            "fetchSubmodules": false,
+            "fetchSubmodules": true,
             "leaveDotGit": false,
             "name": null,
             "owner": "netbirdio",
@@ -58,7 +58,7 @@
     },
     "oh-my-zsh": {
         "cargoLock": null,
-        "date": "2026-02-08",
+        "date": "2026-02-11",
         "extract": null,
         "name": "oh-my-zsh",
         "passthru": null,
@@ -70,12 +70,12 @@
             "name": null,
             "owner": "ohmyzsh",
             "repo": "ohmyzsh",
-            "rev": "41c5b9677afaf239268197546cfc8e003a073c97",
-            "sha256": "sha256-au3Er98CqzTcBx5oV1GZiNjL5AQlMS4kEP076V/xM14=",
+            "rev": "88659ed193cd1af0ba3679c9de3c85f21003f3d4",
+            "sha256": "sha256-x/jdp4Ec7/Iptu8RWZ6mBqT17Di8aNPcMiGLLUY9Z3o=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "41c5b9677afaf239268197546cfc8e003a073c97"
+        "version": "88659ed193cd1af0ba3679c9de3c85f21003f3d4"
     },
     "openbao": {
         "cargoLock": null,
