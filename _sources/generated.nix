@@ -106,13 +106,13 @@
   };
   zabbix74 = {
     pname = "zabbix74";
-    version = "7.4.6";
+    version = "7.4.7";
     src = fetchFromGitHub {
       owner = "zabbix";
       repo = "zabbix";
-      rev = "7.4.6";
+      rev = "7.4.7";
       fetchSubmodules = false;
-      sha256 = "sha256-5NqTzSSrH0wRXUvBZVK/m/3KaNkg2nan703pvi4a1k8=";
+      sha256 = "sha256-Q+Bf+3KYNIY8wHuVMMZ5u2zFnjyrba6VG1KYqB29Ikw=";
     };
   };
 }
