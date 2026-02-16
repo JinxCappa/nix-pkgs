@@ -175,12 +175,12 @@
             "name": null,
             "owner": "VictoriaMetrics",
             "repo": "VictoriaMetrics",
-            "rev": "v1.135.0-cluster",
-            "sha256": "sha256-0VD2+HoYcgX36TC+RxtwOgOlzmwCJgrCCXtjtW9iC+0=",
+            "rev": "v1.136.0-cluster",
+            "sha256": "sha256-UczQQ7mdzYh7ZHuqHF3+3a3Wa3hDCn2gIF77uRrs5RM=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v1.135.0-cluster"
+        "version": "v1.136.0-cluster"
     },
     "zabbix74": {
         "cargoLock": null,
