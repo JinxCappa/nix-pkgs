@@ -135,16 +135,18 @@ update_cargo_hash() {
     return 0
   fi
 
-  # Check if the failure was due to hash mismatch
+  # Check if the failure was due to hash mismatch.
+  # Keep this non-fatal: grep may return no matches for unrelated build failures.
   local new_hash
-  new_hash=$(echo "$build_output" | grep "got:" | awk '{print $2}' | head -1)
+  new_hash=$(echo "$build_output" | sed -nE 's/^[[:space:]]*got:[[:space:]]*([^[:space:]]+).*$/\1/p' | head -1 || true)
 
   if [ -n "$new_hash" ]; then
     echo "  $pkg: updating cargoHash to $new_hash"
-    sed -i "s|cargoHash = \"sha256-.*\"|cargoHash = \"$new_hash\"|" "$pkg_file"
+    sed -i -E "s#cargoHash = (\"sha256-[^\"]*\"|null)#cargoHash = \"$new_hash\"#" "$pkg_file"
   else
     echo "  $pkg: build failed for unknown reason"
     echo "$build_output" | tail -20
+    return 1
   fi
 }
 
@@ -179,16 +181,18 @@ update_vendor_hash() {
     return 0
   fi
 
-  # Check if the failure was due to hash mismatch
+  # Check if the failure was due to hash mismatch.
+  # Keep this non-fatal: grep may return no matches for unrelated build failures.
   local new_hash
-  new_hash=$(echo "$build_output" | grep "got:" | awk '{print $2}' | head -1)
+  new_hash=$(echo "$build_output" | sed -nE 's/^[[:space:]]*got:[[:space:]]*([^[:space:]]+).*$/\1/p' | head -1 || true)
 
   if [ -n "$new_hash" ]; then
     echo "  $pkg: updating vendorHash to $new_hash"
-    sed -i "s|vendorHash = \"sha256-.*\"|vendorHash = \"$new_hash\"|" "$pkg_file"
+    sed -i -E "s#vendorHash = (\"sha256-[^\"]*\"|null)#vendorHash = \"$new_hash\"#" "$pkg_file"
   else
     echo "  $pkg: build failed for unknown reason"
     echo "$build_output" | tail -20
+    return 1
   fi
 }
 

@@ -1,6 +1,7 @@
 {
   lib,
   buildGoModule,
+  go_1_26,
   sources,
 }:
 
@@ -8,7 +9,7 @@ let
   # Extract version number from tag (v1.132.0-cluster -> 1.132.0)
   version = lib.removePrefix "v" (lib.removeSuffix "-cluster" sources.victoriametrics-cluster.version);
 in
-buildGoModule {
+(buildGoModule.override { go = go_1_26; }) {
   pname = "victoriametrics-cluster";
   inherit version;
   src = sources.victoriametrics-cluster.src;
