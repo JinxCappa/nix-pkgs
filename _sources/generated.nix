@@ -8,10 +8,10 @@
 {
   claude-code = {
     pname = "claude-code";
-    version = "2.1.42";
+    version = "2.1.47";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.42.tgz";
-      sha256 = "sha256-ZfaruxpZqc3GGUTIcI0V1vGKE7Imo+eTjZ7ODwMMcZM=";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.47.tgz";
+      sha256 = "sha256-4CpoDVQK81QA8in60EgnlDwF01Sru8JApAA2Y6UKOGI=";
     };
   };
   deploy-rs = {
@@ -28,26 +28,26 @@
   };
   netbird = {
     pname = "netbird";
-    version = "v0.65.1";
+    version = "v0.65.2";
     src = fetchFromGitHub {
       owner = "netbirdio";
       repo = "netbird";
-      rev = "v0.65.1";
+      rev = "v0.65.2";
       fetchSubmodules = true;
-      sha256 = "sha256-U1U26K4hSZUzLthYsg8cOrgERJLwaBdEywgSgU00GRg=";
+      sha256 = "sha256-lCJOW81UkGeV4mUHxrKpawXBCTc49NiNvryymjaq1s8=";
     };
   };
   oh-my-zsh = {
     pname = "oh-my-zsh";
-    version = "45dd7d006ab2650273d9859f7e3224cf757a9db3";
+    version = "44f2a128aaee9f52391fe357d103e54f7f40fabb";
     src = fetchFromGitHub {
       owner = "ohmyzsh";
       repo = "ohmyzsh";
-      rev = "45dd7d006ab2650273d9859f7e3224cf757a9db3";
+      rev = "44f2a128aaee9f52391fe357d103e54f7f40fabb";
       fetchSubmodules = false;
-      sha256 = "sha256-9g2HIkQi9o1k67msZksSBdIv5rGHmOp8F9RnL6DxPE0=";
+      sha256 = "sha256-JnESgVArNy646PJZneGHETH/G+nj7lHVt6D9qgUVT8Q=";
     };
-    date = "2026-02-16";
+    date = "2026-02-18";
   };
   openbao = {
     pname = "openbao";
@@ -95,13 +95,13 @@
   };
   victoriametrics-cluster = {
     pname = "victoriametrics-cluster";
-    version = "v1.135.0-cluster";
+    version = "v1.136.0-cluster";
     src = fetchFromGitHub {
       owner = "VictoriaMetrics";
       repo = "VictoriaMetrics";
-      rev = "v1.135.0-cluster";
+      rev = "v1.136.0-cluster";
       fetchSubmodules = false;
-      sha256 = "sha256-0VD2+HoYcgX36TC+RxtwOgOlzmwCJgrCCXtjtW9iC+0=";
+      sha256 = "sha256-UczQQ7mdzYh7ZHuqHF3+3a3Wa3hDCn2gIF77uRrs5RM=";
     };
   };
   zabbix74 = {
