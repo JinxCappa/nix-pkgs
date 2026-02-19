@@ -130,7 +130,7 @@ update_cargo_hash() {
 
   # Try to build and capture output
   local build_output
-  if build_output=$(nix build ".#$pkg" 2>&1); then
+  if build_output=$(nix build --no-link ".#$pkg" 2>&1); then
     echo "  $pkg: cargoHash is up to date"
     return 0
   fi
@@ -176,7 +176,7 @@ update_vendor_hash() {
 
   # Try to build and capture output
   local build_output
-  if build_output=$(nix build ".#$pkg" 2>&1); then
+  if build_output=$(nix build --no-link ".#$pkg" 2>&1); then
     echo "  $pkg: vendorHash is up to date"
     return 0
   fi
