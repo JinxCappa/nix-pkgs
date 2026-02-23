@@ -91,12 +91,12 @@
             "name": null,
             "owner": "openbao",
             "repo": "openbao",
-            "rev": "v2.5.0",
-            "sha256": "sha256-4w+CkYhFS/P9ZeHiR2daK+DujqCKzF/aUAZbMcHqvyk=",
+            "rev": "v2.5.1",
+            "sha256": "sha256-pVFsyNg9ccSFAdHb/fjeVoMBh1nKcjwcFfVBBqFalIo=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2.5.0"
+        "version": "v2.5.1"
     },
     "rustdesk": {
         "cargoLock": null,
@@ -154,12 +154,12 @@
             "name": null,
             "owner": "vectordotdev",
             "repo": "vector",
-            "rev": "v0.53.0",
-            "sha256": "sha256-OFybPI2oppntYBEklJtdEhImZc/m4oaSSWylr2hHUjA=",
+            "rev": "vdev-v0.2.0",
+            "sha256": "sha256-mkogl+HOV/nrmvqUuQFyMEzwDfYHGumF9jevXIbNLuk=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.53.0"
+        "version": "vdev-v0.2.0"
     },
     "victoriametrics-cluster": {
         "cargoLock": null,

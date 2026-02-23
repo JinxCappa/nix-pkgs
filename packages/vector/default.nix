@@ -33,7 +33,7 @@ rustPlatform.buildRustPackage {
 
   # cargoHash needs to be updated when source changes
   # Build will fail with correct hash if outdated
-  cargoHash = "sha256-Xuff8ZanFCtvitNYnOwCyd0UYjrhrP8UglJqbpScGVM=";
+  cargoHash = "sha256-PHwgWQE59CIuF4eXqX7JVpPExu/OUj88llcFeXzDGOM=";
 
   nativeBuildInputs =
     [

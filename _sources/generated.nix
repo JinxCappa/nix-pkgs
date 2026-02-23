@@ -51,13 +51,13 @@
   };
   openbao = {
     pname = "openbao";
-    version = "v2.5.0";
+    version = "v2.5.1";
     src = fetchFromGitHub {
       owner = "openbao";
       repo = "openbao";
-      rev = "v2.5.0";
+      rev = "v2.5.1";
       fetchSubmodules = false;
-      sha256 = "sha256-4w+CkYhFS/P9ZeHiR2daK+DujqCKzF/aUAZbMcHqvyk=";
+      sha256 = "sha256-pVFsyNg9ccSFAdHb/fjeVoMBh1nKcjwcFfVBBqFalIo=";
     };
   };
   rustdesk = {
@@ -84,13 +84,13 @@
   };
   vector = {
     pname = "vector";
-    version = "v0.53.0";
+    version = "vdev-v0.2.0";
     src = fetchFromGitHub {
       owner = "vectordotdev";
       repo = "vector";
-      rev = "v0.53.0";
+      rev = "vdev-v0.2.0";
       fetchSubmodules = false;
-      sha256 = "sha256-OFybPI2oppntYBEklJtdEhImZc/m4oaSSWylr2hHUjA=";
+      sha256 = "sha256-mkogl+HOV/nrmvqUuQFyMEzwDfYHGumF9jevXIbNLuk=";
     };
   };
   victoriametrics-cluster = {
