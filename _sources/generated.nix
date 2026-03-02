@@ -95,13 +95,13 @@
   };
   victoriametrics-cluster = {
     pname = "victoriametrics-cluster";
-    version = "v1.136.0-cluster";
+    version = "v1.137.0-cluster";
     src = fetchFromGitHub {
       owner = "VictoriaMetrics";
       repo = "VictoriaMetrics";
-      rev = "v1.136.0-cluster";
+      rev = "v1.137.0-cluster";
       fetchSubmodules = false;
-      sha256 = "sha256-UczQQ7mdzYh7ZHuqHF3+3a3Wa3hDCn2gIF77uRrs5RM=";
+      sha256 = "sha256-0waHMAKUjp+a5/bGhUeUbGRAjufmbKAufRGgdOQp3Zs=";
     };
   };
   zabbix74 = {
