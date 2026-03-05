@@ -62,13 +62,13 @@
   };
   rustdesk = {
     pname = "rustdesk";
-    version = "1.4.5";
+    version = "1.4.6";
     src = fetchFromGitHub {
       owner = "rustdesk";
       repo = "rustdesk";
-      rev = "1.4.5";
+      rev = "1.4.6";
       fetchSubmodules = true;
-      sha256 = "sha256-FRtYafsIKHnGPV8NaiaHxIHkon8/T2P83uq9taUD1Xc=";
+      sha256 = "sha256-2MZOM+SHDrjFhCIHcFB7zABpwC7hNtS0XNFx2FpaqIE=";
     };
   };
   vault = {
