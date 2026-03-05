@@ -73,13 +73,13 @@
   };
   vault = {
     pname = "vault";
-    version = "v1.21.3";
+    version = "v1.21.4";
     src = fetchFromGitHub {
       owner = "hashicorp";
       repo = "vault";
-      rev = "v1.21.3";
+      rev = "v1.21.4";
       fetchSubmodules = false;
-      sha256 = "sha256-++2UBVzbgWxXLSPykz53McG7NXsmb5WHW8a8U3uHFLY=";
+      sha256 = "sha256-1yBvcGKzLZYFWlZJL1iJgDFkiT4g2f84iZCjWi2CwDg=";
     };
   };
   vector = {
