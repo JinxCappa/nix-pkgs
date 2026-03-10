@@ -28,26 +28,26 @@
   };
   netbird = {
     pname = "netbird";
-    version = "v0.66.2";
+    version = "v0.66.3";
     src = fetchFromGitHub {
       owner = "netbirdio";
       repo = "netbird";
-      rev = "v0.66.2";
+      rev = "v0.66.3";
       fetchSubmodules = true;
-      sha256 = "sha256-KKVznhyk+zg8j/5d9YiL1BFpvXGZrDwLkmzbYy+LV8I=";
+      sha256 = "sha256-Cj9AcdWdHAfdBbqKAkwk3/Vy24XicjTZpmRXLYkyx3k=";
     };
   };
   oh-my-zsh = {
     pname = "oh-my-zsh";
-    version = "1e3abc123f690c9bdd416e8224f1beb47c96f1c7";
+    version = "d1222044bc3094498cefd478b1a7c859b7922708";
     src = fetchFromGitHub {
       owner = "ohmyzsh";
       repo = "ohmyzsh";
-      rev = "1e3abc123f690c9bdd416e8224f1beb47c96f1c7";
+      rev = "d1222044bc3094498cefd478b1a7c859b7922708";
       fetchSubmodules = false;
-      sha256 = "sha256-k3frBcklYRt7ZjylX2bk6WWz3kAvWKVBJd2UpxyDWUE=";
+      sha256 = "sha256-HDiuMlBw0bu2deY+vmmqEWlirUxid1UtR+H4F1GsZ40=";
     };
-    date = "2026-03-06";
+    date = "2026-03-09";
   };
   openbao = {
     pname = "openbao";
@@ -90,7 +90,7 @@
       repo = "vector";
       rev = "vdev-v0.3.0";
       fetchSubmodules = false;
-      sha256 = "sha256-hPOyL+CMNCCbeEaoggEmL5J918fmjYTCRU6nkOxqquA=";
+      sha256 = "sha256-KJrK2mXxs6maLGAVd/OAji4Mn7PGnKIbQ3zGIYSnq5s=";
     };
   };
   victoriametrics-cluster = {
