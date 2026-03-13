@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-3OM+J+r4knZZjp2uUJnhJsJYDOpR62Rx4cN0eICdGBg=",
+            "sha256": "sha256-0cBe5P9rGQsShE8mBsKd+yrrsCEfeNpaHFN9lw7DWzs=",
             "type": "url",
-            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.74.tgz"
+            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.75.tgz"
         },
-        "version": "2.1.74"
+        "version": "2.1.75"
     },
     "deploy-rs": {
         "cargoLock": null,
@@ -196,11 +196,11 @@
             "name": null,
             "owner": "zabbix",
             "repo": "zabbix",
-            "rev": "7.4.7",
-            "sha256": "sha256-Q+Bf+3KYNIY8wHuVMMZ5u2zFnjyrba6VG1KYqB29Ikw=",
+            "rev": "7.4.8",
+            "sha256": "sha256-ONgerYUAQ1CZhaEKhK5S23Kfekop2jYYXUhY5gBZjN4=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "7.4.7"
+        "version": "7.4.8"
     }
 }
