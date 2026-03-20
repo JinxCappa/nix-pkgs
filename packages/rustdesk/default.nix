@@ -146,6 +146,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
 
   postFixup = lib.optionalString stdenv.hostPlatform.isLinux ''
     patchelf --add-rpath "${libayatana-appindicator}/lib" "$out/lib/rustdesk/rustdesk"
+    patchelf --add-rpath "${xdotool}/lib" "$out/lib/rustdesk/rustdesk"
   '';
 
   env = {
