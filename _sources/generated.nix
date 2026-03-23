@@ -28,26 +28,26 @@
   };
   netbird = {
     pname = "netbird";
-    version = "v0.66.4";
+    version = "v0.67.0";
     src = fetchFromGitHub {
       owner = "netbirdio";
       repo = "netbird";
-      rev = "v0.66.4";
+      rev = "v0.67.0";
       fetchSubmodules = true;
-      sha256 = "sha256-orHi9dqdYhYaU0hrnHWuE9IHrqbWRsfuXZitmRmJXeA=";
+      sha256 = "sha256-5Q90bEAXTnvkEHcsheohu9wdwZRFIoLnqBNzjotFz54=";
     };
   };
   oh-my-zsh = {
     pname = "oh-my-zsh";
-    version = "44394e7225cd2e2200fa2e6a0ed957fed6a4d5d0";
+    version = "df64afb062707212180324f83b3d92e573d709ce";
     src = fetchFromGitHub {
       owner = "ohmyzsh";
       repo = "ohmyzsh";
-      rev = "44394e7225cd2e2200fa2e6a0ed957fed6a4d5d0";
+      rev = "df64afb062707212180324f83b3d92e573d709ce";
       fetchSubmodules = false;
-      sha256 = "sha256-FC6Ppg6L/lTEnWNi84XvkEfX5O6DcvYbKdaZ/In6byU=";
+      sha256 = "sha256-bs02AAK1LHnmBB3P3JGSh4O8GuHFzt3zfYeix5hau1U=";
     };
-    date = "2026-03-19";
+    date = "2026-03-23";
   };
   openbao = {
     pname = "openbao";
