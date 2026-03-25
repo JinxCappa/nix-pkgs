@@ -51,13 +51,13 @@
   };
   openbao = {
     pname = "openbao";
-    version = "v2.5.1";
+    version = "v2.5.2";
     src = fetchFromGitHub {
       owner = "openbao";
       repo = "openbao";
-      rev = "v2.5.1";
+      rev = "v2.5.2";
       fetchSubmodules = false;
-      sha256 = "sha256-pVFsyNg9ccSFAdHb/fjeVoMBh1nKcjwcFfVBBqFalIo=";
+      sha256 = "sha256-fqsCQf9wFlzMWC4XV1BclWlYG649VhhZBKlGrdsbqKc=";
     };
   };
   rustdesk = {

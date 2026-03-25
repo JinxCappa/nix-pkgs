@@ -91,12 +91,12 @@
             "name": null,
             "owner": "openbao",
             "repo": "openbao",
-            "rev": "v2.5.1",
-            "sha256": "sha256-pVFsyNg9ccSFAdHb/fjeVoMBh1nKcjwcFfVBBqFalIo=",
+            "rev": "v2.5.2",
+            "sha256": "sha256-fqsCQf9wFlzMWC4XV1BclWlYG649VhhZBKlGrdsbqKc=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2.5.1"
+        "version": "v2.5.2"
     },
     "rustdesk": {
         "cargoLock": null,
