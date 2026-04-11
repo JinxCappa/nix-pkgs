@@ -60,6 +60,14 @@
       sha256 = "sha256-fqsCQf9wFlzMWC4XV1BclWlYG649VhhZBKlGrdsbqKc=";
     };
   };
+  remotepc-host = {
+    pname = "remotepc-host";
+    version = "6.10.5";
+    src = fetchurl {
+      url = "https://download.remotepc.com/downloads/rpc/310320/remotepc-host.deb";
+      sha256 = "sha256-rn98QQHISqO1XaPvI9rJkTwI6TdplELXftULW0ccST4=";
+    };
+  };
   rustdesk = {
     pname = "rustdesk";
     version = "1.4.6";

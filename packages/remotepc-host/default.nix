@@ -21,6 +21,7 @@
   nspr,
   nss,
   pango,
+  linux-pam,
   systemd,
   xorg,
   ethtool,
@@ -54,6 +55,7 @@ stdenv.mkDerivation (finalAttrs: {
     libdrm
     libnotify
     libxkbcommon
+    linux-pam
     mesa
     nspr
     nss
