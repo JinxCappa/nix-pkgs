@@ -1,0 +1,21 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.8",
+  "base_commit_sha": "13c3af0902d49574aa90f559ea8e9e1e881b53b7",
+  "prompts": {
+    "527c2ca7ea1c6298": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "336d4aa7-a863-4df4-96cc-07a749391642",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "JinxCappa",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 23,
+      "accepted_lines": 0,
+      "overriden_lines": 0
+    }
+  }
+}
