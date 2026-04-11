@@ -36,29 +36,6 @@ let
       binaryName = "netbird-ui";
       license = lib.licenses.bsd3;
     };
-    upload = {
-      module = "upload-server";
-      binaryName = "netbird-upload";
-      license = lib.licenses.bsd3;
-    };
-    management = {
-      module = "management";
-      binaryName = "netbird-mgmt";
-      license = lib.licenses.agpl3Only;
-      versionCheckProgramArg = "--version";
-      hasCompletion = true;
-    };
-    signal = {
-      module = "signal";
-      binaryName = "netbird-signal";
-      license = lib.licenses.agpl3Only;
-      hasCompletion = true;
-    };
-    relay = {
-      module = "relay";
-      binaryName = "netbird-relay";
-      license = lib.licenses.agpl3Only;
-    };
   };
   component = availableComponents.${componentName};
 in
