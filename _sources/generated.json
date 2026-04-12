@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-wWXXLCpU0vHrm71uKrE2nV4Uo8Rqe8OweRIn7KoMFFk=",
+            "sha256": "sha256-yUFU2t646V/sq/JVwfCPC+IIWycx3B+q+gjCccSP0vc=",
             "type": "url",
-            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.101.tgz"
+            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.104.tgz"
         },
-        "version": "2.1.101"
+        "version": "2.1.104"
     },
     "deploy-rs": {
         "cargoLock": null,
