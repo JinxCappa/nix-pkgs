@@ -16,7 +16,7 @@ buildGoModule rec {
 
   src = sources.vault.src;
 
-  vendorHash = "sha256-LxWqJroDfGqqCrTej+jkpxEO/+ipXuqSPB2R3bg2v10=";
+  vendorHash = "sha256-rU04+nNxa3h1hUTm6K4hZIB5aDLfjrhG4+WiZH+YZEg=";
 
   proxyVendor = true;
 

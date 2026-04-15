@@ -8,10 +8,10 @@
 {
   claude-code = {
     pname = "claude-code";
-    version = "2.1.107";
+    version = "2.1.108";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.107.tgz";
-      sha256 = "sha256-RH9CrdwU2t9nmHOJm5dY9/CexyPD3peH1UkwcFYYQuc=";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.108.tgz";
+      sha256 = "sha256-viCymGDX1wgEPu35o2uxQi5QlOfeQny8vKQGiwDg2bg=";
     };
   };
   deploy-rs = {
@@ -81,13 +81,13 @@
   };
   vault = {
     pname = "vault";
-    version = "v1.21.4";
+    version = "v2.0.0";
     src = fetchFromGitHub {
       owner = "hashicorp";
       repo = "vault";
-      rev = "v1.21.4";
+      rev = "v2.0.0";
       fetchSubmodules = false;
-      sha256 = "sha256-1yBvcGKzLZYFWlZJL1iJgDFkiT4g2f84iZCjWi2CwDg=";
+      sha256 = "sha256-7F5LM9ZxMmj1fob4ZzRoWmEfQMgtbBPaglwxvzFD0FU=";
     };
   };
   vector = {
