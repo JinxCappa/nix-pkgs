@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-qeaNuuKyeJO+4TsBnP9kF6ydtZR8vCCdodqGuJX3alg=",
+            "sha256": "sha256-2xpR5UekZZF1I7w2b8QYCnovWlxtQmHAOJTQ6/0H7xg=",
             "type": "url",
-            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.110.tgz"
+            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.111.tgz"
         },
-        "version": "2.1.110"
+        "version": "2.1.111"
     },
     "deploy-rs": {
         "cargoLock": null,
@@ -58,7 +58,7 @@
     },
     "oh-my-zsh": {
         "cargoLock": null,
-        "date": "2026-04-13",
+        "date": "2026-04-16",
         "extract": null,
         "name": "oh-my-zsh",
         "passthru": null,
@@ -70,12 +70,12 @@
             "name": null,
             "owner": "ohmyzsh",
             "repo": "ohmyzsh",
-            "rev": "061f773dd356df52a8bccd5e73377c012f97ef14",
-            "sha256": "sha256-aK3iX+YweXr+LCQJYfzP0M049ujyoE+MVotKv+WccBg=",
+            "rev": "e42ac8c57bc7eb473b689ffcbb98473ba45dbab8",
+            "sha256": "sha256-E0iS3hJgB2ehNVX0WLKSGXXGpo4K9lxHvC2Qemmsn4E=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "061f773dd356df52a8bccd5e73377c012f97ef14"
+        "version": "e42ac8c57bc7eb473b689ffcbb98473ba45dbab8"
     },
     "openbao": {
         "cargoLock": null,
