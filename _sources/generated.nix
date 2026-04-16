@@ -8,10 +8,10 @@
 {
   claude-code = {
     pname = "claude-code";
-    version = "2.1.109";
+    version = "2.1.110";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.109.tgz";
-      sha256 = "sha256-BEm50FshQbpRx6UmKnxi5oxzCYuH5PyXteGlF6qvcSg=";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.110.tgz";
+      sha256 = "sha256-qeaNuuKyeJO+4TsBnP9kF6ydtZR8vCCdodqGuJX3alg=";
     };
   };
   deploy-rs = {
@@ -92,13 +92,13 @@
   };
   vector = {
     pname = "vector";
-    version = "v0.54.0";
+    version = "vdev-v0.3.1";
     src = fetchFromGitHub {
       owner = "vectordotdev";
       repo = "vector";
-      rev = "v0.54.0";
+      rev = "vdev-v0.3.1";
       fetchSubmodules = false;
-      sha256 = "sha256-XEQN6Dk72Yn3FZoqvQk4mj+ME68hJuN7zHpiSLY9iNo=";
+      sha256 = "sha256-G+KrbmVVy2VX1jOOSufStP0YgKN64voaKh2oPftBfk8=";
     };
   };
   victoriametrics-cluster = {

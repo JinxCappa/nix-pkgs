@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-BEm50FshQbpRx6UmKnxi5oxzCYuH5PyXteGlF6qvcSg=",
+            "sha256": "sha256-qeaNuuKyeJO+4TsBnP9kF6ydtZR8vCCdodqGuJX3alg=",
             "type": "url",
-            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.109.tgz"
+            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.110.tgz"
         },
-        "version": "2.1.109"
+        "version": "2.1.110"
     },
     "deploy-rs": {
         "cargoLock": null,
@@ -169,12 +169,12 @@
             "name": null,
             "owner": "vectordotdev",
             "repo": "vector",
-            "rev": "v0.54.0",
-            "sha256": "sha256-XEQN6Dk72Yn3FZoqvQk4mj+ME68hJuN7zHpiSLY9iNo=",
+            "rev": "vdev-v0.3.1",
+            "sha256": "sha256-G+KrbmVVy2VX1jOOSufStP0YgKN64voaKh2oPftBfk8=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.54.0"
+        "version": "vdev-v0.3.1"
     },
     "victoriametrics-cluster": {
         "cargoLock": null,
