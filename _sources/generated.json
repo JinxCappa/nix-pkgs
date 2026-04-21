@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-IJKlrGrnEV9GuWFmLV3IcgOCGfN8+R7le3AEYUuHua8=",
+            "sha256": "sha256-yGu+r0S6v3RLseHwBKJorDHrFk/zevqTEUt2blZn9/E=",
             "type": "url",
-            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.114.tgz"
+            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.116.tgz"
         },
-        "version": "2.1.114"
+        "version": "2.1.116"
     },
     "deploy-rs": {
         "cargoLock": null,
@@ -91,12 +91,12 @@
             "name": null,
             "owner": "openbao",
             "repo": "openbao",
-            "rev": "v2.5.2",
-            "sha256": "sha256-fqsCQf9wFlzMWC4XV1BclWlYG649VhhZBKlGrdsbqKc=",
+            "rev": "v2.5.3",
+            "sha256": "sha256-VpW27vWKtqabJiNxuyx3PGDThHF6MOlxxfzD1UksX6I=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2.5.2"
+        "version": "v2.5.3"
     },
     "remotepc-host": {
         "cargoLock": null,

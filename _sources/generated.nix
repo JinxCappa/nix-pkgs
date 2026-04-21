@@ -8,10 +8,10 @@
 {
   claude-code = {
     pname = "claude-code";
-    version = "2.1.114";
+    version = "2.1.116";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.114.tgz";
-      sha256 = "sha256-IJKlrGrnEV9GuWFmLV3IcgOCGfN8+R7le3AEYUuHua8=";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.116.tgz";
+      sha256 = "sha256-yGu+r0S6v3RLseHwBKJorDHrFk/zevqTEUt2blZn9/E=";
     };
   };
   deploy-rs = {
@@ -51,13 +51,13 @@
   };
   openbao = {
     pname = "openbao";
-    version = "v2.5.2";
+    version = "v2.5.3";
     src = fetchFromGitHub {
       owner = "openbao";
       repo = "openbao";
-      rev = "v2.5.2";
+      rev = "v2.5.3";
       fetchSubmodules = false;
-      sha256 = "sha256-fqsCQf9wFlzMWC4XV1BclWlYG649VhhZBKlGrdsbqKc=";
+      sha256 = "sha256-VpW27vWKtqabJiNxuyx3PGDThHF6MOlxxfzD1UksX6I=";
     };
   };
   remotepc-host = {
