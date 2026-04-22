@@ -92,13 +92,13 @@
   };
   vector = {
     pname = "vector";
-    version = "vdev-v0.3.1";
+    version = "v0.55.0";
     src = fetchFromGitHub {
       owner = "vectordotdev";
       repo = "vector";
-      rev = "vdev-v0.3.1";
+      rev = "v0.55.0";
       fetchSubmodules = false;
-      sha256 = "sha256-G+KrbmVVy2VX1jOOSufStP0YgKN64voaKh2oPftBfk8=";
+      sha256 = "sha256-1t0fHBYBBfG8oFbo1QPXb5y8+lyIPPve4bDtry+KF5Q=";
     };
   };
   victoriametrics-cluster = {
