@@ -18,7 +18,7 @@ buildGoModule {
 
   modRoot = "src/go";
 
-  vendorHash = "sha256-Csq6U2/i+wVPOsWPgK3BsGbLhlhAWHFInCGNgPcKlf8=";
+  vendorHash = "sha256-3RNNwmIlCp1SZGJCrl0tvutn1gPE89r7FrEyZbipO8k=";
 
   nativeBuildInputs = [
     autoconf
