@@ -1,0 +1,25 @@
+_sources/generated.json
+  0eb2297b76ea5da3 110
+_sources/generated.nix
+  0eb2297b76ea5da3 68
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2",
+  "base_commit_sha": "8aac8b53cac0d01b2504f25e70934eae89eba520",
+  "prompts": {
+    "0eb2297b76ea5da3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "07bf6f95-51d7-4a8a-9d12-d8ec3edbe77e",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "JinxCappa",
+      "messages": [],
+      "total_additions": 3,
+      "total_deletions": 3,
+      "accepted_lines": 3,
+      "overriden_lines": 0
+    }
+  }
+}
