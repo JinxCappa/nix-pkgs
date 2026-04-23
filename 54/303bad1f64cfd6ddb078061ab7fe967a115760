@@ -1,0 +1,14 @@
+packages/vector/default.nix
+  h_772d05b0e130f8 10,51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2",
+  "base_commit_sha": "54303bad1f64cfd6ddb078061ab7fe967a115760",
+  "prompts": {},
+  "humans": {
+    "h_772d05b0e130f8": {
+      "author": "JinxCappa"
+    }
+  }
+}
