@@ -1,0 +1,23 @@
+packages/zabbix74/agent2.nix
+  0eb2297b76ea5da3 21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2",
+  "base_commit_sha": "6db4cc64bb3fc158aa99a208e7319be1a3e72053",
+  "prompts": {
+    "0eb2297b76ea5da3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "07bf6f95-51d7-4a8a-9d12-d8ec3edbe77e",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "JinxCappa",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 1,
+      "overriden_lines": 0
+    }
+  }
+}
