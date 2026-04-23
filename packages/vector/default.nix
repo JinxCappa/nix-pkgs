@@ -7,6 +7,7 @@
   protobuf,
   rdkafka,
   oniguruma,
+  cyrus_sasl,
   zstd,
   rust-jemalloc-sys,
   rust-jemalloc-sys-unprefixed,
@@ -47,6 +48,7 @@ rustPlatform.buildRustPackage {
     ++ lib.optional stdenv.hostPlatform.isDarwin darwin.bootstrap_cmds;
   buildInputs =
     [
+      cyrus_sasl
       oniguruma
       openssl
       protobuf
