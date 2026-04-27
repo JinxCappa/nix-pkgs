@@ -28,26 +28,26 @@
   };
   netbird = {
     pname = "netbird";
-    version = "v0.69.0";
+    version = "v0.70.0";
     src = fetchFromGitHub {
       owner = "netbirdio";
       repo = "netbird";
-      rev = "v0.69.0";
+      rev = "v0.70.0";
       fetchSubmodules = true;
-      sha256 = "sha256-qNWzyL0J7mYQcWYQOIjmlh+KH2WBb6LkYhTNiR6tDpw=";
+      sha256 = "sha256-M0rOcIjtp/FicrdMRyMVRjJaAHAU6frgNqYqadd7jlg=";
     };
   };
   oh-my-zsh = {
     pname = "oh-my-zsh";
-    version = "349b9e49ced7682e27927ffb34b6522f011f3e74";
+    version = "52c830cd32db19a9e24b5a34715557fd651f1514";
     src = fetchFromGitHub {
       owner = "ohmyzsh";
       repo = "ohmyzsh";
-      rev = "349b9e49ced7682e27927ffb34b6522f011f3e74";
+      rev = "52c830cd32db19a9e24b5a34715557fd651f1514";
       fetchSubmodules = false;
-      sha256 = "sha256-ZdimmwBKi9iBUQ8RLqzeKDhy1AAQm+bgd1E3IG0/e9I=";
+      sha256 = "sha256-SAmh3PIs4nL1EJuj0eOZK9+pYB7Okxofq4yPEz0xpcg=";
     };
-    date = "2026-04-20";
+    date = "2026-04-27";
   };
   openbao = {
     pname = "openbao";
@@ -103,13 +103,13 @@
   };
   victoriametrics-cluster = {
     pname = "victoriametrics-cluster";
-    version = "v1.140.0-cluster";
+    version = "v1.141.0-cluster";
     src = fetchFromGitHub {
       owner = "VictoriaMetrics";
       repo = "VictoriaMetrics";
-      rev = "v1.140.0-cluster";
+      rev = "v1.141.0-cluster";
       fetchSubmodules = false;
-      sha256 = "sha256-v31/OVmzZAd+HXVScd4UBrtP0yCyeJjcyEK3eukN5hE=";
+      sha256 = "sha256-Ix+c+ajLsUF3jUXdcTMFNPI7yzzbvD+xfNsG+nzi9mY=";
     };
   };
   zabbix74 = {
