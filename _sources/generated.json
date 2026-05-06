@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-WeaK2+GQXwtlQka5lazPffBRDYxnnfOnRWQVMkXTTGg=",
+            "sha256": "sha256-LHG3MRPHyoL0WChw6fIhSrw43Oflah03nZnDJYV0/Vc=",
             "type": "url",
-            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.129.tgz"
+            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.131.tgz"
         },
-        "version": "2.1.129"
+        "version": "2.1.131"
     },
     "deploy-rs": {
         "cargoLock": null,
@@ -49,16 +49,16 @@
             "name": null,
             "owner": "netbirdio",
             "repo": "netbird",
-            "rev": "v0.70.4",
-            "sha256": "sha256-tfScscRllUlV1V6D66rfT6JEsReDQfVGryVzNebm0vg=",
+            "rev": "v0.70.5",
+            "sha256": "sha256-AsM+MEeBqxnwD1jE8ocI93tF3l/7s+s5nF073ZMAi/Y=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.70.4"
+        "version": "v0.70.5"
     },
     "oh-my-zsh": {
         "cargoLock": null,
-        "date": "2026-05-04",
+        "date": "2026-05-06",
         "extract": null,
         "name": "oh-my-zsh",
         "passthru": null,
@@ -70,12 +70,12 @@
             "name": null,
             "owner": "ohmyzsh",
             "repo": "ohmyzsh",
-            "rev": "e64912e0c1eaa32181c3b5e5e4bf8042ecd0e8a7",
-            "sha256": "sha256-KGrCVW+uwlLyBa5cycjqczcKKLO3oQKIS4NHDJ1Xpj8=",
+            "rev": "8ab16fa4939c35b6e589eb1c4ec9c87b71c5043e",
+            "sha256": "sha256-R7V+Wf9EsL4hqnEUy9JYQ2uLX7/iil+V9cn2ZpV1lYo=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "e64912e0c1eaa32181c3b5e5e4bf8042ecd0e8a7"
+        "version": "8ab16fa4939c35b6e589eb1c4ec9c87b71c5043e"
     },
     "openbao": {
         "cargoLock": null,
