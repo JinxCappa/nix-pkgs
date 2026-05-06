@@ -8,10 +8,10 @@
 {
   claude-code = {
     pname = "claude-code";
-    version = "2.1.128";
+    version = "2.1.129";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.128.tgz";
-      sha256 = "sha256-JKDxDguXKPKwObtWS9H+lq5K7lax4aTcZalN3zrzuUU=";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.129.tgz";
+      sha256 = "sha256-WeaK2+GQXwtlQka5lazPffBRDYxnnfOnRWQVMkXTTGg=";
     };
   };
   deploy-rs = {
@@ -114,13 +114,13 @@
   };
   zabbix74 = {
     pname = "zabbix74";
-    version = "7.4.9";
+    version = "7.4.10";
     src = fetchFromGitHub {
       owner = "zabbix";
       repo = "zabbix";
-      rev = "7.4.9";
+      rev = "7.4.10";
       fetchSubmodules = false;
-      sha256 = "sha256-ZW+cHR01m5XQgtzYJ9o+KG2iQzLNKK6b2hh34tdT4F8=";
+      sha256 = "sha256-ERvjoYLO4meFCPiHK3pfz2dByObbZE9pLQ/kUy3/y/0=";
     };
   };
 }
