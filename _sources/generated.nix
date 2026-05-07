@@ -8,10 +8,10 @@
 {
   claude-code = {
     pname = "claude-code";
-    version = "2.1.131";
+    version = "2.1.132";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.131.tgz";
-      sha256 = "sha256-LHG3MRPHyoL0WChw6fIhSrw43Oflah03nZnDJYV0/Vc=";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.132.tgz";
+      sha256 = "sha256-WjeDzfZFGrs9wbRrL27CGhzKu/lCs8I7dFyez1Vdzog=";
     };
   };
   deploy-rs = {
@@ -39,13 +39,13 @@
   };
   oh-my-zsh = {
     pname = "oh-my-zsh";
-    version = "8ab16fa4939c35b6e589eb1c4ec9c87b71c5043e";
+    version = "3604dc23e0d95b5ce9a3932838a7b103ef5ff0c1";
     src = fetchFromGitHub {
       owner = "ohmyzsh";
       repo = "ohmyzsh";
-      rev = "8ab16fa4939c35b6e589eb1c4ec9c87b71c5043e";
+      rev = "3604dc23e0d95b5ce9a3932838a7b103ef5ff0c1";
       fetchSubmodules = false;
-      sha256 = "sha256-R7V+Wf9EsL4hqnEUy9JYQ2uLX7/iil+V9cn2ZpV1lYo=";
+      sha256 = "sha256-3R7dpSByHbEZCjKpfud70z/Ma7CCBVufSZFP/2QaKhQ=";
     };
     date = "2026-05-06";
   };
