@@ -107,11 +107,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-raiDEUiYwbWfknxEAEGpVDnTLXOskl3BdbDaWwgSs44=",
+            "sha256": "sha256-xk3wc3XhYX7MVj68Oz14sXztlbxm+u55yjtCeZ73fLM=",
             "type": "url",
             "url": "https://download.remotepc.com/downloads/rpc/310320/remotepc-host.deb"
         },
-        "version": "6.10.7"
+        "version": "6.10.8"
     },
     "rustdesk": {
         "cargoLock": null,
