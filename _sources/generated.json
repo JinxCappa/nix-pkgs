@@ -49,12 +49,12 @@
             "name": null,
             "owner": "netbirdio",
             "repo": "netbird",
-            "rev": "v0.71.0",
-            "sha256": "sha256-2O2382nVL07tmXNqkW1BDwKX0SCU6qDRmYwTZugxEWk=",
+            "rev": "v0.71.1",
+            "sha256": "sha256-xU2P4COLufGdFrit8+IRn96FT1IJKGQ97R9eGv5cjqU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.71.0"
+        "version": "v0.71.1"
     },
     "oh-my-zsh": {
         "cargoLock": null,
@@ -107,11 +107,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-xk3wc3XhYX7MVj68Oz14sXztlbxm+u55yjtCeZ73fLM=",
+            "sha256": "sha256-VBsaitURiz0EYqw7cXEKHjPVtvym+kcKTv2beK/YqPA=",
             "type": "url",
             "url": "https://download.remotepc.com/downloads/rpc/310320/remotepc-host.deb"
         },
-        "version": "6.10.8"
+        "version": "6.10.9"
     },
     "rustdesk": {
         "cargoLock": null,

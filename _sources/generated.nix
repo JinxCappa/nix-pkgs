@@ -28,13 +28,13 @@
   };
   netbird = {
     pname = "netbird";
-    version = "v0.71.0";
+    version = "v0.71.1";
     src = fetchFromGitHub {
       owner = "netbirdio";
       repo = "netbird";
-      rev = "v0.71.0";
+      rev = "v0.71.1";
       fetchSubmodules = true;
-      sha256 = "sha256-2O2382nVL07tmXNqkW1BDwKX0SCU6qDRmYwTZugxEWk=";
+      sha256 = "sha256-xU2P4COLufGdFrit8+IRn96FT1IJKGQ97R9eGv5cjqU=";
     };
   };
   oh-my-zsh = {
@@ -62,10 +62,10 @@
   };
   remotepc-host = {
     pname = "remotepc-host";
-    version = "6.10.8";
+    version = "6.10.9";
     src = fetchurl {
       url = "https://download.remotepc.com/downloads/rpc/310320/remotepc-host.deb";
-      sha256 = "sha256-xk3wc3XhYX7MVj68Oz14sXztlbxm+u55yjtCeZ73fLM=";
+      sha256 = "sha256-VBsaitURiz0EYqw7cXEKHjPVtvym+kcKTv2beK/YqPA=";
     };
   };
   rustdesk = {
