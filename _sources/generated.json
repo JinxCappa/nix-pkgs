@@ -49,12 +49,12 @@
             "name": null,
             "owner": "netbirdio",
             "repo": "netbird",
-            "rev": "v0.71.2",
-            "sha256": "sha256-rmm9NdWNjcEmUp84lad709EoVCZz19/5/N5ssflWzt4=",
+            "rev": "v0.71.1",
+            "sha256": "sha256-xU2P4COLufGdFrit8+IRn96FT1IJKGQ97R9eGv5cjqU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.71.2"
+        "version": "v0.71.1"
     },
     "oh-my-zsh": {
         "cargoLock": null,
