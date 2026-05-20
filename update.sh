@@ -8,6 +8,9 @@ source ./lib.sh
 
 # Cache current versions from generated.nix BEFORE nvfetcher runs
 declare -A OLD_VERSIONS
+SOURCE_CACHE_DIR=$(mktemp -d)
+trap 'rm -rf "$SOURCE_CACHE_DIR"' EXIT
+
 cache_old_versions() {
   # Get package list dynamically from generated.json
   local packages
@@ -16,6 +19,93 @@ cache_old_versions() {
     # Parse version from generated.nix (can't use nix eval - it's a function)
     OLD_VERSIONS[$pkg]=$(grep -A2 "$pkg = {" _sources/generated.nix | grep 'version' | sed 's/.*version = "\([^"]*\)".*/\1/' || echo "")
   done
+}
+
+cache_sources() {
+  cp _sources/generated.nix "$SOURCE_CACHE_DIR/generated.nix"
+  cp _sources/generated.json "$SOURCE_CACHE_DIR/generated.json"
+  mkdir -p "$SOURCE_CACHE_DIR/source-versions"
+
+  local pkg pkg_dir
+  for pkg in $(jq -r 'keys[]' _sources/generated.json 2>/dev/null); do
+    pkg_dir="packages/$pkg"
+    if [ -f "$pkg_dir/.source-version" ]; then
+      cp "$pkg_dir/.source-version" "$SOURCE_CACHE_DIR/source-versions/$pkg"
+    fi
+  done
+}
+
+# Restore one package's nvfetcher output from the pre-update cache.
+# This is used when a source bump cannot be made buildable yet, while keeping
+# unrelated package updates from the same nvfetcher run.
+restore_cached_package_source() {
+  local pkg="$1"
+  local tmp_file
+
+  if ! jq -e --arg pkg "$pkg" 'has($pkg)' "$SOURCE_CACHE_DIR/generated.json" >/dev/null; then
+    echo "  $pkg: no cached source entry found, leaving generated sources unchanged"
+    return 0
+  fi
+
+  tmp_file=$(mktemp)
+  jq --arg pkg "$pkg" --slurpfile old "$SOURCE_CACHE_DIR/generated.json" \
+    '.[$pkg] = $old[0][$pkg]' \
+    _sources/generated.json > "$tmp_file"
+  mv "$tmp_file" _sources/generated.json
+
+  tmp_file=$(mktemp)
+  awk -v pkg="$pkg" -v old_file="$SOURCE_CACHE_DIR/generated.nix" '
+    BEGIN {
+      pattern = "^  " pkg " = \\{"
+      while ((getline line < old_file) > 0) {
+        if (line ~ pattern) {
+          in_old = 1
+        }
+        if (in_old) {
+          old_block = old_block line "\n"
+        }
+        if (in_old && line ~ /^  \};/) {
+          in_old = 0
+        }
+      }
+    }
+    $0 ~ pattern {
+      if (old_block != "") {
+        printf "%s", old_block
+      }
+      skip = 1
+      next
+    }
+    skip && $0 ~ /^  \};/ {
+      skip = 0
+      next
+    }
+    !skip {
+      print
+    }
+  ' _sources/generated.nix > "$tmp_file"
+  mv "$tmp_file" _sources/generated.nix
+
+  if [ -f "$SOURCE_CACHE_DIR/source-versions/$pkg" ]; then
+    cp "$SOURCE_CACHE_DIR/source-versions/$pkg" "packages/$pkg/.source-version"
+  else
+    rm -f "packages/$pkg/.source-version"
+  fi
+}
+
+is_toolchain_too_old() {
+  local build_output="$1"
+
+  echo "$build_output" | grep -qiE \
+    'requires go >= [0-9]+\.[0-9]+(\.[0-9]+)? \(running go [0-9]+\.[0-9]+(\.[0-9]+)?; GOTOOLCHAIN=local\)|requires rustc [0-9]+\.[0-9]+(\.[0-9]+)? or newer|rustc [0-9]+\.[0-9]+(\.[0-9]+)? is not supported|EBADENGINE|Unsupported engine|The engine "node" is incompatible|Requires-Python[[:space:]]*[>=<~!]+[[:space:]]*[0-9]+\.[0-9]+|requires Python[[:space:]]*[>=<~!]+[[:space:]]*[0-9]+\.[0-9]+|requires Java[[:space:]]*[0-9]+|invalid source release:[[:space:]]*[0-9]+|Unsupported class file major version'
+}
+
+skip_update_until_toolchain_updates() {
+  local pkg="$1"
+
+  echo "  $pkg: upstream requires a newer toolchain than nixpkgs currently provides"
+  echo "  $pkg: restoring previous source pin and skipping this update for now"
+  restore_cached_package_source "$pkg"
 }
 
 # Check if package version changed (compares cached version with generated.json)
@@ -34,6 +124,7 @@ version_changed() {
 # Cache versions before nvfetcher updates them
 echo "=== Caching current versions ==="
 cache_old_versions
+cache_sources
 
 echo "=== Updating sources with nvfetcher ==="
 ensure_nix_prefetch_git
@@ -143,6 +234,9 @@ update_cargo_hash() {
   if [ -n "$new_hash" ]; then
     echo "  $pkg: updating cargoHash to $new_hash"
     sed -i -E "s#cargoHash = (\"sha256-[^\"]*\"|null)#cargoHash = \"$new_hash\"#" "$pkg_file"
+  elif is_toolchain_too_old "$build_output"; then
+    skip_update_until_toolchain_updates "$pkg"
+    return 0
   else
     echo "  $pkg: build failed for unknown reason"
     echo "$build_output" | tail -20
@@ -189,6 +283,9 @@ update_vendor_hash() {
   if [ -n "$new_hash" ]; then
     echo "  $pkg: updating vendorHash to $new_hash"
     sed -i -E "s#vendorHash = (\"sha256-[^\"]*\"|null)#vendorHash = \"$new_hash\"#" "$pkg_file"
+  elif is_toolchain_too_old "$build_output"; then
+    skip_update_until_toolchain_updates "$pkg"
+    return 0
   else
     echo "  $pkg: build failed for unknown reason"
     echo "$build_output" | tail -20
@@ -219,6 +316,8 @@ update_npm_hash() {
   local pkg_dir="packages/$pkg"
   local pkg_file="$pkg_dir/default.nix"
   local start_dir="$PWD"
+  local lock_backup
+  lock_backup=$(mktemp)
 
   # Get the npm package name from nvfetcher.toml (extract from src.cmd line)
   local npm_pkg
@@ -242,23 +341,44 @@ update_npm_hash() {
 
   # Update package-lock.json
   cd "$pkg_dir"
+  if [ -f package-lock.json ]; then
+    cp package-lock.json "$lock_backup"
+  else
+    rm -f "$lock_backup"
+  fi
   rm -f package.json package-lock.json 2>/dev/null || true
   echo '{}' > package.json
-  npm install --package-lock-only "$npm_pkg@$version" >/dev/null 2>&1 || true
+  local npm_output
+  npm_output=$(npm install --package-lock-only "$npm_pkg@$version" 2>&1) || true
   rm -f package.json
 
   # Get new hash (prefetch-npm-deps outputs hash on last line of stderr)
   local new_hash
-  new_hash=$(prefetch-npm-deps package-lock.json 2>&1 | tail -1)
+  new_hash=""
+  if [ -f package-lock.json ]; then
+    new_hash=$(prefetch-npm-deps package-lock.json 2>&1 | tail -1)
+  fi
 
   cd "$start_dir"
 
   if [ -n "$new_hash" ] && [[ "$new_hash" == sha256-* ]]; then
     echo "  $pkg: updating npmDepsHash to $new_hash"
     sed -i "s|npmDepsHash = \"sha256-.*\"|npmDepsHash = \"$new_hash\"|" "$pkg_file"
+  elif is_toolchain_too_old "$npm_output"; then
+    if [ -f "$lock_backup" ]; then
+      cp "$lock_backup" "$pkg_dir/package-lock.json"
+    else
+      rm -f "$pkg_dir/package-lock.json"
+    fi
+    skip_update_until_toolchain_updates "$pkg"
   else
+    if [ -f "$lock_backup" ]; then
+      cp "$lock_backup" "$pkg_dir/package-lock.json"
+    fi
     echo "  $pkg: could not determine npmDepsHash"
   fi
+
+  rm -f "$lock_backup"
 }
 
 # Update npm packages only if version changed
