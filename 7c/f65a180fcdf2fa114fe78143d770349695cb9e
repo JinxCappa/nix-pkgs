@@ -1,0 +1,21 @@
+packages/vault/default.nix
+  s_c3660e37436c76::t_0232f9384aed5a 5,14,29-30
+  s_c3660e37436c76::t_8aef887766ddff 28,88
+  s_c3660e37436c76::t_53a1cbcc0437be 31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.9",
+  "base_commit_sha": "7cf65a180fcdf2fa114fe78143d770349695cb9e",
+  "prompts": {},
+  "sessions": {
+    "s_c3660e37436c76": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e4572-9da7-77d2-9c42-2b0899f31951",
+        "model": "gpt-5.5"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
