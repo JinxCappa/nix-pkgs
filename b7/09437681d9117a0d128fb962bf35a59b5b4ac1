@@ -1,0 +1,42 @@
+.github/workflows/update-flake.yaml
+  h_30afaad5482ce1 15,20
+add-package.sh
+  h_30afaad5482ce1 284
+.github/workflows/netbird.yaml
+  h_30afaad5482ce1 29,37,43,52
+.github/workflows/remotepc-host.yaml
+  h_30afaad5482ce1 26,29,36
+.github/workflows/rustdesk.yaml
+  h_30afaad5482ce1 27,30,37
+.github/workflows/netbird-ui.yaml
+  h_30afaad5482ce1 29,37,43,52
+.github/workflows/deploy-rs.yaml
+  h_30afaad5482ce1 29,37,43,52
+.github/workflows/victoriametrics-cluster.yaml
+  h_30afaad5482ce1 29,37,43,52
+.github/workflows/zabbix74.yml
+  h_30afaad5482ce1 37,40,47,69,77,83,92
+.github/workflows/claude-code.yaml
+  h_30afaad5482ce1 29,37,43,52
+.github/workflows/openbao.yml
+  h_30afaad5482ce1 37,45,51,60,83,86,93
+.github/workflows/oh-my-zsh.yaml
+  h_30afaad5482ce1 29,37,43,52
+.github/workflows/vault.yml
+  h_30afaad5482ce1 33,41,47,56
+.github/workflows/vector.yaml
+  h_30afaad5482ce1 29,37,43,52
+.github/workflows/update-packages.yaml
+  h_30afaad5482ce1 5,16,21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.11",
+  "base_commit_sha": "b709437681d9117a0d128fb962bf35a59b5b4ac1",
+  "prompts": {},
+  "humans": {
+    "h_30afaad5482ce1": {
+      "author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
