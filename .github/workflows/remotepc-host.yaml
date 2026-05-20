@@ -23,17 +23,17 @@ jobs:
       CELLAR_TOKEN: ${{ secrets.CELLAR_TOKEN }}
       CELLAR_CACHE_ID: ${{ secrets.CELLAR_CACHE_ID }}
     steps:
-      - uses: actions/checkout@v4.2.2
+      - uses: actions/checkout@v6
 
       - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v21
+        uses: DeterminateSystems/nix-installer-action@v22
         with:
           determinate: false
 
       - name: Install cellarctl
         uses: jinxcappa/cellar-action@v1
         with:
-          configure-nix: 'true'
+          configure-nix: "true"
 
       - name: Build and push
         run: cellarctl push --flake .#remotepc-host

@@ -26,7 +26,7 @@ jobs:
       CELLAR_TOKEN: ${{ secrets.CELLAR_TOKEN }}
       CELLAR_CACHE_ID: ${{ secrets.CELLAR_CACHE_ID }}
     steps:
-      - uses: actions/checkout@v4.2.2
+      - uses: actions/checkout@v6
 
       - name: Install current Bash on macOS
         if: runner.os == 'macOS'
@@ -34,13 +34,13 @@ jobs:
           command -v brew && brew install bash || true
 
       - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v21
+        uses: DeterminateSystems/nix-installer-action@v22
         if: matrix.os != 'macos-15-intel'
         with:
           determinate: false
 
       - name: Install Nix (Intel Mac)
-        uses: DeterminateSystems/nix-installer-action@v21
+        uses: DeterminateSystems/nix-installer-action@v22
         if: matrix.os == 'macos-15-intel'
         with:
           determinate: false
@@ -49,7 +49,7 @@ jobs:
       - name: Install cellarctl
         uses: jinxcappa/cellar-action@v1
         with:
-          configure-nix: 'true'
+          configure-nix: "true"
 
       - name: Build and push
         run: cellarctl push --flake .#netbird-ui

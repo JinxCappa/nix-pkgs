@@ -281,7 +281,7 @@ $MATRIX_OS    permissions:
       contents: write
     runs-on: \${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4.2.2$MACOS_BASH_STEP
+      - uses: actions/checkout@v6
 
       - uses: nixbuild/nix-quick-install-action@v30
 
