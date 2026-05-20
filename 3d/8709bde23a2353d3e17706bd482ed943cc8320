@@ -1,0 +1,21 @@
+update.sh
+  s_c9a4fdc20b606e::t_dd8c5538074bdc 11-13,24-93,127,288
+  s_c9a4fdc20b606e::t_b3f8348bc8cf01 96-110,237-239,286-287,319-320,344-348,351-352,357-360,367-373,380-381
+  s_c9a4fdc20b606e::t_b16bcef16bfbae 375-377
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.11",
+  "base_commit_sha": "3d8709bde23a2353d3e17706bd482ed943cc8320",
+  "prompts": {},
+  "sessions": {
+    "s_c9a4fdc20b606e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e45ab-2758-75f3-9fa5-c662ffa03579",
+        "model": "gpt-5.5"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
