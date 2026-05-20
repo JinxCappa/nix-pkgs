@@ -28,13 +28,13 @@
   };
   netbird = {
     pname = "netbird";
-    version = "v0.71.2";
+    version = "v0.71.3";
     src = fetchFromGitHub {
       owner = "netbirdio";
       repo = "netbird";
-      rev = "v0.71.2";
+      rev = "v0.71.3";
       fetchSubmodules = true;
-      sha256 = "sha256-rmm9NdWNjcEmUp84lad709EoVCZz19/5/N5ssflWzt4=";
+      sha256 = "sha256-1doOf/rgGbD/YtMY0+j1VM7933zR+G+Vyq6bF5fyuMg=";
     };
   };
   oh-my-zsh = {
@@ -51,13 +51,13 @@
   };
   openbao = {
     pname = "openbao";
-    version = "v2.5.3";
+    version = "v2.5.4";
     src = fetchFromGitHub {
       owner = "openbao";
       repo = "openbao";
-      rev = "v2.5.3";
+      rev = "v2.5.4";
       fetchSubmodules = false;
-      sha256 = "sha256-VpW27vWKtqabJiNxuyx3PGDThHF6MOlxxfzD1UksX6I=";
+      sha256 = "sha256-Gf/2/3XLzCnmU8hJfctUra6mamBsH/4QEiC89FolKQ4=";
     };
   };
   remotepc-host = {

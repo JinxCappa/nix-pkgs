@@ -49,12 +49,12 @@
       "name": null,
       "owner": "netbirdio",
       "repo": "netbird",
-      "rev": "v0.71.2",
-      "sha256": "sha256-rmm9NdWNjcEmUp84lad709EoVCZz19/5/N5ssflWzt4=",
+      "rev": "v0.71.3",
+      "sha256": "sha256-1doOf/rgGbD/YtMY0+j1VM7933zR+G+Vyq6bF5fyuMg=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "v0.71.2"
+    "version": "v0.71.3"
   },
   "oh-my-zsh": {
     "cargoLock": null,
@@ -91,12 +91,12 @@
       "name": null,
       "owner": "openbao",
       "repo": "openbao",
-      "rev": "v2.5.3",
-      "sha256": "sha256-VpW27vWKtqabJiNxuyx3PGDThHF6MOlxxfzD1UksX6I=",
+      "rev": "v2.5.4",
+      "sha256": "sha256-Gf/2/3XLzCnmU8hJfctUra6mamBsH/4QEiC89FolKQ4=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "v2.5.3"
+    "version": "v2.5.4"
   },
   "remotepc-host": {
     "cargoLock": null,
