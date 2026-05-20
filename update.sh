@@ -100,11 +100,39 @@ is_toolchain_too_old() {
     'requires go >= [0-9]+\.[0-9]+(\.[0-9]+)? \(running go [0-9]+\.[0-9]+(\.[0-9]+)?; GOTOOLCHAIN=local\)|requires rustc [0-9]+\.[0-9]+(\.[0-9]+)? or newer|rustc [0-9]+\.[0-9]+(\.[0-9]+)? is not supported|EBADENGINE|Unsupported engine|The engine "node" is incompatible|Requires-Python[[:space:]]*[>=<~!]+[[:space:]]*[0-9]+\.[0-9]+|requires Python[[:space:]]*[>=<~!]+[[:space:]]*[0-9]+\.[0-9]+|requires Java[[:space:]]*[0-9]+|invalid source release:[[:space:]]*[0-9]+|Unsupported class file major version'
 }
 
+emit_github_warning() {
+  local pkg="$1"
+  local message="$2"
+  local escaped_message
+
+  if [ "${GITHUB_ACTIONS:-}" != "true" ]; then
+    return 0
+  fi
+
+  escaped_message=${message//'%'/'%25'}
+  escaped_message=${escaped_message//$'\r'/'%0D'}
+  escaped_message=${escaped_message//$'\n'/'%0A'}
+
+  echo "::warning title=Package update skipped::$escaped_message"
+
+  if [ -n "${GITHUB_STEP_SUMMARY:-}" ]; then
+    {
+      echo "### Package update skipped"
+      echo ""
+      echo "- Package: \`$pkg\`"
+      echo "- Reason: $message"
+      echo ""
+    } >> "$GITHUB_STEP_SUMMARY"
+  fi
+}
+
 skip_update_until_toolchain_updates() {
   local pkg="$1"
+  local message="upstream requires a newer toolchain than nixpkgs currently provides; restored the previous source pin and skipped this update"
 
   echo "  $pkg: upstream requires a newer toolchain than nixpkgs currently provides"
   echo "  $pkg: restoring previous source pin and skipping this update for now"
+  emit_github_warning "$pkg" "$message"
   restore_cached_package_source "$pkg"
 }
 
