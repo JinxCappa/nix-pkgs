@@ -1,0 +1,19 @@
+update.sh
+  s_c9a4fdc20b606e::t_86e1af5ef2d613 103-128,131,135
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.11",
+  "base_commit_sha": "cc39c5f5e4510bfee293df9adc3f3dc77a18c63f",
+  "prompts": {},
+  "sessions": {
+    "s_c9a4fdc20b606e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e45ab-2758-75f3-9fa5-c662ffa03579",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}
