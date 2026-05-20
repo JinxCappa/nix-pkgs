@@ -8,10 +8,10 @@
 {
   claude-code = {
     pname = "claude-code";
-    version = "2.1.119";
+    version = "2.1.144";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.119.tgz";
-      sha256 = "sha256-cCEwMuxb7eC4injZvE+jYZ2B5Qej/+TdC+uxWxXzNfI=";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.144.tgz";
+      sha256 = "sha256-20rbFi3riP8ipWt+Q74WjBUP+yChMk0589SZmVAaAHA=";
     };
   };
   deploy-rs = {
@@ -28,26 +28,26 @@
   };
   netbird = {
     pname = "netbird";
-    version = "v0.69.0";
+    version = "v0.71.2";
     src = fetchFromGitHub {
       owner = "netbirdio";
       repo = "netbird";
-      rev = "v0.69.0";
+      rev = "v0.71.2";
       fetchSubmodules = true;
-      sha256 = "sha256-qNWzyL0J7mYQcWYQOIjmlh+KH2WBb6LkYhTNiR6tDpw=";
+      sha256 = "sha256-rmm9NdWNjcEmUp84lad709EoVCZz19/5/N5ssflWzt4=";
     };
   };
   oh-my-zsh = {
     pname = "oh-my-zsh";
-    version = "349b9e49ced7682e27927ffb34b6522f011f3e74";
+    version = "cb64103161b69d59e1efefeb761ac85564c44698";
     src = fetchFromGitHub {
       owner = "ohmyzsh";
       repo = "ohmyzsh";
-      rev = "349b9e49ced7682e27927ffb34b6522f011f3e74";
+      rev = "cb64103161b69d59e1efefeb761ac85564c44698";
       fetchSubmodules = false;
-      sha256 = "sha256-ZdimmwBKi9iBUQ8RLqzeKDhy1AAQm+bgd1E3IG0/e9I=";
+      sha256 = "sha256-A6HKwOEyd4jjbWbE5HjCVX9KgfG/jEHi7keSP5Ye/lg=";
     };
-    date = "2026-04-20";
+    date = "2026-05-18";
   };
   openbao = {
     pname = "openbao";
@@ -62,10 +62,10 @@
   };
   remotepc-host = {
     pname = "remotepc-host";
-    version = "6.10.7";
+    version = "6.10.9";
     src = fetchurl {
       url = "https://download.remotepc.com/downloads/rpc/310320/remotepc-host.deb";
-      sha256 = "sha256-raiDEUiYwbWfknxEAEGpVDnTLXOskl3BdbDaWwgSs44=";
+      sha256 = "sha256-VBsaitURiz0EYqw7cXEKHjPVtvym+kcKTv2beK/YqPA=";
     };
   };
   rustdesk = {
@@ -92,35 +92,35 @@
   };
   vector = {
     pname = "vector";
-    version = "v0.55.0";
+    version = "vdev-v0.3.3";
     src = fetchFromGitHub {
       owner = "vectordotdev";
       repo = "vector";
-      rev = "v0.55.0";
+      rev = "vdev-v0.3.3";
       fetchSubmodules = false;
-      sha256 = "sha256-1t0fHBYBBfG8oFbo1QPXb5y8+lyIPPve4bDtry+KF5Q=";
+      sha256 = "sha256-cLTJkhN8B3107Keb5EFZYPQlklupOaVJpelQKrh8Jo0=";
     };
   };
   victoriametrics-cluster = {
     pname = "victoriametrics-cluster";
-    version = "v1.140.0-cluster";
+    version = "v1.143.0-cluster";
     src = fetchFromGitHub {
       owner = "VictoriaMetrics";
       repo = "VictoriaMetrics";
-      rev = "v1.140.0-cluster";
+      rev = "v1.143.0-cluster";
       fetchSubmodules = false;
-      sha256 = "sha256-v31/OVmzZAd+HXVScd4UBrtP0yCyeJjcyEK3eukN5hE=";
+      sha256 = "sha256-0qcyxE7jPyl28B/HkhQIXW4vCwJBCk6yNgif7Ms1Ni4=";
     };
   };
   zabbix74 = {
     pname = "zabbix74";
-    version = "7.4.9";
+    version = "7.4.10";
     src = fetchFromGitHub {
       owner = "zabbix";
       repo = "zabbix";
-      rev = "7.4.9";
+      rev = "7.4.10";
       fetchSubmodules = false;
-      sha256 = "sha256-ZW+cHR01m5XQgtzYJ9o+KG2iQzLNKK6b2hh34tdT4F8=";
+      sha256 = "sha256-ERvjoYLO4meFCPiHK3pfz2dByObbZE9pLQ/kUy3/y/0=";
     };
   };
 }
