@@ -17,7 +17,7 @@
 
   src = sources.vault.src;
 
-  vendorHash = "sha256-rU04+nNxa3h1hUTm6K4hZIB5aDLfjrhG4+WiZH+YZEg=";
+  vendorHash = "sha256-AZ0CHEnL2bcsBcYyWL867QCcEA7sG0jMPgUNuvQIL5Y=";
 
   proxyVendor = true;
 
