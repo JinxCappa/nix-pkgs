@@ -1,14 +1,14 @@
 {
   lib,
   buildNpmPackage,
-  nodejs_20,
+  nodejs_24,
   sources,
 }:
 
 buildNpmPackage {
   inherit (sources.claude-code) pname version src;
 
-  nodejs = nodejs_20; # required for sandboxed Nix builds on Darwin
+  nodejs = nodejs_24; # required for sandboxed Nix builds on Darwin
 
   # npmDepsHash needs to be updated manually when version changes
   # Run: npm install --package-lock-only @anthropic-ai/claude-code@VERSION
