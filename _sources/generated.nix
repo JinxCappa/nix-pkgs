@@ -123,4 +123,15 @@
       sha256 = "sha256-ERvjoYLO4meFCPiHK3pfz2dByObbZE9pLQ/kUy3/y/0=";
     };
   };
+  zabbix80pre = {
+    pname = "zabbix80pre";
+    version = "8.0.0beta1";
+    src = fetchFromGitHub {
+      owner = "zabbix";
+      repo = "zabbix";
+      rev = "8.0.0beta1";
+      fetchSubmodules = false;
+      sha256 = "sha256-hEhposPj3CEZt/RSnfuVGsQmvFtWyghfIRi0dygHBKk=";
+    };
+  };
 }

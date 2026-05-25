@@ -10,15 +10,19 @@
   pcre2,
   zlib,
   sources,
+  zabbixSource ? sources.zabbix74,
+  agent2VendorHash ? "sha256-3RNNwmIlCp1SZGJCrl0tvutn1gPE89r7FrEyZbipO8k=",
+  agent2Platforms ? lib.platforms.unix,
+  agent2PostPatch ? "",
 }:
 
 buildGoModule {
   pname = "zabbix-agent2";
-  inherit (sources.zabbix74) version src;
+  inherit (zabbixSource) version src;
 
   modRoot = "src/go";
 
-  vendorHash = "sha256-3RNNwmIlCp1SZGJCrl0tvutn1gPE89r7FrEyZbipO8k=";
+  vendorHash = agent2VendorHash;
 
   nativeBuildInputs = [
     autoconf
@@ -43,6 +47,7 @@ buildGoModule {
       --replace '`go env GOARCH`' "$GOARCH" \
       --replace '`date +%H:%M:%S`' "00:00:00" \
       --replace '`date +"%b %_d %Y"`' "Jan 1 1970"
+    ${agent2PostPatch}
   '';
 
   # manually configure the c dependencies
@@ -86,6 +91,6 @@ buildGoModule {
       aanderse
       bstanderline
     ];
-    platforms = lib.platforms.unix;
+    platforms = agent2Platforms;
   };
 }

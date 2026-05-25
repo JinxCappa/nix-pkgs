@@ -25,6 +25,7 @@
   postgresqlSupport ? false,
   libpq,
   sources,
+  zabbixSource ? sources.zabbix74,
 }:
 
 # ensure exactly one database type is selected
@@ -45,7 +46,7 @@ let
 in
 stdenv.mkDerivation {
   pname = "zabbix-proxy";
-  inherit (sources.zabbix74) version src;
+  inherit (zabbixSource) version src;
 
   enableParallelBuilding = true;
 

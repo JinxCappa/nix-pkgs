@@ -217,5 +217,26 @@
             "type": "github"
         },
         "version": "7.4.10"
+    },
+    "zabbix80pre": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "zabbix80pre",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "zabbix",
+            "repo": "zabbix",
+            "rev": "8.0.0beta1",
+            "sha256": "sha256-hEhposPj3CEZt/RSnfuVGsQmvFtWyghfIRi0dygHBKk=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "8.0.0beta1"
     }
 }

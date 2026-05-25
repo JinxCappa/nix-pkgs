@@ -1,0 +1,97 @@
+name: zabbix80pre
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - packages/zabbix74/**
+      - packages/zabbix80pre/**
+      - .github/workflows/zabbix80pre.yml
+  pull_request:
+    branches:
+      - main
+    paths:
+      - packages/zabbix74/**
+      - packages/zabbix80pre/**
+      - .github/workflows/zabbix80pre.yml
+  workflow_dispatch:
+jobs:
+  # Server, proxy, web - Linux only
+  linux:
+    strategy:
+      fail-fast: false
+      matrix:
+        package:
+          - zabbix80pre.server
+          - zabbix80pre.proxy-sqlite
+          - zabbix80pre.proxy-pgsql
+          - zabbix80pre.web
+        runner:
+          - ubuntu-24.04
+          - ubuntu-24.04-arm
+    runs-on: ${{ matrix.runner }}
+    name: ${{ matrix.package }} (${{ matrix.runner }})
+    env:
+      CELLAR_SERVER: ${{ secrets.CELLAR_SERVER }}
+      CELLAR_TOKEN: ${{ secrets.CELLAR_TOKEN }}
+      CELLAR_CACHE_ID: ${{ secrets.CELLAR_CACHE_ID }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v22
+        with:
+          determinate: false
+
+      - name: Install cellarctl
+        uses: jinxcappa/cellar-action@v1
+        with:
+          configure-nix: "true"
+
+      - name: Build and push ${{ matrix.package }}
+        run: cellarctl push --flake '.#"${{ matrix.package }}"'
+
+  # Agent - Linux and macOS
+  agent:
+    strategy:
+      fail-fast: false
+      matrix:
+        runner:
+          - ubuntu-24.04
+          - ubuntu-24.04-arm
+          - macos-15
+          - macos-15-intel
+    runs-on: ${{ matrix.runner }}
+    name: zabbix80pre.agent2 (${{ matrix.runner }})
+    env:
+      CELLAR_SERVER: ${{ secrets.CELLAR_SERVER }}
+      CELLAR_TOKEN: ${{ secrets.CELLAR_TOKEN }}
+      CELLAR_CACHE_ID: ${{ secrets.CELLAR_CACHE_ID }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install current Bash on macOS
+        if: runner.os == 'macOS'
+        run: |
+          command -v brew && brew install bash || true
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v22
+        if: matrix.runner != 'macos-15-intel'
+        with:
+          determinate: false
+
+      - name: Install Nix (Intel Mac)
+        uses: DeterminateSystems/nix-installer-action@v22
+        if: matrix.runner == 'macos-15-intel'
+        with:
+          determinate: false
+          source-tag: v3.12.2
+
+      - name: Install cellarctl
+        uses: jinxcappa/cellar-action@v1
+        with:
+          configure-nix: "true"
+
+      - name: Build and push zabbix80pre.agent2
+        run: cellarctl push --flake '.#"zabbix80pre.agent2"'

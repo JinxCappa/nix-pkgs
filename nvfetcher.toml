@@ -39,6 +39,10 @@ fetch.github = "VictoriaMetrics/VictoriaMetrics"
 src.cmd = "git ls-remote --tags https://github.com/zabbix/zabbix.git | sed -n 's|.*refs/tags/\\(7\\.4\\.[0-9]*\\)$|\\1|p' | sort -V | tail -1"
 fetch.github = "zabbix/zabbix"
 
+[zabbix80pre]
+src.cmd = "git ls-remote --tags https://github.com/zabbix/zabbix.git | sed -n -e 's|.*refs/tags/\\(8\\.0\\.0alpha[0-9]*\\)$|\\1|p' -e 's|.*refs/tags/\\(8\\.0\\.0beta[0-9]*\\)$|\\1|p' -e 's|.*refs/tags/\\(8\\.0\\.0rc[0-9]*\\)$|\\1|p' | sort -V | tail -1"
+fetch.github = "zabbix/zabbix"
+
 [remotepc-host]
 src.cmd = "for y in $(date +%Y) $(($(date +%Y)-1)); do v=$(curl -sf https://www.remotepc.com/downloads/linux_release_notes${y}.xml | sed -n 's/.*<ver>Linux Version \\([^<]*\\)<.*/\\1/p' | head -1); [ -n \"$v\" ] && echo $v && break; done"
 fetch.url = "https://download.remotepc.com/downloads/rpc/310320/remotepc-host.deb"

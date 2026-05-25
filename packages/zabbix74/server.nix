@@ -29,6 +29,7 @@
   ipmiSupport ? false,
   openipmi,
   sources,
+  zabbixSource ? sources.zabbix74,
 }:
 
 # ensure exactly one primary database type is selected
@@ -40,7 +41,7 @@ let
 in
 stdenv.mkDerivation {
   pname = "zabbix-server";
-  inherit (sources.zabbix74) version src;
+  inherit (zabbixSource) version src;
 
   enableParallelBuilding = true;
 

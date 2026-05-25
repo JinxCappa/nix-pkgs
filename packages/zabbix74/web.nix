@@ -3,6 +3,7 @@
   stdenv,
   writeText,
   sources,
+  zabbixSource ? sources.zabbix74,
 }:
 
 let
@@ -14,7 +15,7 @@ let
 in
 stdenv.mkDerivation {
   pname = "zabbix-web";
-  inherit (sources.zabbix74) version src;
+  inherit (zabbixSource) version src;
 
   installPhase = ''
     mkdir -p $out/share/zabbix/

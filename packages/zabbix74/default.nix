@@ -25,6 +25,10 @@
   openipmi,
   sqlite,
   sources,
+  zabbixSource ? sources.zabbix74,
+  agent2VendorHash ? "sha256-3RNNwmIlCp1SZGJCrl0tvutn1gPE89r7FrEyZbipO8k=",
+  agent2Platforms ? lib.platforms.unix,
+  agent2PostPatch ? "",
 }:
 
 let
@@ -56,6 +60,10 @@ let
       openipmi
       sqlite
       sources
+      zabbixSource
+      agent2VendorHash
+      agent2Platforms
+      agent2PostPatch
       ;
   };
 in
