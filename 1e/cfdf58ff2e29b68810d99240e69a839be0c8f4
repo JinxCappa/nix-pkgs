@@ -1,0 +1,14 @@
+packages/claude-code/default.nix
+  h_30afaad5482ce1 11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.1",
+  "base_commit_sha": "1ecfdf58ff2e29b68810d99240e69a839be0c8f4",
+  "prompts": {},
+  "humans": {
+    "h_30afaad5482ce1": {
+      "author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
