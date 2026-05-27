@@ -58,7 +58,7 @@
     },
     "oh-my-zsh": {
         "cargoLock": null,
-        "date": "2026-05-26",
+        "date": "2026-05-27",
         "extract": null,
         "name": "oh-my-zsh",
         "passthru": null,
@@ -70,12 +70,12 @@
             "name": null,
             "owner": "ohmyzsh",
             "repo": "ohmyzsh",
-            "rev": "5ef67beadbe371d7f4ed3a7456240e0fd46608ce",
-            "sha256": "sha256-vAg1USuUUDG/hPSj/5OUFOqv1bQwaG7f1dGmZLljWD4=",
+            "rev": "b26b5002633e865b70e17933536fe4dc99127898",
+            "sha256": "sha256-wkfu2LwDbQU5vgSED8DaZt0etsSns4CCwyGCADHbUe0=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "5ef67beadbe371d7f4ed3a7456240e0fd46608ce"
+        "version": "b26b5002633e865b70e17933536fe4dc99127898"
     },
     "openbao": {
         "cargoLock": null,
@@ -107,11 +107,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-VBsaitURiz0EYqw7cXEKHjPVtvym+kcKTv2beK/YqPA=",
+            "sha256": "sha256-pKuuNmgZrI3mOmBwwhJpGOBaWs/XMg52ESPj+Y3ozPw=",
             "type": "url",
             "url": "https://download.remotepc.com/downloads/rpc/310320/remotepc-host.deb"
         },
-        "version": "6.10.9"
+        "version": "6.11.0"
     },
     "rustdesk": {
         "cargoLock": null,

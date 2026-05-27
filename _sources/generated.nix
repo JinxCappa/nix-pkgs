@@ -39,15 +39,15 @@
   };
   oh-my-zsh = {
     pname = "oh-my-zsh";
-    version = "5ef67beadbe371d7f4ed3a7456240e0fd46608ce";
+    version = "b26b5002633e865b70e17933536fe4dc99127898";
     src = fetchFromGitHub {
       owner = "ohmyzsh";
       repo = "ohmyzsh";
-      rev = "5ef67beadbe371d7f4ed3a7456240e0fd46608ce";
+      rev = "b26b5002633e865b70e17933536fe4dc99127898";
       fetchSubmodules = false;
-      sha256 = "sha256-vAg1USuUUDG/hPSj/5OUFOqv1bQwaG7f1dGmZLljWD4=";
+      sha256 = "sha256-wkfu2LwDbQU5vgSED8DaZt0etsSns4CCwyGCADHbUe0=";
     };
-    date = "2026-05-26";
+    date = "2026-05-27";
   };
   openbao = {
     pname = "openbao";
@@ -62,10 +62,10 @@
   };
   remotepc-host = {
     pname = "remotepc-host";
-    version = "6.10.9";
+    version = "6.11.0";
     src = fetchurl {
       url = "https://download.remotepc.com/downloads/rpc/310320/remotepc-host.deb";
-      sha256 = "sha256-VBsaitURiz0EYqw7cXEKHjPVtvym+kcKTv2beK/YqPA=";
+      sha256 = "sha256-pKuuNmgZrI3mOmBwwhJpGOBaWs/XMg52ESPj+Y3ozPw=";
     };
   };
   rustdesk = {
