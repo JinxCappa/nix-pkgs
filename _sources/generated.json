@@ -211,12 +211,12 @@
             "name": null,
             "owner": "zabbix",
             "repo": "zabbix",
-            "rev": "7.4.10",
-            "sha256": "sha256-ERvjoYLO4meFCPiHK3pfz2dByObbZE9pLQ/kUy3/y/0=",
+            "rev": "7.4.11",
+            "sha256": "sha256-i0zWbDI5RAvPfPuWVyz0ZbAbynRwYugupwmShHiNQwQ=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "7.4.10"
+        "version": "7.4.11"
     },
     "zabbix80pre": {
         "cargoLock": null,
