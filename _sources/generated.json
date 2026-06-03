@@ -8,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-U8WoYwsmkdJL5hmdByNE5Y/KG5IXAUsMjeVVZdA4my4=",
+            "sha256": "sha256-3i6ZU8wpaxRSDmKuMsQ1JicD2GKck+dfjwrlX3t+EYA=",
             "type": "url",
-            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.160.tgz"
+            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.161.tgz"
         },
-        "version": "2.1.160"
+        "version": "2.1.161"
     },
     "deploy-rs": {
         "cargoLock": null,
@@ -127,12 +127,12 @@
             "name": null,
             "owner": "rustdesk",
             "repo": "rustdesk",
-            "rev": "1.4.6",
-            "sha256": "sha256-2MZOM+SHDrjFhCIHcFB7zABpwC7hNtS0XNFx2FpaqIE=",
+            "rev": "1.4.7",
+            "sha256": "sha256-k4hJjr6xN1EOPfxRoTZMAUXZCFrwod3c+jVtBbqqO0U=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "1.4.6"
+        "version": "1.4.7"
     },
     "vault": {
         "cargoLock": null,
