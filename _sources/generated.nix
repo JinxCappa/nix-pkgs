@@ -28,13 +28,13 @@
   };
   netbird = {
     pname = "netbird";
-    version = "v0.71.4";
+    version = "v0.72.0";
     src = fetchFromGitHub {
       owner = "netbirdio";
       repo = "netbird";
-      rev = "v0.71.4";
+      rev = "v0.72.0";
       fetchSubmodules = true;
-      sha256 = "sha256-e/fe4wEjz7apA5RZ4nGIaunp0+5NVH4yMHK/l/MfcWI=";
+      sha256 = "sha256-oRTlmel05Y61NmPojiV9eJvvPR+SsnESh6FLez448Ws=";
     };
   };
   oh-my-zsh = {
@@ -81,13 +81,13 @@
   };
   vault = {
     pname = "vault";
-    version = "v2.0.1";
+    version = "v2.0.2";
     src = fetchFromGitHub {
       owner = "hashicorp";
       repo = "vault";
-      rev = "v2.0.1";
+      rev = "v2.0.2";
       fetchSubmodules = false;
-      sha256 = "sha256-xmc3u5f+k5MUTa0DDV0JJ7HZ8ZGe/ze9q/N4nElWIiE=";
+      sha256 = "sha256-EebBguA9YuqtrXTcKHNwjQv7bgXFBtaRN0+lk7Zn6n0=";
     };
   };
   vector = {

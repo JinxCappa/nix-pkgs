@@ -49,12 +49,12 @@
             "name": null,
             "owner": "netbirdio",
             "repo": "netbird",
-            "rev": "v0.71.4",
-            "sha256": "sha256-e/fe4wEjz7apA5RZ4nGIaunp0+5NVH4yMHK/l/MfcWI=",
+            "rev": "v0.72.0",
+            "sha256": "sha256-oRTlmel05Y61NmPojiV9eJvvPR+SsnESh6FLez448Ws=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.71.4"
+        "version": "v0.72.0"
     },
     "oh-my-zsh": {
         "cargoLock": null,
@@ -148,12 +148,12 @@
             "name": null,
             "owner": "hashicorp",
             "repo": "vault",
-            "rev": "v2.0.1",
-            "sha256": "sha256-xmc3u5f+k5MUTa0DDV0JJ7HZ8ZGe/ze9q/N4nElWIiE=",
+            "rev": "v2.0.2",
+            "sha256": "sha256-EebBguA9YuqtrXTcKHNwjQv7bgXFBtaRN0+lk7Zn6n0=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2.0.1"
+        "version": "v2.0.2"
     },
     "vector": {
         "cargoLock": null,
