@@ -1,0 +1,24 @@
+packages/zabbix74/agent2.nix
+  s_50e895db8a8e9a::t_c9e648a9a59614 14
+update.sh
+  s_50e895db8a8e9a::t_89596d4e6bb2c8 331-332
+  s_50e895db8a8e9a::t_3350ba82481a29 292-304,306-314,317-318,327-330,333,337,342-344,348-353,355-358
+packages/zabbix74/default.nix
+  s_50e895db8a8e9a::t_5053e8ffcfa6e7 29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "8a2d2c749fb808762ce216fcaf2b4f7d08e73060",
+  "prompts": {},
+  "sessions": {
+    "s_50e895db8a8e9a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "30f0ddd4-4447-47bf-a5d2-5a72f4262db5",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": null
+    }
+  }
+}
