@@ -289,50 +289,73 @@ done
 echo ""
 echo "=== Checking for vendorHash updates ==="
 
-# Function to update vendorHash for a Go package
-update_vendor_hash() {
-  local pkg="$1"
-  local pkg_file="packages/$pkg/default.nix"
+# Resolve the buildable flake attribute for a given Go hash variable.
+# Standard packages name their hash `vendorHash` and expose `.#<pkg>`.
+# Multi-derivation packages (e.g. zabbix74) are flattened by flake.nix to
+# `.#<pkg>.<sub>` and name their hashes `<sub>VendorHash` (a callPackage arg).
+vendor_hash_target() {
+  local pkg="$1" var="$2"
+  if [ "$var" = "vendorHash" ]; then
+    printf '%s' "$pkg"
+  else
+    # agent2VendorHash -> sub-attr "agent2" -> ".#zabbix74.agent2"
+    printf '%s.%s' "$pkg" "${var%VendorHash}"
+  fi
+}
 
-  echo "  $pkg: version changed, updating vendorHash..."
+# Update one Go vendor-hash variable, rewriting it in every .nix file of the
+# package. Handles both `vendorHash = "..."` (attr) and `agent2VendorHash ? "..."`
+# (function default) by preserving whichever assignment operator is present.
+update_one_vendor_hash() {
+  local pkg="$1" var="$2"
+  local target
+  target=$(vendor_hash_target "$pkg" "$var")
 
-  # Try to build and capture output
+  echo "  $pkg: checking $var (build target .#\"$target\")"
+
   local build_output
-  if build_output=$(nix build --no-link ".#$pkg" 2>&1); then
-    echo "  $pkg: vendorHash is up to date"
+  if build_output=$(nix build --no-link ".#\"$target\"" 2>&1); then
+    echo "  $pkg: $var is up to date"
     return 0
   fi
 
-  # Check if the failure was due to hash mismatch.
   # Keep this non-fatal: grep may return no matches for unrelated build failures.
   local new_hash
   new_hash=$(echo "$build_output" | sed -nE 's/^[[:space:]]*got:[[:space:]]*([^[:space:]]+).*$/\1/p' | head -1 || true)
 
   if [ -n "$new_hash" ]; then
-    echo "  $pkg: updating vendorHash to $new_hash"
-    sed -i -E "s#vendorHash = (\"sha256-[^\"]*\"|null)#vendorHash = \"$new_hash\"#" "$pkg_file"
+    echo "  $pkg: updating $var to $new_hash"
+    local f
+    for f in "packages/$pkg"/*.nix; do
+      [ -f "$f" ] || continue
+      grep -qE "(^|[^A-Za-z0-9_])${var}[[:space:]]*[?=]" "$f" || continue
+      sed -i -E "s#((^|[[:space:]])${var}[[:space:]]*[?=][[:space:]]*)(\"sha256-[^\"]*\"|null)#\\1\"${new_hash}\"#g" "$f"
+    done
   elif is_toolchain_too_old "$build_output"; then
     skip_update_until_toolchain_updates "$pkg"
-    return 0
   else
-    echo "  $pkg: build failed for unknown reason"
+    echo "  $pkg: build failed for unknown reason while checking $var"
     echo "$build_output" | tail -20
-    return 1
   fi
 }
 
-# Update Go packages only if version changed
-# Detect Go packages by presence of vendorHash in default.nix
+# Update Go packages only if version changed.
+# Detect Go hashes by any variable named `vendorHash` or `<name>VendorHash`.
+# A single package may define several (one per sub-derivation).
 for pkg_dir in packages/*/; do
   pkg=$(basename "$pkg_dir")
   pkg_file="$pkg_dir/default.nix"
-  if [ -f "$pkg_file" ] && grep -q "vendorHash" "$pkg_file"; then
-    if version_changed "$pkg"; then
-      update_vendor_hash "$pkg"
-    else
-      echo "  $pkg: version unchanged, skipping vendorHash check"
-    fi
+  [ -f "$pkg_file" ] || continue
+  grep -qE '[A-Za-z0-9_]*[Vv]endorHash' "$pkg_file" || continue
+
+  if ! version_changed "$pkg"; then
+    echo "  $pkg: version unchanged, skipping vendorHash check"
+    continue
   fi
+
+  while IFS= read -r var; do
+    update_one_vendor_hash "$pkg" "$var"
+  done < <(grep -oE '[A-Za-z0-9_]*[Vv]endorHash' "$pkg_file" | sort -u)
 done
 
 echo ""

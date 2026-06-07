@@ -11,7 +11,7 @@
   zlib,
   sources,
   zabbixSource ? sources.zabbix74,
-  agent2VendorHash ? "sha256-3RNNwmIlCp1SZGJCrl0tvutn1gPE89r7FrEyZbipO8k=",
+  agent2VendorHash ? "sha256-59Q6dnpQTYZ7oYPz56ukew8BU7Bo7gfcDvIXD9KvkME=",
   agent2Platforms ? lib.platforms.unix,
   agent2PostPatch ? "",
 }:
