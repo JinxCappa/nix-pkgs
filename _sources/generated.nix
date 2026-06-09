@@ -8,23 +8,23 @@
 {
   claude-code = {
     pname = "claude-code";
-    version = "2.1.169";
+    version = "2.1.170";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.169.tgz";
-      sha256 = "sha256-sK8zAibh03wpQ2PaGHQDX7fg70QxsqI9biz3d5IetuI=";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.170.tgz";
+      sha256 = "sha256-vUuvi0FDS7D07svMGbXlhFAJbOaS3vLjQUoSwgG6qdE=";
     };
   };
   deploy-rs = {
     pname = "deploy-rs";
-    version = "1c1703ab92db600e4f5884d762ba9e22ebe7a41c";
+    version = "2ce9051767ee4d1a3c43b52ba327431783bfd463";
     src = fetchFromGitHub {
       owner = "serokell";
       repo = "deploy-rs";
-      rev = "1c1703ab92db600e4f5884d762ba9e22ebe7a41c";
+      rev = "2ce9051767ee4d1a3c43b52ba327431783bfd463";
       fetchSubmodules = false;
-      sha256 = "sha256-/DTEDl6pUIusBx3+QZ1is+imWtlUotm2L/AvK+YBuwk=";
+      sha256 = "sha256-Gt+qFANcrDRjl3xzidLYrAUQCd3808iuAsLwZbYYAEU=";
     };
-    date = "2026-06-08";
+    date = "2026-06-09";
   };
   netbird = {
     pname = "netbird";
@@ -62,10 +62,10 @@
   };
   remotepc-host = {
     pname = "remotepc-host";
-    version = "6.11.0";
+    version = "6.12.0";
     src = fetchurl {
       url = "https://download.remotepc.com/downloads/rpc/310320/remotepc-host.deb";
-      sha256 = "sha256-pKuuNmgZrI3mOmBwwhJpGOBaWs/XMg52ESPj+Y3ozPw=";
+      sha256 = "sha256-mVDKeUeFba2KtIaVCBdiQ/R/IV/rvtWXox1A+zyPK6c=";
     };
   };
   rustdesk = {
