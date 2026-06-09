@@ -154,6 +154,12 @@ echo "=== Caching current versions ==="
 cache_old_versions
 cache_sources
 
+echo "=== Refreshing remotepc-host download URLs ==="
+# RemotePC's download URLs embed a release-specific path segment that nvfetcher
+# can't template. Resolve the live URLs before nvfetcher so it hashes the
+# current artifacts. Non-fatal: keep existing URLs if the site is unreachable.
+./packages/remotepc-host/sync-urls.sh || echo "  warning: could not refresh remotepc-host URLs; keeping existing"
+
 echo "=== Updating sources with nvfetcher ==="
 ensure_nix_prefetch_git
 nvfetcher

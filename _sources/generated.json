@@ -109,9 +109,24 @@
             "name": null,
             "sha256": "sha256-mVDKeUeFba2KtIaVCBdiQ/R/IV/rvtWXox1A+zyPK6c=",
             "type": "url",
-            "url": "https://download.remotepc.com/downloads/rpc/310320/remotepc-host.deb"
+            "url": "https://static.remotepc.com/downloads/rpc/310320/remotepc-host.deb"
         },
         "version": "6.12.0"
+    },
+    "remotepc-host-pi64": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "remotepc-host-pi64",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-GWudSHJLok4ZnedN2SFZN5+x42NcV6f3GfKPld/mVhA=",
+            "type": "url",
+            "url": "https://static.remotepc.com/downloads/rpc/310320/remotepc-host-pi64.deb"
+        },
+        "version": "6.10.3"
     },
     "rustdesk": {
         "cargoLock": null,

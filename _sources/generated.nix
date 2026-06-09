@@ -64,8 +64,16 @@
     pname = "remotepc-host";
     version = "6.12.0";
     src = fetchurl {
-      url = "https://download.remotepc.com/downloads/rpc/310320/remotepc-host.deb";
+      url = "https://static.remotepc.com/downloads/rpc/310320/remotepc-host.deb";
       sha256 = "sha256-mVDKeUeFba2KtIaVCBdiQ/R/IV/rvtWXox1A+zyPK6c=";
+    };
+  };
+  remotepc-host-pi64 = {
+    pname = "remotepc-host-pi64";
+    version = "6.10.3";
+    src = fetchurl {
+      url = "https://static.remotepc.com/downloads/rpc/310320/remotepc-host-pi64.deb";
+      sha256 = "sha256-GWudSHJLok4ZnedN2SFZN5+x42NcV6f3GfKPld/mVhA=";
     };
   };
   rustdesk = {

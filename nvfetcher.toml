@@ -45,7 +45,13 @@ fetch.github = "zabbix/zabbix"
 
 [remotepc-host]
 src.cmd = "for y in $(date +%Y) $(($(date +%Y)-1)); do v=$(curl -sf https://www.remotepc.com/downloads/linux_release_notes${y}.xml | sed -n 's/.*<ver>Linux Version \\([^<]*\\)<.*/\\1/p' | head -1); [ -n \"$v\" ] && echo $v && break; done"
-fetch.url = "https://download.remotepc.com/downloads/rpc/310320/remotepc-host.deb"
+fetch.url = "https://static.remotepc.com/downloads/rpc/310320/remotepc-host.deb"
+
+# arm64 (Raspberry Pi 64-bit) build. It versions independently of the amd64
+# release-notes feed, so the version comes from the .deb's own control file.
+[remotepc-host-pi64]
+src.cmd = "bash packages/remotepc-host/update-version-pi64.sh"
+fetch.url = "https://static.remotepc.com/downloads/rpc/310320/remotepc-host-pi64.deb"
 
 [openbao]
 src.github = "openbao/openbao"
