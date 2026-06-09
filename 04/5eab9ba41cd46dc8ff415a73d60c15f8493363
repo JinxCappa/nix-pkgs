@@ -1,0 +1,20 @@
+packages/remotepc-host/default.nix
+  s_7a2524cd88ea82::t_b934cf97e6d2fd 64
+  s_7a2524cd88ea82::t_2b026aa3a3cf0a 24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "045eab9ba41cd46dc8ff415a73d60c15f8493363",
+  "prompts": {},
+  "sessions": {
+    "s_7a2524cd88ea82": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9499939b-00b6-4b6f-8112-7e1e5cf7bd8a",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
