@@ -27,6 +27,7 @@
   ethtool,
   xdotool,
   sources,
+  pipewire,
 }:
 
 stdenv.mkDerivation (finalAttrs: {
@@ -60,6 +61,7 @@ stdenv.mkDerivation (finalAttrs: {
     nspr
     nss
     pango
+    pipewire
     systemd
     xorg.libX11
     xorg.libXcomposite
