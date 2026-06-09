@@ -1,0 +1,42 @@
+.github/workflows/remotepc-host.yaml
+  s_7a2524cd88ea82::t_c3194c18487a0c 15,18-19
+update.sh
+  s_7a2524cd88ea82::t_fd9cba979ce0c8 157-162
+packages/remotepc-host/default.nix
+  s_7a2524cd88ea82::t_d7abd9b1d02f0b 121
+  s_7a2524cd88ea82::t_028d4491a2d96d 107-109,111-112
+  s_7a2524cd88ea82::t_7e80dbfa486247 83-86
+  s_7a2524cd88ea82::t_adca85105d4bda 33-40,43,45
+packages/remotepc-host/resolve-url.sh
+  s_7a2524cd88ea82::t_6efeb18e8eeee1 1-20
+nvfetcher.toml
+  s_7a2524cd88ea82::t_43e521e874dabe 48,54
+  s_7a2524cd88ea82::t_6e9b8c71033d5a 50-53
+_sources/generated.json
+  s_7a2524cd88ea82::t_38278570486049 112,127
+  s_7a2524cd88ea82::t_48ddf271a213d6 116-126,128-129
+_sources/generated.nix
+  s_7a2524cd88ea82::t_48ddf271a213d6 71-74,76
+  s_7a2524cd88ea82::t_38278570486049 67,75
+packages/remotepc-host/update-version-pi64.sh
+  s_7a2524cd88ea82::t_3b1874fea5581a 13-14
+  s_7a2524cd88ea82::t_52817a1e5a50ed 1-12,15-23
+packages/remotepc-host/sync-urls.sh
+  s_7a2524cd88ea82::t_d634dc1a2f4d4d 1-22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "b970973b4ac3748626763c403e205edbcb824fdf",
+  "prompts": {},
+  "sessions": {
+    "s_7a2524cd88ea82": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9499939b-00b6-4b6f-8112-7e1e5cf7bd8a",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": null
+    }
+  }
+}
