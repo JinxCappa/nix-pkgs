@@ -1,4 +1,25 @@
 {
+    "caddy-l4": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "caddy-l4",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "mholt",
+            "repo": "caddy-l4",
+            "rev": "v0.1.1",
+            "sha256": "sha256-P6ltBzCQLELDtIQkQ2E3xoNBjCyLvwCoWWztyRoR7ZI=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.1.1"
+    },
     "claude-code": {
         "cargoLock": null,
         "date": null,

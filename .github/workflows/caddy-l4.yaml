@@ -1,0 +1,47 @@
+name: caddy-l4
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - packages/caddy-l4/**
+      - .github/workflows/caddy-l4.yaml
+      - flake.lock
+  pull_request:
+    branches:
+      - main
+    paths:
+      - packages/caddy-l4/**
+      - .github/workflows/caddy-l4.yaml
+      - flake.lock
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-24.04
+          - ubuntu-24.04-arm
+    permissions:
+      contents: write
+    runs-on: ${{ matrix.os }}
+    env:
+      CELLAR_SERVER: ${{ secrets.CELLAR_SERVER }}
+      CELLAR_TOKEN: ${{ secrets.CELLAR_TOKEN }}
+      CELLAR_CACHE_ID: ${{ secrets.CELLAR_CACHE_ID }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v22
+        with:
+          determinate: false
+
+      - name: Install cellarctl
+        uses: jinxcappa/cellar-action@v1
+        with:
+          configure-nix: "true"
+
+      - name: Build and push
+        run: cellarctl push --flake .#caddy-l4

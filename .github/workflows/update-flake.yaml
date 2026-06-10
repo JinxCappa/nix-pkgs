@@ -24,16 +24,19 @@ jobs:
       - name: Update flake inputs
         run: nix flake update
 
+      - name: Refresh Caddy L4 package metadata
+        run: nix develop --command ./packages/caddy-l4/update.sh
+
       - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          if git diff --quiet flake.lock; then
+          if git diff --quiet flake.lock packages/caddy-l4; then
             echo "No changes to flake.lock"
             exit 0
           fi
 
-          git add flake.lock
+          git add flake.lock packages/caddy-l4
           git commit -m "chore: update flake inputs"
           git push

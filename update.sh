@@ -293,6 +293,23 @@ for pkg_dir in packages/*/; do
 done
 
 echo ""
+echo "=== Checking for caddy.withPlugins hash updates ==="
+
+for pkg_dir in packages/*/; do
+  pkg=$(basename "$pkg_dir")
+  pkg_file="$pkg_dir/default.nix"
+  [ -f "$pkg_file" ] || continue
+  grep -q "caddy.withPlugins" "$pkg_file" || continue
+
+  if [ -x "$pkg_dir/update.sh" ]; then
+    "$pkg_dir/update.sh"
+  else
+    echo "  $pkg: missing package updater for caddy.withPlugins hash"
+    exit 1
+  fi
+done
+
+echo ""
 echo "=== Checking for vendorHash updates ==="
 
 # Resolve the buildable flake attribute for a given Go hash variable.

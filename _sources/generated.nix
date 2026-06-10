@@ -6,6 +6,17 @@
   dockerTools,
 }:
 {
+  caddy-l4 = {
+    pname = "caddy-l4";
+    version = "v0.1.1";
+    src = fetchFromGitHub {
+      owner = "mholt";
+      repo = "caddy-l4";
+      rev = "v0.1.1";
+      fetchSubmodules = false;
+      sha256 = "sha256-P6ltBzCQLELDtIQkQ2E3xoNBjCyLvwCoWWztyRoR7ZI=";
+    };
+  };
   claude-code = {
     pname = "claude-code";
     version = "2.1.170";
