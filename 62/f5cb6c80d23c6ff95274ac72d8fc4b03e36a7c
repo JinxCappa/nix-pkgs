@@ -1,0 +1,40 @@
+.github/workflows/update-flake.yaml
+  s_00f1361f29469a::t_19634a30cc3a16 27-29,35,40
+update.sh
+  s_00f1361f29469a::t_16b322b23c7eb7 308
+  s_00f1361f29469a::t_fc42c78737d042 304-305,307
+  s_00f1361f29469a::t_a33e2837cc4522 296-303,306,309-311
+nvfetcher.toml
+  s_00f1361f29469a::t_3537c582abe8f1 8-12
+packages/caddy-l4/.source-version
+  s_00f1361f29469a::t_b08efab47f2eec 1-2
+_sources/generated.nix
+  s_00f1361f29469a::t_dca9cc4e6c1773 9-19
+packages/caddy-l4/default.nix
+  s_00f1361f29469a::t_83f16b9d38c240 2-4,6-7,9
+  s_00f1361f29469a::t_3b6c118d82ac80 1,5
+  s_00f1361f29469a::t_b9b79ded0578d4 8
+_sources/generated.json
+  s_00f1361f29469a::t_dca9cc4e6c1773 2-22
+packages/caddy-l4/update.sh
+  s_00f1361f29469a::t_e41e7a441c75de 1-38
+.github/workflows/caddy-l4.yaml
+  s_00f1361f29469a::t_75c4082839c8b4 10,17
+  s_00f1361f29469a::t_2b6b9c2c2ce471 1-9,11-16,18-47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "62f5cb6c80d23c6ff95274ac72d8fc4b03e36a7c",
+  "prompts": {},
+  "sessions": {
+    "s_00f1361f29469a": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019eb1fb-105e-7f92-a45e-57b0e54063cd",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}
