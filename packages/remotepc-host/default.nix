@@ -15,8 +15,10 @@
   glib,
   gtk3,
   libdrm,
+  libglvnd,
   libnotify,
   libxcrypt-legacy,
+  libxscrnsaver,
   libxkbcommon,
   mesa,
   nspr,
@@ -26,7 +28,11 @@
   systemd,
   xorg,
   ethtool,
+  hwinfo,
   xdotool,
+  xinput,
+  xrandr,
+  xsel,
   sources,
   pipewire,
 }:
@@ -63,9 +69,11 @@ stdenv.mkDerivation (finalAttrs: {
     glib
     gtk3
     libdrm
+    libglvnd
     libnotify
     # libcrypt.so.1 for the vendored node-gyp python3 helpers (arm64 deb).
     libxcrypt-legacy
+    libxscrnsaver
     libxkbcommon
     linux-pam
     mesa
@@ -99,10 +107,46 @@ stdenv.mkDerivation (finalAttrs: {
 
     cp -r opt/remotepc-host $out/opt/remotepc-host
 
-    # wrap the main binary with required runtime tools on PATH
-    makeWrapper $out/opt/remotepc-host/remotepc-host $out/bin/remotepc-host \
-      --prefix PATH : ${lib.makeBinPath [ ethtool xdotool ]} \
+    makeWrapper $out/opt/remotepc-host/remotepc-host $out/bin/.remotepc-host-wrapped \
+      --prefix PATH : ${lib.makeBinPath [
+        ethtool
+        hwinfo
+        libnotify
+        xdotool
+        xinput
+        xrandr
+        xsel
+      ]} \
+      --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath [ libglvnd mesa ]} \
+      --set-default APP remotepc-host \
+      --set-default MESA_NO_WARNINGS 1 \
+      --set-default NODE_NO_WARNINGS 1 \
       --add-flags "--no-sandbox"
+
+    makeWrapper $out/opt/remotepc-host/remotepc-host $out/bin/.remotepc-host-cli \
+      --prefix PATH : ${lib.makeBinPath [
+        ethtool
+        hwinfo
+        libnotify
+        xdotool
+        xinput
+        xrandr
+        xsel
+      ]} \
+      --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath [ libglvnd mesa ]} \
+      --set ELECTRON_RUN_AS_NODE 1 \
+      --set APP remotepc-cli \
+      --set-default NODE_NO_WARNINGS 1 \
+      --add-flags "$out/opt/remotepc-host/resources/app.asar"
+
+    cat > $out/bin/remotepc-host <<EOF
+    #!${stdenv.shell}
+    case "\''${1-}" in
+      ""|-*) exec "$out/bin/.remotepc-host-wrapped" "\$@" ;;
+      *) exec "$out/bin/.remotepc-host-cli" "\$@" ;;
+    esac
+    EOF
+    chmod +x $out/bin/remotepc-host
 
     # desktop file and icons
     cp -r usr/share/applications $out/share/
