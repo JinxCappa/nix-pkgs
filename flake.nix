@@ -6,7 +6,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = inputs@{ flake-parts, ... }:
+  outputs = inputs@{ self, flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
 
@@ -54,6 +54,15 @@
         # Usage: pkgs.jinx.claude-code, pkgs.jinx.zabbix74.server, etc.
         overlays.namespaced = final: prev:
           { jinx = lib.packagesBySystem.${prev.stdenv.hostPlatform.system} or {}; };
+
+        nixosModules = rec {
+          remotepc-host = { lib, pkgs, ... }: {
+            imports = [ ./modules/nixos/remotepc-host ];
+            services.remotepc-host.package =
+              lib.mkDefault self.packages.${pkgs.stdenv.hostPlatform.system}.remotepc-host;
+          };
+          default = remotepc-host;
+        };
       };
 
       perSystem = { system, ... }:

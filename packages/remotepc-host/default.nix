@@ -8,10 +8,14 @@
   at-spi2-atk,
   at-spi2-core,
   cairo,
+  coreutils,
   cups,
   dbus,
   expat,
+  gawk,
   gdk-pixbuf,
+  gnugrep,
+  gnused,
   glib,
   gtk3,
   libdrm,
@@ -25,7 +29,9 @@
   nss,
   pango,
   linux-pam,
+  procps,
   systemd,
+  util-linux,
   xorg,
   ethtool,
   hwinfo,
@@ -43,6 +49,28 @@ let
   # Pi 64-bit) build lags behind. Each is fetched as its own nvfetcher source.
   isAarch64 = stdenv.hostPlatform.isAarch64;
   source = if isAarch64 then sources.remotepc-host-pi64 else sources.remotepc-host;
+
+  runtimePath = "/run/wrappers/bin:" + lib.makeBinPath [
+    coreutils
+    dbus
+    ethtool
+    gawk
+    gnugrep
+    gnused
+    hwinfo
+    libnotify
+    procps
+    systemd
+    util-linux
+    xdotool
+    xinput
+    xrandr
+    xsel
+  ];
+  runtimeLibraryPath = lib.makeLibraryPath [
+    libglvnd
+    mesa
+  ];
 in
 
 stdenv.mkDerivation (finalAttrs: {
@@ -108,16 +136,8 @@ stdenv.mkDerivation (finalAttrs: {
     cp -r opt/remotepc-host $out/opt/remotepc-host
 
     makeWrapper $out/opt/remotepc-host/remotepc-host $out/bin/.remotepc-host-wrapped \
-      --prefix PATH : ${lib.makeBinPath [
-        ethtool
-        hwinfo
-        libnotify
-        xdotool
-        xinput
-        xrandr
-        xsel
-      ]} \
-      --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath [ libglvnd mesa ]} \
+      --prefix PATH : ${runtimePath} \
+      --prefix LD_LIBRARY_PATH : ${runtimeLibraryPath} \
       --set-default APP remotepc-host \
       --set-default MESA_NO_WARNINGS 1 \
       --set-default NODE_NO_WARNINGS 1 \
@@ -127,20 +147,21 @@ stdenv.mkDerivation (finalAttrs: {
       --add-flags "--disable-dev-shm-usage"
 
     makeWrapper $out/opt/remotepc-host/remotepc-host $out/bin/.remotepc-host-cli \
-      --prefix PATH : ${lib.makeBinPath [
-        ethtool
-        hwinfo
-        libnotify
-        xdotool
-        xinput
-        xrandr
-        xsel
-      ]} \
-      --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath [ libglvnd mesa ]} \
+      --prefix PATH : ${runtimePath} \
+      --prefix LD_LIBRARY_PATH : ${runtimeLibraryPath} \
       --set ELECTRON_RUN_AS_NODE 1 \
       --set APP remotepc-cli \
       --set-default NODE_NO_WARNINGS 1 \
       --add-flags "$out/opt/remotepc-host/resources/app.asar"
+
+    makeWrapper $out/opt/remotepc-host/remotepc-host $out/bin/.remotepc-host-daemon \
+      --prefix PATH : ${runtimePath} \
+      --prefix LD_LIBRARY_PATH : ${runtimeLibraryPath} \
+      --set ELECTRON_RUN_AS_NODE 1 \
+      --set APP remotepc-host \
+      --set-default MESA_NO_WARNINGS 1 \
+      --set-default NODE_NO_WARNINGS 1 \
+      --add-flags "$out/opt/remotepc-host/resources/app.asar/node_modules/daemon/"
 
     cat > $out/bin/remotepc-host <<EOF
     #!${stdenv.shell}
