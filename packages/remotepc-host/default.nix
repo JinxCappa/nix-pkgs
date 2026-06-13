@@ -4,6 +4,7 @@
   dpkg,
   autoPatchelfHook,
   makeWrapper,
+  bash,
   alsa-lib,
   at-spi2-atk,
   at-spi2-core,
@@ -30,6 +31,7 @@
   pango,
   linux-pam,
   procps,
+  sudo,
   systemd,
   util-linux,
   xorg,
@@ -51,6 +53,7 @@ let
   source = if isAarch64 then sources.remotepc-host-pi64 else sources.remotepc-host;
 
   runtimePath = "/run/wrappers/bin:" + lib.makeBinPath [
+    bash
     coreutils
     dbus
     ethtool
@@ -60,6 +63,7 @@ let
     hwinfo
     libnotify
     procps
+    sudo
     systemd
     util-linux
     xdotool
@@ -134,6 +138,15 @@ stdenv.mkDerivation (finalAttrs: {
     mkdir -p $out/opt $out/bin $out/share
 
     cp -r opt/remotepc-host $out/opt/remotepc-host
+
+    # The host bytecode spawns native helpers from /opt/<app>/bin even though
+    # the Debian package ships them at the application root.
+    mkdir -p $out/opt/remotepc-host/bin
+    for helper in capture-screen capture-audio; do
+      if [ -e "$out/opt/remotepc-host/$helper" ]; then
+        ln -sfn "../$helper" "$out/opt/remotepc-host/bin/$helper"
+      fi
+    done
 
     makeWrapper $out/opt/remotepc-host/remotepc-host $out/bin/.remotepc-host-wrapped \
       --prefix PATH : ${runtimePath} \

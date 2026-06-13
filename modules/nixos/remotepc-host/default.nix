@@ -34,6 +34,10 @@ let
     pkgs.xsel
   ];
   servicePathText = "/run/wrappers/bin:${lib.makeBinPath servicePath}";
+  compatSh = pkgs.writeShellScript "remotepc-host-compat-sh" ''
+    export PATH="${servicePathText}''${PATH:+:}$PATH"
+    exec ${pkgs.bash}/bin/sh "$@"
+  '';
 
   commonEnvironment = {
     NODE_NO_WARNINGS = "1";
@@ -112,6 +116,7 @@ in
       serviceConfig = {
         Type = "simple";
         ExecStart = "${package}/bin/.remotepc-host-daemon";
+        BindReadOnlyPaths = [ "${compatSh}:/bin/sh" ];
         Restart = "on-failure";
         StartLimitIntervalSec = 60;
         StartLimitBurst = 10;
