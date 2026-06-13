@@ -121,7 +121,10 @@ stdenv.mkDerivation (finalAttrs: {
       --set-default APP remotepc-host \
       --set-default MESA_NO_WARNINGS 1 \
       --set-default NODE_NO_WARNINGS 1 \
-      --add-flags "--no-sandbox"
+      --add-flags "--no-sandbox" \
+      --add-flags "--disable-gpu" \
+      --add-flags "--disable-gpu-sandbox" \
+      --add-flags "--disable-dev-shm-usage"
 
     makeWrapper $out/opt/remotepc-host/remotepc-host $out/bin/.remotepc-host-cli \
       --prefix PATH : ${lib.makeBinPath [
