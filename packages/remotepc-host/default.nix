@@ -14,6 +14,7 @@
   dbus,
   expat,
   gawk,
+  getent,
   gdk-pixbuf,
   gnugrep,
   gnused,
@@ -66,6 +67,7 @@ let
     dbus
     ethtool
     gawk
+    getent
     gnugrep
     gnused
     hwinfo

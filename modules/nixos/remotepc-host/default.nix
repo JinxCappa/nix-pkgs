@@ -13,13 +13,14 @@ let
   appAsar = "${appDir}/resources/app.asar";
 
   servicePath = [
-    pkgs.bash
+    pkgs.bashNonInteractive
     pkgs.coreutils
     pkgs.dbus
     pkgs.dmidecode
     pkgs.ethtool
     pkgs.findutils
     pkgs.gawk
+    pkgs.getent
     pkgs.gnugrep
     pkgs.gnused
     pkgs.hwinfo
@@ -35,8 +36,38 @@ let
   ];
   servicePathText = "/run/wrappers/bin:${lib.makeBinPath servicePath}";
   compatSh = pkgs.writeShellScript "remotepc-host-compat-sh" ''
-    export PATH="${servicePathText}''${PATH:+:}$PATH"
-    exec ${pkgs.bash}/bin/sh "$@"
+    keep_env=("PATH=${servicePathText}")
+    for name in \
+      APP \
+      DBUS_SESSION_BUS_ADDRESS \
+      DESKTOP_SESSION \
+      DISPLAY \
+      DISPLAY_VARIABLE \
+      ELECTRON_RUN_AS_NODE \
+      HOME \
+      LD_LIBRARY_PATH \
+      LOCALE_ARCHIVE \
+      LOG_LEVEL \
+      LOGNAME \
+      MESA_NO_WARNINGS \
+      NODE_NO_WARNINGS \
+      SESSION_TYPE \
+      TZDIR \
+      UID \
+      USER \
+      VIEWER_MACHINE_ID \
+      WAYLAND_DISPLAY \
+      XAUTHORITY \
+      XAUTH_VARIABLE \
+      XDG_CURRENT_DESKTOP \
+      XDG_RUNTIME_DIR \
+      XDG_SESSION_TYPE
+    do
+      if [ "''${!name+x}" = x ]; then
+        keep_env+=("$name=''${!name}")
+      fi
+    done
+    exec ${pkgs.coreutils}/bin/env -i "''${keep_env[@]}" ${pkgs.bashNonInteractive}/bin/sh "$@"
   '';
 
   commonEnvironment = {
