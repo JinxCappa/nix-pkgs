@@ -34,7 +34,15 @@
   sudo,
   systemd,
   util-linux,
-  xorg,
+  libx11,
+  libxcomposite,
+  libxdamage,
+  libxext,
+  libxfixes,
+  libxrandr,
+  libxcb,
+  libxshmfence,
+  libxtst,
   ethtool,
   hwinfo,
   xdotool,
@@ -113,16 +121,16 @@ stdenv.mkDerivation (finalAttrs: {
     nss
     pango
     systemd
-    xorg.libX11
-    xorg.libXcomposite
-    xorg.libXdamage
-    xorg.libXext
-    xorg.libXfixes
-    xorg.libXrandr
-    xorg.libxcb
-    xorg.libxshmfence
-    xorg.libXtst
-    xorg.xinput
+    libx11
+    libxcomposite
+    libxdamage
+    libxext
+    libxfixes
+    libxrandr
+    libxcb
+    libxshmfence
+    libxtst
+    xinput
   ]
   # The amd64 capture-screen binary captures via PipeWire; the arm64 build
   # uses an X11-based capture path and does not link PipeWire.
