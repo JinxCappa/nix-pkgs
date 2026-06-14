@@ -1,0 +1,19 @@
+update.sh
+  s_b1d28fbb37def5::t_6c528d65ae1a4b 165
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "866f9abc2bc3c304871495a3f29d6af21a97bddc",
+  "prompts": {},
+  "sessions": {
+    "s_b1d28fbb37def5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec772-dd04-7b00-86bb-ed7c6716b3c6",
+        "model": "gpt-5.5"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
