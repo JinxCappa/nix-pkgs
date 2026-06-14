@@ -162,7 +162,7 @@ echo "=== Refreshing remotepc-host download URLs ==="
 
 echo "=== Updating sources with nvfetcher ==="
 ensure_nix_prefetch_git
-nvfetcher
+nvfetcher --keep-going
 
 echo ""
 # Auto-detect and fix packages that need fetchSubmodules
