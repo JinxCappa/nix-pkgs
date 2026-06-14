@@ -1,0 +1,32 @@
+modules/nixos/remotepc-host/default.nix
+  s_ba5230433a68af::t_cddea561238984 37-40,119
+packages/remotepc-host/default.nix
+  s_f73ff1a77a36ac::t_25bc2a9657d46c 142-143,150
+  s_f73ff1a77a36ac::t_4b27a916ec1cf3 144
+  s_ba5230433a68af::t_cddea561238984 7,34,56,66
+  s_f73ff1a77a36ac::t_274831208ccffa 145-149
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "13a2f1d0f0652a9902b178ab85a3cef7606f16d1",
+  "prompts": {},
+  "sessions": {
+    "s_ba5230433a68af": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec6d3-33a8-7413-85da-7e71fcf13465",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    },
+    "s_f73ff1a77a36ac": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ebce5-3bca-7e52-be1e-314d229eb5b9",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}
