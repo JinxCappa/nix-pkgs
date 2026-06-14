@@ -1,0 +1,19 @@
+packages/remotepc-host/default.nix
+  s_ba5230433a68af::t_038d3e81896ec6 37-45,124-133
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "077e800bed86ec52ce76f4774045dd92851209bb",
+  "prompts": {},
+  "sessions": {
+    "s_ba5230433a68af": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ec6d3-33a8-7413-85da-7e71fcf13465",
+        "model": "gpt-5.5"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
