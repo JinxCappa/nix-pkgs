@@ -111,6 +111,10 @@ in
     system.activationScripts.remotepcHostOpt = lib.stringAfter [ "usrbinenv" ] ''
       mkdir -p ${optDir} ${optDir}/resources /var/log/remotepc-host
 
+      if [ -d ${optDir}/bin ] && [ ! -L ${optDir}/bin ]; then
+        rm -rf ${optDir}/bin
+      fi
+      
       for path in ${appDir}/* ${appDir}/.[!.]*; do
         name="$(basename "$path")"
         case "$name" in
