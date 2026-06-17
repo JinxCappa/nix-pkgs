@@ -62,13 +62,13 @@
   };
   openbao = {
     pname = "openbao";
-    version = "v2.5.4";
+    version = "v2.5.5";
     src = fetchFromGitHub {
       owner = "openbao";
       repo = "openbao";
-      rev = "v2.5.4";
+      rev = "v2.5.5";
       fetchSubmodules = false;
-      sha256 = "sha256-Gf/2/3XLzCnmU8hJfctUra6mamBsH/4QEiC89FolKQ4=";
+      sha256 = "sha256-75Rm9EGkvUKJ05d55bboPAE+Nm/GLLgH1TqDrExkJO0=";
     };
   };
   remotepc-host = {
