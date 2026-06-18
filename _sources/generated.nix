@@ -39,13 +39,13 @@
   };
   netbird = {
     pname = "netbird";
-    version = "v0.72.4";
+    version = "v0.73.0";
     src = fetchFromGitHub {
       owner = "netbirdio";
       repo = "netbird";
-      rev = "v0.72.4";
+      rev = "v0.73.0";
       fetchSubmodules = true;
-      sha256 = "sha256-YRXXuaqnQBLODcz/FNpIG9Ht+6VGRknE2Q6Q5ZaAIus=";
+      sha256 = "sha256-xgZ1vteRQ9AEPdoV4gL9ZCzkiva8sTFUP0qt5S1u+zc=";
     };
   };
   oh-my-zsh = {
