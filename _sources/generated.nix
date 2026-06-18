@@ -19,10 +19,10 @@
   };
   claude-code = {
     pname = "claude-code";
-    version = "2.1.179";
+    version = "2.1.181";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.179.tgz";
-      sha256 = "sha256-QfD03+GhA2DrQ3mOfezQvb5rkKdKTTAX0j53IPqa2qo=";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.181.tgz";
+      sha256 = "sha256-tP/N7RWYQhnvoLageSAwulO+OblQknMtrUXySq8DxU4=";
     };
   };
   deploy-rs = {
@@ -100,24 +100,24 @@
   };
   vault = {
     pname = "vault";
-    version = "v2.0.2";
+    version = "v2.0.3";
     src = fetchFromGitHub {
       owner = "hashicorp";
       repo = "vault";
-      rev = "v2.0.2";
+      rev = "v2.0.3";
       fetchSubmodules = false;
-      sha256 = "sha256-EebBguA9YuqtrXTcKHNwjQv7bgXFBtaRN0+lk7Zn6n0=";
+      sha256 = "sha256-s6Muogxe+jvre1qZYRiSGTDgMf0+BVsSOwyxF6+Aa2o=";
     };
   };
   vector = {
     pname = "vector";
-    version = "v0.56.0";
+    version = "vdev-v0.3.4";
     src = fetchFromGitHub {
       owner = "vectordotdev";
       repo = "vector";
-      rev = "v0.56.0";
+      rev = "vdev-v0.3.4";
       fetchSubmodules = false;
-      sha256 = "sha256-ge3epfB8xErF+2I1jW3OvHS+mHnGSSU6vOz2v/sSMW4=";
+      sha256 = "sha256-srsUNEQfls0B5uE3/p+C6njJzyzXu8JuUY4IVIHlFMA=";
     };
   };
   victoriametrics-cluster = {

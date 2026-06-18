@@ -29,11 +29,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-QfD03+GhA2DrQ3mOfezQvb5rkKdKTTAX0j53IPqa2qo=",
+            "sha256": "sha256-tP/N7RWYQhnvoLageSAwulO+OblQknMtrUXySq8DxU4=",
             "type": "url",
-            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.179.tgz"
+            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.181.tgz"
         },
-        "version": "2.1.179"
+        "version": "2.1.181"
     },
     "deploy-rs": {
         "cargoLock": null,
@@ -184,12 +184,12 @@
             "name": null,
             "owner": "hashicorp",
             "repo": "vault",
-            "rev": "v2.0.2",
-            "sha256": "sha256-EebBguA9YuqtrXTcKHNwjQv7bgXFBtaRN0+lk7Zn6n0=",
+            "rev": "v2.0.3",
+            "sha256": "sha256-s6Muogxe+jvre1qZYRiSGTDgMf0+BVsSOwyxF6+Aa2o=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2.0.2"
+        "version": "v2.0.3"
     },
     "vector": {
         "cargoLock": null,
@@ -205,12 +205,12 @@
             "name": null,
             "owner": "vectordotdev",
             "repo": "vector",
-            "rev": "v0.56.0",
-            "sha256": "sha256-ge3epfB8xErF+2I1jW3OvHS+mHnGSSU6vOz2v/sSMW4=",
+            "rev": "vdev-v0.3.4",
+            "sha256": "sha256-srsUNEQfls0B5uE3/p+C6njJzyzXu8JuUY4IVIHlFMA=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.56.0"
+        "version": "vdev-v0.3.4"
     },
     "victoriametrics-cluster": {
         "cargoLock": null,
