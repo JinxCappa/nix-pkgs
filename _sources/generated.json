@@ -163,12 +163,12 @@
             "name": null,
             "owner": "rustdesk",
             "repo": "rustdesk",
-            "rev": "1.4.7",
-            "sha256": "sha256-k4hJjr6xN1EOPfxRoTZMAUXZCFrwod3c+jVtBbqqO0U=",
+            "rev": "1.4.8",
+            "sha256": "sha256-SkCG/m/B0PhYHbCj5iMKMLaKwiBTx+Nk5Wv1mDRxTiM=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "1.4.7"
+        "version": "1.4.8"
     },
     "vault": {
         "cargoLock": null,
