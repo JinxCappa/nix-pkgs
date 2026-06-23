@@ -1,0 +1,14 @@
+.github/workflows/rustdesk.yaml
+  h_30afaad5482ce1 4-8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.10",
+  "base_commit_sha": "1e51be9310d53d4bab150414f66d27c8ed0332b0",
+  "prompts": {},
+  "humans": {
+    "h_30afaad5482ce1": {
+      "author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
