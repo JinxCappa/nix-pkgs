@@ -1,11 +1,11 @@
 name: rustdesk
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - packages/rustdesk/**
+  # push:
+  #   branches:
+  #     - main
+  #   paths:
+  #     - packages/rustdesk/**
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ghcr.io/${{ github.repository }}
