@@ -1,0 +1,20 @@
+flake.nix
+  s_8ccd97d3a16154::t_058242a65295d3 61-62
+  s_8ccd97d3a16154::t_2086e44f4fc4dd 41-60,65,70-71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.8",
+  "base_commit_sha": "478548ad6043bc36df7b2b95e0eaca2408054a63",
+  "prompts": {},
+  "sessions": {
+    "s_8ccd97d3a16154": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f234c-c2c9-73f3-a9ab-cf0eed6267e8",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}
