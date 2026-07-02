@@ -38,16 +38,37 @@
         overlays.merged = final: prev:
           import ./packages { lib = prev.lib; inherit prev; };
 
-        # List of overlays that merge pre-built packages into pkgs, using this flake's nixpkgs
+        lib.cachedTopLevelAliases = jinx: {
+          "caddy-l4" = jinx."caddy-l4";
+          "claude-code" = jinx."claude-code";
+          "deploy-rs" = jinx."deploy-rs";
+          netbird = jinx.netbird;
+          "netbird-ui" = jinx."netbird-ui";
+          "oh-my-zsh" = jinx."oh-my-zsh";
+          openbao = jinx.openbao;
+          "openbao-full" = jinx."openbao-full";
+          "openbao-hsm" = jinx."openbao-hsm";
+          "openbao-ui" = jinx."openbao-ui";
+          "remotepc-host" = jinx."remotepc-host";
+          rustdesk = jinx.rustdesk;
+          vault = jinx.vault;
+          vector = jinx.vector;
+          "victoriametrics-cluster" = jinx."victoriametrics-cluster";
+          zabbix74 = jinx.zabbix74;
+          zabbix80pre = jinx.zabbix80pre;
+        };
+
+        # List of overlays that merge pre-built packages into pkgs, using this
+        # flake input's nixpkgs as resolved by the consuming flake lock.
         # This is a list of two overlays that must be applied together:
         # 1. First puts packages under 'jinx' namespace (avoids alias conflicts)
-        # 2. Second hoists them to top-level using explicit names (avoids dynamic attr access)
+        # 2. Second hoists selected aliases to top-level using explicit names
         # Usage: pkgs.claude-code, pkgs.vector, pkgs.zabbix74.server, etc.
         lib.overlays.cached = [
           # First: add packages under jinx namespace
           (final: prev: { jinx = lib.packagesBySystem.${prev.stdenv.hostPlatform.system} or {}; })
-          # Second: hoist jinx packages to top-level (uses actual attr names, not just directory names)
-          (final: prev: prev.jinx)
+          # Second: hoist only the intentionally vendored top-level aliases
+          (final: prev: lib.cachedTopLevelAliases prev.jinx)
         ];
 
         # Overlay that provides all packages under a 'jinx' namespace
