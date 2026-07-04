@@ -29,11 +29,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-GVwQCiTh2q0QxlEqpJttq4B+1bEn5JPmMqaoaJVOImA=",
+            "sha256": "sha256-fxR4YtwaV5Gq62scczY0LhyBJAmfC+KFKrBYZ/VPKII=",
             "type": "url",
-            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.200.tgz"
+            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.201.tgz"
         },
-        "version": "2.1.200"
+        "version": "2.1.201"
     },
     "deploy-rs": {
         "cargoLock": null,
@@ -172,7 +172,7 @@
     },
     "sops-install-secrets": {
         "cargoLock": null,
-        "date": "2026-06-22",
+        "date": "2026-07-03",
         "extract": null,
         "name": "sops-install-secrets",
         "passthru": null,
@@ -184,12 +184,12 @@
             "name": null,
             "owner": "Mic92",
             "repo": "sops-nix",
-            "rev": "56b24064fdcaedca53553b1a6d607fd23b613a24",
-            "sha256": "sha256-478kKQBvK6SYTOdN2h9jhKJv94nbXRbFMfuL1WshErg=",
+            "rev": "1ebd41717762d837d5115f7108522c29cdb00fbb",
+            "sha256": "sha256-vSLKc7m34/g5xH4dwmNZSqxc5OcHeE3qiG3EIz6bJKs=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "56b24064fdcaedca53553b1a6d607fd23b613a24"
+        "version": "1ebd41717762d837d5115f7108522c29cdb00fbb"
     },
     "vault": {
         "cargoLock": null,

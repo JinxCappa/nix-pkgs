@@ -19,10 +19,10 @@
   };
   claude-code = {
     pname = "claude-code";
-    version = "2.1.200";
+    version = "2.1.201";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.200.tgz";
-      sha256 = "sha256-GVwQCiTh2q0QxlEqpJttq4B+1bEn5JPmMqaoaJVOImA=";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.201.tgz";
+      sha256 = "sha256-fxR4YtwaV5Gq62scczY0LhyBJAmfC+KFKrBYZ/VPKII=";
     };
   };
   deploy-rs = {
@@ -100,15 +100,15 @@
   };
   sops-install-secrets = {
     pname = "sops-install-secrets";
-    version = "56b24064fdcaedca53553b1a6d607fd23b613a24";
+    version = "1ebd41717762d837d5115f7108522c29cdb00fbb";
     src = fetchFromGitHub {
       owner = "Mic92";
       repo = "sops-nix";
-      rev = "56b24064fdcaedca53553b1a6d607fd23b613a24";
+      rev = "1ebd41717762d837d5115f7108522c29cdb00fbb";
       fetchSubmodules = false;
-      sha256 = "sha256-478kKQBvK6SYTOdN2h9jhKJv94nbXRbFMfuL1WshErg=";
+      sha256 = "sha256-vSLKc7m34/g5xH4dwmNZSqxc5OcHeE3qiG3EIz6bJKs=";
     };
-    date = "2026-06-22";
+    date = "2026-07-03";
   };
   vault = {
     pname = "vault";
