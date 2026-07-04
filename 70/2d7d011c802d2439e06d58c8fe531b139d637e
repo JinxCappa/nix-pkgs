@@ -1,0 +1,19 @@
+.github/scripts/changed-derivations.sh
+  s_3a4ae14b25c0f4::t_bbf0f9691e84bc 6,23-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "702d7d011c802d2439e06d58c8fe531b139d637e",
+  "prompts": {},
+  "sessions": {
+    "s_3a4ae14b25c0f4": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f2372-356e-7f22-b82a-f20b183c8ae9",
+        "model": "gpt-5.5"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
