@@ -98,6 +98,18 @@
       sha256 = "sha256-SkCG/m/B0PhYHbCj5iMKMLaKwiBTx+Nk5Wv1mDRxTiM=";
     };
   };
+  sops-install-secrets = {
+    pname = "sops-install-secrets";
+    version = "56b24064fdcaedca53553b1a6d607fd23b613a24";
+    src = fetchFromGitHub {
+      owner = "Mic92";
+      repo = "sops-nix";
+      rev = "56b24064fdcaedca53553b1a6d607fd23b613a24";
+      fetchSubmodules = false;
+      sha256 = "sha256-478kKQBvK6SYTOdN2h9jhKJv94nbXRbFMfuL1WshErg=";
+    };
+    date = "2026-06-22";
+  };
   vault = {
     pname = "vault";
     version = "v2.0.3";

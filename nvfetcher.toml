@@ -31,6 +31,11 @@ src.git = "https://github.com/ohmyzsh/ohmyzsh"
 src.branch = "master"
 fetch.github = "ohmyzsh/ohmyzsh"
 
+[sops-install-secrets]
+src.git = "https://github.com/Mic92/sops-nix"
+src.branch = "master"
+fetch.github = "Mic92/sops-nix"
+
 [vector]
 src.github = "vectordotdev/vector"
 src.include_regex = "^v[0-9]+\\.[0-9]+\\.[0-9]+$"
