@@ -5,8 +5,107 @@ on:
     - cron: "0 0 * * *" # Every day at midnight UTC
   workflow_dispatch: # Allow manual trigger
 
+concurrency:
+  group: update-flake-inputs
+  cancel-in-progress: false
+
 jobs:
-  update:
+  detect:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    outputs:
+      changed: ${{ steps.detect.outputs.changed }}
+      has_diff: ${{ steps.detect.outputs.has_diff }}
+      matrix: ${{ steps.detect.outputs.matrix }}
+      changed_count: ${{ steps.detect.outputs.changed_count }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v22
+        with:
+          determinate: false
+
+      - name: Detect package derivation changes
+        id: detect
+        run: ./.github/scripts/changed-derivations.sh
+
+      - name: Upload updated flake files
+        uses: actions/upload-artifact@v4
+        with:
+          name: updated-flake-files
+          path: |
+            flake.lock
+            packages/caddy-l4/**
+
+      - name: Upload derivation report
+        uses: actions/upload-artifact@v4
+        with:
+          name: changed-derivations
+          path: .github/changed-derivations/
+
+  build:
+    needs: detect
+    if: needs.detect.outputs.changed == 'true'
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.detect.outputs.matrix) }}
+    runs-on: ${{ matrix.runner }}
+    name: Build changed packages (${{ matrix.system }})
+    env:
+      CELLAR_SERVER: ${{ secrets.CELLAR_SERVER }}
+      CELLAR_TOKEN: ${{ secrets.CELLAR_TOKEN }}
+      CELLAR_CACHE_ID: ${{ secrets.CELLAR_CACHE_ID }}
+      CHANGED_ATTRS: ${{ toJson(matrix.attrs) }}
+      NIXPKGS_ALLOW_INSECURE: "1"
+      NIXPKGS_ALLOW_UNFREE: "1"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Download updated flake files
+        uses: actions/download-artifact@v4
+        with:
+          name: updated-flake-files
+          path: .
+
+      - name: Install current Bash on macOS
+        if: runner.os == 'macOS'
+        run: |
+          command -v brew && brew install bash || true
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v22
+        if: matrix.runner != 'macos-15-intel'
+        with:
+          determinate: false
+
+      - name: Install Nix (Intel Mac)
+        uses: DeterminateSystems/nix-installer-action@v22
+        if: matrix.runner == 'macos-15-intel'
+        with:
+          determinate: false
+          source-tag: v3.12.2
+
+      - name: Install cellarctl
+        uses: jinxcappa/cellar-action@v1
+        with:
+          configure-nix: "true"
+
+      - name: Build and push changed packages
+        run: |
+          printf '%s\n' "$CHANGED_ATTRS" | jq -r '.[]' | while IFS= read -r attr; do
+            echo "Building and pushing ${attr} for ${{ matrix.system }}"
+            cellarctl push --flake ".#\"${attr}\""
+          done
+
+  commit:
+    needs:
+      - detect
+      - build
+    if: always() && needs.detect.outputs.has_diff == 'true' && (needs.build.result == 'success' || needs.build.result == 'skipped')
     runs-on: ubuntu-24.04
     permissions:
       contents: write
@@ -16,27 +115,29 @@ jobs:
         with:
           token: ${{ secrets.PAT_TOKEN }}
 
-      - name: Install Nix
-        uses: DeterminateSystems/nix-installer-action@v22
+      - name: Download updated flake files
+        uses: actions/download-artifact@v4
         with:
-          determinate: false
+          name: updated-flake-files
+          path: .
 
-      - name: Update flake inputs
-        run: nix flake update
-
-      - name: Refresh Caddy L4 package metadata
-        run: nix develop --command ./packages/caddy-l4/update.sh
+      - name: Download derivation report
+        uses: actions/download-artifact@v4
+        with:
+          name: changed-derivations
+          path: .github/changed-derivations/
 
       - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          if git diff --quiet flake.lock packages/caddy-l4; then
-            echo "No changes to flake.lock"
+          if git diff --quiet -- flake.lock packages/caddy-l4; then
+            echo "No flake changes to commit"
             exit 0
           fi
 
           git add flake.lock packages/caddy-l4
-          git commit -m "chore: update flake inputs"
+          git commit -m "chore: update flake inputs" \
+            -m "Changed package derivations: ${{ needs.detect.outputs.changed_count }}"
           git push

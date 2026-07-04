@@ -51,6 +51,7 @@
           "openbao-ui" = jinx."openbao-ui";
           "remotepc-host" = jinx."remotepc-host";
           rustdesk = jinx.rustdesk;
+          "sops-install-secrets" = jinx."sops-install-secrets";
           vault = jinx.vault;
           vector = jinx.vector;
           "victoriametrics-cluster" = jinx."victoriametrics-cluster";
