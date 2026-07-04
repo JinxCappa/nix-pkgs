@@ -1,0 +1,25 @@
+.github/workflows/update-flake.yaml
+  s_3a4ae14b25c0f4::t_c02e49e191223c 62-63
+  s_3a4ae14b25c0f4::t_c1c04675b152bf 8-11,13,16-21,25-27,29-61,64-77,81,85-95,97-128,135-136,141-142
+flake.nix
+  s_3a4ae14b25c0f4::t_54b904de3c2fcd 54
+.github/scripts/changed-derivations.sh
+  s_3a4ae14b25c0f4::t_12848fff60d507 1-16,18-22,40-140
+  s_3a4ae14b25c0f4::t_8ca27d3067cc86 17,23-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "0d4cb7452de13bb52bb753e2e1923d7cc9418646",
+  "prompts": {},
+  "sessions": {
+    "s_3a4ae14b25c0f4": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f2372-356e-7f22-b82a-f20b183c8ae9",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}
