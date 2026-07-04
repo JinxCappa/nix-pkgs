@@ -1,0 +1,30 @@
+.github/workflows/sops-install-secrets.yaml
+  s_3a4ae14b25c0f4::t_8c1d71912730b0 13-14
+  s_3a4ae14b25c0f4::t_54b904de3c2fcd 1-12,15-61
+packages/sops-install-secrets/.source-version
+  s_3a4ae14b25c0f4::t_324032c89122a4 1
+_sources/generated.nix
+  s_3a4ae14b25c0f4::t_639ca48d85e62c 101-112
+_sources/generated.json
+  s_3a4ae14b25c0f4::t_639ca48d85e62c 173-193,299
+packages/sops-install-secrets/default.nix
+  s_3a4ae14b25c0f4::t_61a82bcb86aa03 1-46
+nvfetcher.toml
+  s_3a4ae14b25c0f4::t_61a82bcb86aa03 34-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "4a6acd4402f301d6a0a3cdef22576275dbb5706d",
+  "prompts": {},
+  "sessions": {
+    "s_3a4ae14b25c0f4": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f2372-356e-7f22-b82a-f20b183c8ae9",
+        "model": "gpt-5.5"
+      },
+      "human_author": null
+    }
+  }
+}
