@@ -100,15 +100,15 @@
   };
   sops-install-secrets = {
     pname = "sops-install-secrets";
-    version = "1ebd41717762d837d5115f7108522c29cdb00fbb";
+    version = "f1406619a3884cd5c47992a70b8b35c9c0fcb4c9";
     src = fetchFromGitHub {
       owner = "Mic92";
       repo = "sops-nix";
-      rev = "1ebd41717762d837d5115f7108522c29cdb00fbb";
+      rev = "f1406619a3884cd5c47992a70b8b35c9c0fcb4c9";
       fetchSubmodules = false;
-      sha256 = "sha256-vSLKc7m34/g5xH4dwmNZSqxc5OcHeE3qiG3EIz6bJKs=";
+      sha256 = "sha256-aCWC8ngycU7OdJrU2+Je3qf+1a2ykuBvpPhZT/9tXMc=";
     };
-    date = "2026-07-03";
+    date = "2026-07-04";
   };
   vault = {
     pname = "vault";
