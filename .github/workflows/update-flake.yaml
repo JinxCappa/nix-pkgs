@@ -21,7 +21,7 @@ jobs:
       changed_count: ${{ steps.detect.outputs.changed_count }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v22
@@ -33,7 +33,7 @@ jobs:
         run: ./.github/scripts/changed-derivations.sh
 
       - name: Upload updated flake files
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: updated-flake-files
           path: |
@@ -41,7 +41,7 @@ jobs:
             packages/caddy-l4/**
 
       - name: Upload derivation report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: changed-derivations
           path: .github/changed-derivations/
@@ -63,10 +63,10 @@ jobs:
       NIXPKGS_ALLOW_UNFREE: "1"
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Download updated flake files
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: updated-flake-files
           path: .
@@ -111,18 +111,18 @@ jobs:
       contents: write
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           token: ${{ secrets.PAT_TOKEN }}
 
       - name: Download updated flake files
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: updated-flake-files
           path: .
 
       - name: Download derivation report
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: changed-derivations
           path: .github/changed-derivations/
