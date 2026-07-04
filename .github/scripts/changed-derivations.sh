@@ -3,6 +3,7 @@ set -euo pipefail
 
 out_dir="${1:-.github/changed-derivations}"
 mkdir -p "$out_dir"
+flake_ref="path:$PWD"
 
 systems=(
   x86_64-linux
@@ -19,9 +20,25 @@ snapshot() {
 
   for system in "${systems[@]}"; do
     echo "Snapshotting ${label} derivations for ${system}" >&2
-    nix eval --json ".#packages.${system}" --apply '
-      packages: builtins.filter (name: name != "default") (builtins.attrNames packages)
-    ' | jq -r '.[]' > "$names_file"
+    nix eval --impure --json --expr "
+      let
+        flake = builtins.getFlake \"$flake_ref\";
+        pkgs = import flake.inputs.nixpkgs {
+          system = \"$system\";
+          config = {
+            allowUnfree = true;
+            permittedInsecurePackages = [];
+          };
+        };
+        packages = flake.packages.\"$system\";
+      in
+        builtins.filter
+          (name:
+            name != \"default\"
+            && pkgs.lib.meta.availableOn pkgs.stdenv.hostPlatform packages.\${name}
+          )
+          (builtins.attrNames packages)
+    " | jq -r '.[]' > "$names_file"
 
     while IFS= read -r attr; do
       local ref=".#packages.${system}.\"${attr}\".drvPath"
