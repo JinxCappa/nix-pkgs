@@ -89,13 +89,13 @@
   };
   rustdesk = {
     pname = "rustdesk";
-    version = "1.4.8";
+    version = "1.4.9";
     src = fetchFromGitHub {
       owner = "rustdesk";
       repo = "rustdesk";
-      rev = "1.4.8";
+      rev = "1.4.9";
       fetchSubmodules = true;
-      sha256 = "sha256-SkCG/m/B0PhYHbCj5iMKMLaKwiBTx+Nk5Wv1mDRxTiM=";
+      sha256 = "sha256-AnwdIO4TveC48uMioBCvH60xun24ckK420ONSEB9lQI=";
     };
   };
   sops-install-secrets = {
@@ -134,13 +134,13 @@
   };
   victoriametrics-cluster = {
     pname = "victoriametrics-cluster";
-    version = "v1.146.0-cluster";
+    version = "v1.147.0-cluster";
     src = fetchFromGitHub {
       owner = "VictoriaMetrics";
       repo = "VictoriaMetrics";
-      rev = "v1.146.0-cluster";
+      rev = "v1.147.0-cluster";
       fetchSubmodules = false;
-      sha256 = "sha256-24l1+ktSYDTEIfzbsmu2admdXqsIHVkK91GEVdKIPUk=";
+      sha256 = "sha256-GVYAW1K0AgEOfjsnI4xDGJyil5yj3kR2ngS1ZtRuWMI=";
     };
   };
   zabbix74 = {

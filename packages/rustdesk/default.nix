@@ -57,7 +57,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
 
   inherit (sources.rustdesk) src;
 
-  cargoHash = "sha256-HAKcu4tuF6Og9jxYn8DWGQCc2Dr6taxXk5x8gFEzHJg=";
+  cargoHash = "sha256-HPvvsTcjSErGfdNwsHgWhs930Fe0hmK1g5J/ngtlkKM=";
 
   depsExtraArgs = {
     nativeBuildInputs = [ nixPrefetchGitCompat ];
