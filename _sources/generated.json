@@ -70,12 +70,12 @@
             "name": null,
             "owner": "netbirdio",
             "repo": "netbird",
-            "rev": "v0.74.2",
-            "sha256": "sha256-+BGWZzw6a8Fp8NlhtbX81OA3hCTcQ9r6nLuXTsbXCZ8=",
+            "rev": "v0.74.3",
+            "sha256": "sha256-JXmtoHe0CwO1nKOPi82+cxhJ3tf3XZUCpDstk8U6s94=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.74.2"
+        "version": "v0.74.3"
     },
     "oh-my-zsh": {
         "cargoLock": null,
@@ -268,12 +268,12 @@
             "name": null,
             "owner": "zabbix",
             "repo": "zabbix",
-            "rev": "7.4.11",
-            "sha256": "sha256-i0zWbDI5RAvPfPuWVyz0ZbAbynRwYugupwmShHiNQwQ=",
+            "rev": "7.4.12",
+            "sha256": "sha256-DCRpzqtlQvA2S/avOQhnP6wSySAqoMwhocBzhCAAmTg=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "7.4.11"
+        "version": "7.4.12"
     },
     "zabbix80pre": {
         "cargoLock": null,

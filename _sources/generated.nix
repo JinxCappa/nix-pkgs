@@ -39,13 +39,13 @@
   };
   netbird = {
     pname = "netbird";
-    version = "v0.74.2";
+    version = "v0.74.3";
     src = fetchFromGitHub {
       owner = "netbirdio";
       repo = "netbird";
-      rev = "v0.74.2";
+      rev = "v0.74.3";
       fetchSubmodules = true;
-      sha256 = "sha256-+BGWZzw6a8Fp8NlhtbX81OA3hCTcQ9r6nLuXTsbXCZ8=";
+      sha256 = "sha256-JXmtoHe0CwO1nKOPi82+cxhJ3tf3XZUCpDstk8U6s94=";
     };
   };
   oh-my-zsh = {
@@ -145,13 +145,13 @@
   };
   zabbix74 = {
     pname = "zabbix74";
-    version = "7.4.11";
+    version = "7.4.12";
     src = fetchFromGitHub {
       owner = "zabbix";
       repo = "zabbix";
-      rev = "7.4.11";
+      rev = "7.4.12";
       fetchSubmodules = false;
-      sha256 = "sha256-i0zWbDI5RAvPfPuWVyz0ZbAbynRwYugupwmShHiNQwQ=";
+      sha256 = "sha256-DCRpzqtlQvA2S/avOQhnP6wSySAqoMwhocBzhCAAmTg=";
     };
   };
   zabbix80pre = {
