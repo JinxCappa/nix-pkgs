@@ -289,11 +289,11 @@
             "name": null,
             "owner": "zabbix",
             "repo": "zabbix",
-            "rev": "8.0.0beta1",
-            "sha256": "sha256-hEhposPj3CEZt/RSnfuVGsQmvFtWyghfIRi0dygHBKk=",
+            "rev": "8.0.0beta2",
+            "sha256": "sha256-gtfmFlqhLBmmYiyzgLq9GVPOV1KDco5LXZ84msyNBwM=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "8.0.0beta1"
+        "version": "8.0.0beta2"
     }
 }
