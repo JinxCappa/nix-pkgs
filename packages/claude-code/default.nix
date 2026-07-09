@@ -13,7 +13,7 @@ buildNpmPackage {
   # npmDepsHash needs to be updated manually when version changes
   # Run: npm install --package-lock-only @anthropic-ai/claude-code@VERSION
   # Then: prefetch-npm-deps package-lock.json
-  npmDepsHash = "sha256-k70y7Y0CuVGB23QG/mpPGcdofzvLUj1GAvmmtYcVxss=";
+  npmDepsHash = "sha256-3W1WsVPhT4NhUlyj9lYqewIC3mQPwikmG4BR/SFgP30=";
 
   postPatch = ''
     cp ${./package-lock.json} package-lock.json
