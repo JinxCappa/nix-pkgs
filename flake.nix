@@ -7,6 +7,18 @@
   };
 
   outputs = inputs@{ self, flake-parts, ... }:
+    let
+      nixpkgsConfig = {
+        allowUnfree = true;
+        # OpenBao 2.5.5 requires Node.js 20 to build its UI. Node is
+        # build-time-only here; remove this exception once upstream supports
+        # a maintained Node.js release.
+        permittedInsecurePackages = [
+          "nodejs-20.20.2"
+          "nodejs-slim-20.20.2"
+        ];
+      };
+    in
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" ];
 
@@ -27,7 +39,10 @@
         lib.packagesBySystem = builtins.listToAttrs (map (system: {
           name = system;
           value = let
-            pkgs = import inputs.nixpkgs { inherit system; config.allowUnfree = true; };
+            pkgs = import inputs.nixpkgs {
+              inherit system;
+              config = nixpkgsConfig;
+            };
           in import ./packages { lib = pkgs.lib; prev = pkgs; };
         }) [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" ]);
 
@@ -91,7 +106,7 @@
         let
           pkgs = import inputs.nixpkgs {
             inherit system;
-            config = { allowUnfree = true; };
+            config = nixpkgsConfig;
           };
           customPackages = import ./packages { lib = pkgs.lib; prev = pkgs; };
 
