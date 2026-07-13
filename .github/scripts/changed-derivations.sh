@@ -30,10 +30,14 @@ snapshot() {
           };
         };
         packages = flake.packages.\"$system\";
+        # RustDesk is intentionally updated and built independently of the
+        # flake-input workflow because its vendored dependencies are fragile.
+        excludedPackages = [ \"rustdesk\" ];
       in
         builtins.filter
           (name:
             name != \"default\"
+            && !(builtins.elem name excludedPackages)
             && pkgs.lib.meta.availableOn pkgs.stdenv.hostPlatform packages.\${name}
           )
           (builtins.attrNames packages)
