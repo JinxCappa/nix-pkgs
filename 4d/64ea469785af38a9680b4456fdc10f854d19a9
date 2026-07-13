@@ -1,0 +1,21 @@
+flake.nix
+  s_3a63d1ef2e296b::t_8db70e8b875f17 10-15,20-21,44,109
+  s_3a63d1ef2e296b::t_0315c2df1ba34b 16-19
+  s_3a63d1ef2e296b::t_224595d583203e 42-43,45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.13",
+  "base_commit_sha": "4d64ea469785af38a9680b4456fdc10f854d19a9",
+  "prompts": {},
+  "sessions": {
+    "s_3a63d1ef2e296b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5bb6-e153-73e0-8eb6-a3d79dc53a8f",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
