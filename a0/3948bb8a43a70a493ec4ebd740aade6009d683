@@ -1,0 +1,23 @@
+.github/workflows/vector.yaml
+  s_4b2515b2aeddf4::t_02acb8da98d556 37
+add-package.sh
+  s_4b2515b2aeddf4::t_16662b10568d80 32
+flake.nix
+  s_4b2515b2aeddf4::t_425d8df6571d33 11,32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.13",
+  "base_commit_sha": "a03948bb8a43a70a493ec4ebd740aade6009d683",
+  "prompts": {},
+  "sessions": {
+    "s_4b2515b2aeddf4": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f4f03-a31c-7f32-8584-430a1f557e45",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
