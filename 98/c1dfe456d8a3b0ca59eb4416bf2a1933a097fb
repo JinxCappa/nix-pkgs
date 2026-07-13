@@ -1,0 +1,24 @@
+packages/netbird/default.nix
+  s_3a63d1ef2e296b::t_2920a72e8c0f37 75,78,143
+  s_3a63d1ef2e296b::t_7b8a3abcb96338 44-45
+  s_3a63d1ef2e296b::t_e94573d66ace90 46-47
+  s_3a63d1ef2e296b::t_68b7ae5c5f4796 43
+  s_3a63d1ef2e296b::t_0ff9361a26f0b3 7,42,48,81
+  s_3a63d1ef2e296b::t_543e6b45facde0 72-74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.13",
+  "base_commit_sha": "98c1dfe456d8a3b0ca59eb4416bf2a1933a097fb",
+  "prompts": {},
+  "sessions": {
+    "s_3a63d1ef2e296b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5bb6-e153-73e0-8eb6-a3d79dc53a8f",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
