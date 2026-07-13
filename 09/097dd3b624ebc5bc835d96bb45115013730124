@@ -1,0 +1,19 @@
+packages/zabbix80pre/default.nix
+  s_3a63d1ef2e296b::t_65fd4adde82c71 34-64,66
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.13",
+  "base_commit_sha": "09097dd3b624ebc5bc835d96bb45115013730124",
+  "prompts": {},
+  "sessions": {
+    "s_3a63d1ef2e296b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5bb6-e153-73e0-8eb6-a3d79dc53a8f",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
