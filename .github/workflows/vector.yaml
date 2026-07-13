@@ -17,7 +17,6 @@ jobs:
           - ubuntu-24.04
           - rock5a
           - macos-15
-          - macos-15-intel
     permissions:
       contents: write
     runs-on: ${{ matrix.os }}
@@ -35,16 +34,9 @@ jobs:
 
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v22
-        if: matrix.os != 'rock5a' && matrix.os != 'macos-15-intel'
+        if: matrix.os != 'rock5a'
         with:
           determinate: false
-
-      - name: Install Nix (Intel Mac)
-        uses: DeterminateSystems/nix-installer-action@v22
-        if: matrix.os == 'macos-15-intel'
-        with:
-          determinate: false
-          source-tag: v3.12.2
 
       - name: Install cellarctl
         uses: jinxcappa/cellar-action@v1

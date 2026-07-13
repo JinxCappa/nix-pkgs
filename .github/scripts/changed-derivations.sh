@@ -9,7 +9,6 @@ systems=(
   x86_64-linux
   aarch64-linux
   aarch64-darwin
-  x86_64-darwin
 )
 
 snapshot() {
@@ -108,7 +107,6 @@ jq '
     if $system == "x86_64-linux" then "ubuntu-24.04"
     elif $system == "aarch64-linux" then "ubuntu-22.04-arm"
     elif $system == "aarch64-darwin" then "macos-15"
-    elif $system == "x86_64-darwin" then "macos-15-intel"
     else error("unsupported system: " + $system)
     end;
 

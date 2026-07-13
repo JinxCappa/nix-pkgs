@@ -29,14 +29,13 @@ get_supported_runners() {
   local runners=()
   local available
 
-  for system in x86_64-linux aarch64-linux x86_64-darwin aarch64-darwin; do
+  for system in x86_64-linux aarch64-linux aarch64-darwin; do
     available=$(is_available_on "$pkg" "$system")
 
     if [[ "$available" == "true" ]]; then
       case "$system" in
         x86_64-linux) runners+=("ubuntu-24.04") ;;
         aarch64-linux) runners+=("ubuntu-22.04-arm") ;;
-        x86_64-darwin) runners+=("macos-15-intel") ;;
         aarch64-darwin) runners+=("macos-15") ;;
       esac
     fi

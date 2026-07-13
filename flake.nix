@@ -8,7 +8,7 @@
 
   outputs = inputs@{ self, flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+      systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" ];
 
       flake = rec {
         # Package directory names (for use in overlays)
@@ -29,7 +29,7 @@
           value = let
             pkgs = import inputs.nixpkgs { inherit system; config.allowUnfree = true; };
           in import ./packages { lib = pkgs.lib; prev = pkgs; };
-        }) [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ]);
+        }) [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" ]);
 
         # Overlay that merges packages directly into pkgs
         # Usage: pkgs.claude-code, pkgs.zabbix74.server, etc.
