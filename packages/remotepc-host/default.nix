@@ -149,6 +149,14 @@ stdenv.mkDerivation (finalAttrs: {
 
     cp -r opt/remotepc-host $out/opt/remotepc-host
 
+    ${lib.optionalString (!isAarch64) ''
+      # RemotePC's PipeWire configuration does not load these optional generic
+      # modules. Drop them instead of retaining dependencies on EOL OpenSSL 1.1
+      # and PulseAudio solely for unused RAOP and PulseAudio tunnel support.
+      rm $out/opt/remotepc-host/pipewire-modules/libpipewire-module-raop-sink.so
+      rm $out/opt/remotepc-host/pipewire-modules/libpipewire-module-pulse-tunnel.so
+    ''}
+
     # The host bytecode spawns native helpers from /opt/<app>/bin even though
     # the Debian package ships them at the application root.
     mkdir -p $out/opt/remotepc-host/bin
