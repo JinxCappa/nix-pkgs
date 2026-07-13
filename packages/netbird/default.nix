@@ -4,6 +4,7 @@
   nixosTests,
   buildGoModule,
   installShellFiles,
+  writeShellScript,
   pkg-config,
   gtk3,
   libayatana-appindicator,
@@ -38,6 +39,13 @@ let
     };
   };
   component = availableComponents.${componentName};
+  darwinSystemClang = writeShellScript "netbird-system-clang" ''
+    unset COMPILER_PATH LIBRARY_PATH
+    export PATH=/Library/Developer/CommandLineTools/usr/bin:/usr/bin:/bin
+    exec /Library/Developer/CommandLineTools/usr/bin/clang \
+      -B/Library/Developer/CommandLineTools/usr/bin \
+      -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk "$@"
+  '';
 in
 buildGoModule (finalAttrs: {
   pname = "netbird-${componentName}";
@@ -61,12 +69,16 @@ buildGoModule (finalAttrs: {
 
   subPackages = [ component.module ];
 
-  ldflags = [
+  # cctools ld crashes while linking the Darwin UI binary with the macOS 26.5
+  # bootstrap SDK. Use Apple's linker until the nixpkgs toolchain is fixed;
+  # Nix still strips the finished binary during fixupPhase.
+  ldflags = lib.optionals (!(stdenv.hostPlatform.isDarwin && componentName == "ui")) [
     "-s"
     "-w"
+  ] ++ [
     "-X github.com/netbirdio/netbird/version.version=${finalAttrs.version}"
     "-X main.builtBy=nix"
-  ];
+  ] ++ lib.optional (stdenv.hostPlatform.isDarwin && componentName == "ui") "-extld=${darwinSystemClang}";
 
   # needs network access
   doCheck = false;
