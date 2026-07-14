@@ -1,0 +1,19 @@
+packages/vector/default.nix
+  s_3a63d1ef2e296b::t_d58a2e5d04ae89 109-116
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.13",
+  "base_commit_sha": "e406e27fb954569687261127f3e3e167ee276b82",
+  "prompts": {},
+  "sessions": {
+    "s_3a63d1ef2e296b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5bb6-e153-73e0-8eb6-a3d79dc53a8f",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
