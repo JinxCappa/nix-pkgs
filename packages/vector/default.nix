@@ -82,7 +82,11 @@ rustPlatform.buildRustPackage {
   # needed to dynamically link rdkafka
   CARGO_FEATURE_DYNAMIC_LINKING = 1;
 
-  CARGO_PROFILE_RELEASE_LTO = "fat";
+  # Fat LTO exhausts the memory available on GitHub's hosted ARM64 Linux
+  # runners while linking Vector. ThinLTO retains most optimizations with a
+  # much lower peak memory requirement.
+  CARGO_PROFILE_RELEASE_LTO =
+    if stdenv.hostPlatform.system == "aarch64-linux" then "thin" else "fat";
   CARGO_PROFILE_RELEASE_CODEGEN_UNITS = "1";
 
   # In case anything goes wrong.
