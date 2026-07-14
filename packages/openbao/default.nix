@@ -19,7 +19,7 @@ let
       inherit version;
       inherit (source) src;
 
-      vendorHash = "sha256-3d3g6f0O7X+aedYCfLbqLNuITKNQuxZkApWTTKSk7lA=";
+      vendorHash = "sha256-O0xx61S0KEk5QB/NsV+kBlErvVuKBfI/81o29rDye1w=";
 
       proxyVendor = true;
 
