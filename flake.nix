@@ -15,7 +15,9 @@
         # a maintained Node.js release.
         permittedInsecurePackages = [
           "nodejs-20.20.2"
+          "nodejs-20.20.2-source"
           "nodejs-slim-20.20.2"
+          "nodejs-slim-20.20.2-source"
         ];
       };
     in
