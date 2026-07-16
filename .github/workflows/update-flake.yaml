@@ -6,8 +6,11 @@ on:
   workflow_dispatch: # Allow manual trigger
 
 concurrency:
-  group: update-flake-inputs
+  # Serialize workflows that commit to main so long package builds cannot race
+  # with the package updater and produce a non-fast-forward push.
+  group: main-update-writers
   cancel-in-progress: false
+  queue: max
 
 jobs:
   detect:
@@ -22,6 +25,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
+        with:
+          ref: main
 
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v22
@@ -64,6 +69,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
+        with:
+          ref: main
 
       - name: Download updated flake files
         uses: actions/download-artifact@v8
@@ -106,6 +113,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           token: ${{ secrets.PAT_TOKEN }}
+          ref: main
 
       - name: Download updated flake files
         uses: actions/download-artifact@v8
@@ -132,4 +140,5 @@ jobs:
           git add flake.lock packages/caddy-l4
           git commit -m "chore: update flake inputs" \
             -m "Changed package derivations: ${{ needs.detect.outputs.changed_count }}"
+          git pull --rebase origin main
           git push
