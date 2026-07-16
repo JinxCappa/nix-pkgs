@@ -1,7 +1,7 @@
 {
   lib,
   stdenvNoCC,
-  nodejs_20,
+  nodejs_22,
   fetchPnpmDeps,
   pnpmConfigHook,
   pnpm_10,
@@ -22,7 +22,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   };
 
   nativeBuildInputs = [
-    nodejs_20
+    nodejs_22
     pnpmConfigHook
     pnpm_10
   ];
@@ -30,6 +30,11 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   pnpmInstallFlags = [
     "--ignore-scripts"
   ];
+
+  postPatch = ''
+    substituteInPlace package.json \
+      --replace-fail '"node": "20"' '"node": "22"'
+  '';
 
   postConfigure = ''
     substituteInPlace .ember-cli \
