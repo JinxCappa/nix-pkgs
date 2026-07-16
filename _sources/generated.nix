@@ -8,13 +8,13 @@
 {
   caddy-l4 = {
     pname = "caddy-l4";
-    version = "v0.1.1";
+    version = "v0.1.2";
     src = fetchFromGitHub {
       owner = "mholt";
       repo = "caddy-l4";
-      rev = "v0.1.1";
+      rev = "v0.1.2";
       fetchSubmodules = false;
-      sha256 = "sha256-P6ltBzCQLELDtIQkQ2E3xoNBjCyLvwCoWWztyRoR7ZI=";
+      sha256 = "sha256-xys5S1QAGGHF/XHXWxjfjeplVr1Aq1wks37lRNJkmKM=";
     };
   };
   claude-code = {

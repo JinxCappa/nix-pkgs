@@ -13,12 +13,12 @@
             "name": null,
             "owner": "mholt",
             "repo": "caddy-l4",
-            "rev": "v0.1.1",
-            "sha256": "sha256-P6ltBzCQLELDtIQkQ2E3xoNBjCyLvwCoWWztyRoR7ZI=",
+            "rev": "v0.1.2",
+            "sha256": "sha256-xys5S1QAGGHF/XHXWxjfjeplVr1Aq1wks37lRNJkmKM=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.1.1"
+        "version": "v0.1.2"
     },
     "claude-code": {
         "cargoLock": null,
