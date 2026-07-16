@@ -1,0 +1,21 @@
+.github/workflows/update-flake.yaml
+  s_3a63d1ef2e296b::t_61e9e12eb46d5e 9-11,13,28-29,72-73,116,143
+.github/workflows/update-packages.yaml
+  s_3a63d1ef2e296b::t_61e9e12eb46d5e 9-14,25,56-57
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "88c6f9ecf0f6edfd9da14f952933a4b413a59da1",
+  "prompts": {},
+  "sessions": {
+    "s_3a63d1ef2e296b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f5bb6-e153-73e0-8eb6-a3d79dc53a8f",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
