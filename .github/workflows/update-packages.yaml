@@ -30,6 +30,8 @@ jobs:
           determinate: false
 
       - name: Run update script
+        env:
+          NVCHECKER_GITHUB_TOKEN: ${{ github.token }}
         run: nix develop --command ./update.sh
 
       - name: Commit and push changes

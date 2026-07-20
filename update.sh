@@ -162,7 +162,14 @@ echo "=== Refreshing remotepc-host download URLs ==="
 
 echo "=== Updating sources with nvfetcher ==="
 ensure_nix_prefetch_git
-nvfetcher --keep-going
+nvfetcher_args=(--keep-going)
+if [ -n "${NVCHECKER_GITHUB_TOKEN:-}" ]; then
+  nvchecker_keyfile="$SOURCE_CACHE_DIR/nvchecker-keyfile.toml"
+  printf '[keys]\ngithub = "%s"\n' "$NVCHECKER_GITHUB_TOKEN" > "$nvchecker_keyfile"
+  chmod 600 "$nvchecker_keyfile"
+  nvfetcher_args+=(--keyfile "$nvchecker_keyfile")
+fi
+nvfetcher "${nvfetcher_args[@]}"
 
 echo ""
 # Auto-detect and fix packages that need fetchSubmodules
