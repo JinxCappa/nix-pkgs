@@ -34,7 +34,7 @@ rustPlatform.buildRustPackage {
 
   # cargoHash needs to be updated when source changes
   # Build will fail with correct hash if outdated
-  cargoHash = "sha256-lLO6kSlElK/Szzhqy50XZv/+hWZXOe8o4FcDzCvHuEA=";
+  cargoHash = "sha256-H26tUF+i/79t7W2BVjh2bVRCGZK8rgazHzlTF4L2jyA=";
 
   nativeBuildInputs =
     [
@@ -110,14 +110,6 @@ rustPlatform.buildRustPackage {
 
     substituteInPlace ./lib/vector-config-macros/src/lib.rs \
       --replace-fail "#![deny(warnings)]" ""
-
-    # databricks-zerobus-ingest-sdk 2.0.1 passes a bare proto filename,
-    # whose parent is an empty path. Newer prost/protoc skips that invalid
-    # include directory, so make the current directory explicit.
-    substituteInPlace \
-      "$cargoDepsCopy/source-registry-0/databricks-zerobus-ingest-sdk-2.0.1/build.rs" \
-      --replace-fail 'compile_protos("zerobus_service.proto")' \
-      'compile_protos("./zerobus_service.proto")'
   '';
 
   passthru.tests = {

@@ -226,12 +226,12 @@
             "name": null,
             "owner": "vectordotdev",
             "repo": "vector",
-            "rev": "vdev-v0.3.8",
-            "sha256": "sha256-L7UTJ/tylUD58mAoJt3tTxoezk/JGlP1B6ZAP+ySwPc=",
+            "rev": "v0.57.0",
+            "sha256": "sha256-x4yfC/qAMRM7X19usonsp8GSJHwIsn0zoX0owLn2EXs=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "vdev-v0.3.8"
+        "version": "v0.57.0"
     },
     "victoriametrics-cluster": {
         "cargoLock": null,

@@ -39,7 +39,6 @@ in
     # Increase timeouts in tests to prevent failure on heavily loaded builders
     substituteInPlace lib/storage/storage_test.go \
       --replace-fail "time.After(10 " "time.After(120 " \
-      --replace-fail "time.NewTimer(30 " "time.NewTimer(120 " \
       --replace-fail "time.NewTimer(time.Second * 10)" "time.NewTimer(time.Second * 120)" \
   '';
 

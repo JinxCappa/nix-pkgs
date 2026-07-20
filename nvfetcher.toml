@@ -37,8 +37,7 @@ src.branch = "master"
 fetch.github = "Mic92/sops-nix"
 
 [vector]
-src.github = "vectordotdev/vector"
-src.include_regex = "^v[0-9]+\\.[0-9]+\\.[0-9]+$"
+src.cmd = "git ls-remote --tags https://github.com/vectordotdev/vector.git | sed -n 's|.*refs/tags/\\(v[0-9]*\\.[0-9]*\\.[0-9]*\\)$|\\1|p' | sort -V | tail -1"
 fetch.github = "vectordotdev/vector"
 
 [victoriametrics-cluster]
