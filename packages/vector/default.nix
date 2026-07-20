@@ -110,6 +110,17 @@ rustPlatform.buildRustPackage {
 
     substituteInPlace ./lib/vector-config-macros/src/lib.rs \
       --replace-fail "#![deny(warnings)]" ""
+
+    # databricks-zerobus-ingest-sdk passes a bare proto filename, whose parent
+    # is an empty path. Newer prost/protoc skips that invalid include directory,
+    # so make the current directory explicit. Match any SDK version so routine
+    # Vector updates do not require changing this path.
+    for build_rs in \
+      "$cargoDepsCopy"/source-registry-*/databricks-zerobus-ingest-sdk-*/build.rs; do
+      substituteInPlace "$build_rs" \
+        --replace-fail 'compile_protos("zerobus_service.proto")' \
+        'compile_protos("./zerobus_service.proto")'
+    done
   '';
 
   passthru.tests = {
