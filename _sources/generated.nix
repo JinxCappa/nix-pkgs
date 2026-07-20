@@ -123,24 +123,24 @@
   };
   vector = {
     pname = "vector";
-    version = "v0.57.0";
+    version = "vdev-v0.3.8";
     src = fetchFromGitHub {
       owner = "vectordotdev";
       repo = "vector";
-      rev = "v0.57.0";
+      rev = "vdev-v0.3.8";
       fetchSubmodules = false;
-      sha256 = "sha256-x4yfC/qAMRM7X19usonsp8GSJHwIsn0zoX0owLn2EXs=";
+      sha256 = "sha256-L7UTJ/tylUD58mAoJt3tTxoezk/JGlP1B6ZAP+ySwPc=";
     };
   };
   victoriametrics-cluster = {
     pname = "victoriametrics-cluster";
-    version = "v1.147.0-cluster";
+    version = "v1.148.0-cluster";
     src = fetchFromGitHub {
       owner = "VictoriaMetrics";
       repo = "VictoriaMetrics";
-      rev = "v1.147.0-cluster";
+      rev = "v1.148.0-cluster";
       fetchSubmodules = false;
-      sha256 = "sha256-GVYAW1K0AgEOfjsnI4xDGJyil5yj3kR2ngS1ZtRuWMI=";
+      sha256 = "sha256-Xx2K0eFk5Gylav+HtIuz4XFTU8GUc+wW3i0raE+BZ8Q=";
     };
   };
   zabbix74 = {
