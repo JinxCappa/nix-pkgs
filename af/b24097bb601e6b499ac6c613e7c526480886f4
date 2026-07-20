@@ -1,0 +1,27 @@
+packages/vector/.source-version
+  s_bd1524bd60014d::t_a160fc8b701ab7 1
+nvfetcher.toml
+  s_bd1524bd60014d::t_a160fc8b701ab7 40
+_sources/generated.nix
+  s_bd1524bd60014d::t_a160fc8b701ab7 126,130,132
+_sources/generated.json
+  s_bd1524bd60014d::t_a160fc8b701ab7 229-230,234
+packages/vector/default.nix
+  s_bd1524bd60014d::t_a160fc8b701ab7 37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "afb24097bb601e6b499ac6c613e7c526480886f4",
+  "prompts": {},
+  "sessions": {
+    "s_bd1524bd60014d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f800d-481d-7fd2-bed1-1d6437b941db",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
