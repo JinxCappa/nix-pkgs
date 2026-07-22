@@ -112,12 +112,12 @@
             "name": null,
             "owner": "openbao",
             "repo": "openbao",
-            "rev": "v2.6.0",
-            "sha256": "sha256-FJ+34HeRT025EFwFXY8ewfnJbQirqFb3j+kPNxpGOA4=",
+            "rev": "v2.6.1",
+            "sha256": "sha256-2wl06I6/yF/V5P9MFCCzpEiX4G+YTtXWRjvh+wDyB1U=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2.6.0"
+        "version": "v2.6.1"
     },
     "remotepc-host": {
         "cargoLock": null,
