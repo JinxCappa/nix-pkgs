@@ -3,14 +3,22 @@
   lib,
   nixosTests,
   buildGoModule,
+  fetchFromGitHub,
+  fetchPnpmDeps,
+  go,
   installShellFiles,
   writeShellScript,
+  nodejs,
+  pnpm_10,
+  pnpmConfigHook,
   pkg-config,
   gtk3,
+  gtk4,
   libayatana-appindicator,
   libX11,
   libXcursor,
   libXxf86vm,
+  webkitgtk_6_0,
   versionCheckHook,
   sources,
   componentName ? "client",
@@ -39,6 +47,30 @@ let
     };
   };
   component = availableComponents.${componentName};
+  wails3 = buildGoModule {
+    pname = "wails3";
+    version = "3.0.0-alpha2.117";
+
+    src = fetchFromGitHub {
+      owner = "wailsapp";
+      repo = "wails";
+      tag = "v3.0.0-alpha2.117";
+      hash = "sha256-lGMY+xlhclf+1YWJHiZI8/VVOz8e5bCOAw4XUDzecNI=";
+    };
+
+    modRoot = "v3";
+    subPackages = [ "cmd/wails3" ];
+    vendorHash = "sha256-50pbaGdwsZLZegeU423gAjoZtXoDAsSrSEWEQ9ivDdc=";
+    proxyVendor = true;
+    env.GOWORK = "off";
+    nativeBuildInputs = [ pkg-config ];
+    buildInputs = lib.optionals stdenv.hostPlatform.isLinux [
+      gtk3
+      gtk4
+      webkitgtk_6_0
+    ];
+    doCheck = false;
+  };
   darwinSystemClang = writeShellScript "netbird-system-clang" ''
     unset COMPILER_PATH LIBRARY_PATH
     export PATH=/Library/Developer/CommandLineTools/usr/bin:/usr/bin:/bin
@@ -55,19 +87,64 @@ buildGoModule (finalAttrs: {
 
   # vendorHash needs to be updated when source changes
   # Build will fail with correct hash if outdated
-  vendorHash = "sha256-bcz8XaME182Rh346VQhTO5E3hb5WmCIjB1Q6dvOu3iY=";
+  vendorHash = "sha256-KVGCV89qGHrg2GQVw6MnftQswbdihcqozptjf5vs5BA=";
+  # Wails v3's module zip omits Windows-only embedded DLLs. Avoid
+  # `go mod vendor`, which resolves those embeds even on non-Windows hosts.
+  proxyVendor = true;
 
-  nativeBuildInputs = [ installShellFiles ] ++ lib.optional (componentName == "ui") pkg-config;
+  pnpmDeps =
+    if componentName == "ui" then
+      fetchPnpmDeps {
+        inherit (finalAttrs)
+          pname
+          version
+          src
+          pnpmInstallFlags
+          ;
+        sourceRoot = "${finalAttrs.src.name}/client/ui/frontend";
+        pnpm = pnpm_10;
+        fetcherVersion = 3;
+        hash = "sha256-014ngMpfGEchr+XWOp+pRpPkKzHxCcANfjlQpGW6fLQ=";
+      }
+    else
+      null;
+
+  pnpmRoot = "client/ui/frontend";
+  pnpmInstallFlags = [
+    "--network-concurrency=1"
+    "--child-concurrency=1"
+  ];
+
+  nativeBuildInputs = [
+    installShellFiles
+  ] ++ lib.optionals (componentName == "ui") [
+    nodejs
+    pnpm_10
+    pnpmConfigHook
+    pkg-config
+    wails3
+  ];
 
   buildInputs = lib.optionals (stdenv.hostPlatform.isLinux && componentName == "ui") [
     gtk3
+    gtk4
     libayatana-appindicator
     libX11
     libXcursor
     libXxf86vm
+    webkitgtk_6_0
   ];
 
   subPackages = [ component.module ];
+  tags = lib.optional (componentName == "ui") "production";
+
+  overrideModAttrs = lib.optionalAttrs (componentName == "ui") {
+    nativeBuildInputs = [
+      go
+      pkg-config
+    ];
+    preBuild = "";
+  };
 
   # cctools ld crashes while linking the Darwin UI binary with the macOS 26.5
   # bootstrap SDK. Use Apple's linker until the nixpkgs toolchain is fixed;
@@ -87,8 +164,17 @@ buildGoModule (finalAttrs: {
     # make it compatible with systemd's RuntimeDirectory
     substituteInPlace client/cmd/root.go \
       --replace-fail 'unix:///var/run/netbird.sock' 'unix:///var/run/netbird/sock'
-    substituteInPlace client/ui/client_ui.go \
+    substituteInPlace client/ui/grpc.go \
       --replace-fail 'unix:///var/run/netbird.sock' 'unix:///var/run/netbird/sock'
+  '';
+
+  preBuild = lib.optionalString (componentName == "ui") ''
+    pushd client/ui
+    wails3 generate bindings -f '-tags production' -clean=true -ts
+    pushd frontend
+    pnpm run build
+    popd
+    popd
   '';
 
   postInstall =
@@ -110,10 +196,10 @@ buildGoModule (finalAttrs: {
     # assemble & adjust netbird.desktop files for the GUI
     + lib.optionalString (stdenv.hostPlatform.isLinux && componentName == "ui") ''
       install -Dm644 "$src/client/ui/assets/netbird-systemtray-connected.png" "$out/share/pixmaps/netbird.png"
-      install -Dm644 "$src/client/ui/build/netbird.desktop" "$out/share/applications/netbird.desktop"
+      install -Dm644 "$src/client/ui/build/linux/netbird.desktop" "$out/share/applications/netbird.desktop"
 
       substituteInPlace $out/share/applications/netbird.desktop \
-        --replace-fail "Exec=/usr/bin/netbird-ui" "Exec=$out/bin/${component.binaryName}"
+        --replace-fail "/usr/bin/netbird-ui" "$out/bin/${component.binaryName}"
     '';
 
   nativeInstallCheckInputs = lib.lists.optionals (component ? versionCheckProgramArg) [
