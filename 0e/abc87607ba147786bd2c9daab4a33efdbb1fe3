@@ -1,0 +1,29 @@
+packages/netbird/default.nix
+  s_e7a20f277c555a::t_f089a97da7b46f 90,93
+  s_e7a20f277c555a::t_43888ac2f13027 91-92
+  s_e7a20f277c555a::t_8acde1ccc479de 12,105-106,122
+  s_e7a20f277c555a::t_31a2f10dd01da3 66-71
+  s_e7a20f277c555a::t_d19c6777145504 8,142-145
+  s_e7a20f277c555a::t_d260b102f60a2c 63
+  s_e7a20f277c555a::t_df7d9a694c8223 98-103,113-116
+  s_e7a20f277c555a::t_f6764fda4357b9 107
+  s_e7a20f277c555a::t_591816fce3f0c3 6-7,11,13,16,21,50-62,64-65,72-73,94,112,118-121,123-126,130,135,139-141,146-147,167,171-179,199,202
+  s_e7a20f277c555a::t_b8df147c6a2c3d 95-97,104,108-110
+  s_e7a20f277c555a::t_9402d4f07ef10d 111
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "0eabc87607ba147786bd2c9daab4a33efdbb1fe3",
+  "prompts": {},
+  "sessions": {
+    "s_e7a20f277c555a": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f812b-1ce1-7d62-8f9b-74eddd846019",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
