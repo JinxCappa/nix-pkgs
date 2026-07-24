@@ -36,6 +36,14 @@ src.git = "https://github.com/Mic92/sops-nix"
 src.branch = "master"
 fetch.github = "Mic92/sops-nix"
 
+[technitium-dns-server]
+src.cmd = "packages/technitium-dns-server/latest-common-version.sh"
+fetch.url = "https://github.com/TechnitiumSoftware/DnsServer/archive/refs/tags/v$ver.tar.gz"
+
+[technitium-dns-server-library]
+src.cmd = "packages/technitium-dns-server/latest-common-version.sh"
+fetch.url = "https://github.com/TechnitiumSoftware/TechnitiumLibrary/archive/refs/tags/dns-server-v$ver.tar.gz"
+
 [vector]
 src.cmd = "git ls-remote --tags https://github.com/vectordotdev/vector.git | sed -n 's|.*refs/tags/\\(v[0-9]*\\.[0-9]*\\.[0-9]*\\)$|\\1|p' | sort -V | tail -1"
 fetch.github = "vectordotdev/vector"

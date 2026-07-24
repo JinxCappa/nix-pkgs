@@ -190,6 +190,27 @@ for pkg in $(jq -r 'keys[]' _sources/generated.json 2>/dev/null); do
 done
 
 echo ""
+echo "=== Checking Technitium NuGet dependencies ==="
+
+if version_changed "technitium-dns-server" || version_changed "technitium-dns-server-library"; then
+  echo "  technitium-dns-server: regenerating pinned NuGet dependencies"
+
+  library_fetch_deps=$(
+    nix build --no-link --print-out-paths ".#technitium-dns-server-library-fetch-deps"
+  )
+  "$library_fetch_deps" \
+    "$PWD/packages/technitium-dns-server/nuget-deps-library.json"
+
+  server_fetch_deps=$(
+    nix build --no-link --print-out-paths ".#technitium-dns-server-fetch-deps"
+  )
+  "$server_fetch_deps" \
+    "$PWD/packages/technitium-dns-server/nuget-deps-server.json"
+else
+  echo "  technitium-dns-server: source versions unchanged, skipping"
+fi
+
+echo ""
 echo "=== Initializing new npm packages ==="
 
 # Find npm packages in nvfetcher.toml and initialize if missing package-lock.json

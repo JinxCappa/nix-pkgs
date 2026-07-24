@@ -191,6 +191,36 @@
         },
         "version": "f1406619a3884cd5c47992a70b8b35c9c0fcb4c9"
     },
+    "technitium-dns-server": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "technitium-dns-server",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-B5MMLx1qxA0YvXOsiXzEnIvB7/3+CBnlaRDgalPdQbE=",
+            "type": "url",
+            "url": "https://github.com/TechnitiumSoftware/DnsServer/archive/refs/tags/v15.4.0.tar.gz"
+        },
+        "version": "15.4.0"
+    },
+    "technitium-dns-server-library": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "technitium-dns-server-library",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-tdHEBwakoG46lxs4RgDslIW0L6xFPU1bQt0Dfiz6b2o=",
+            "type": "url",
+            "url": "https://github.com/TechnitiumSoftware/TechnitiumLibrary/archive/refs/tags/dns-server-v15.4.0.tar.gz"
+        },
+        "version": "15.4.0"
+    },
     "vault": {
         "cargoLock": null,
         "date": null,

@@ -69,6 +69,7 @@
           "remotepc-host" = jinx."remotepc-host";
           rustdesk = jinx.rustdesk;
           "sops-install-secrets" = jinx."sops-install-secrets";
+          "technitium-dns-server" = jinx."technitium-dns-server";
           vault = jinx.vault;
           vector = jinx.vector;
           "victoriametrics-cluster" = jinx."victoriametrics-cluster";
