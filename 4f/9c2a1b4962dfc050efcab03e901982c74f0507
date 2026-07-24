@@ -1,0 +1,54 @@
+flake.nix
+  s_bef73a89456734::t_e139429a8497a3 72
+packages/technitium-dns-server/nuget-deps-library.json
+  s_bef73a89456734::t_4c706143fa1986 1-22
+_sources/generated.nix
+  s_bef73a89456734::t_8e235ef41be964 117,125
+  s_bef73a89456734::t_d5a999501a4645 113-114
+  s_bef73a89456734::t_9c01717ace749e 115-116,118-124,126-128
+_sources/generated.json
+  s_bef73a89456734::t_8e235ef41be964 205,220
+  s_bef73a89456734::t_4edcf99f0ca961 194
+  s_bef73a89456734::t_ad769f905ab48c 329
+  s_bef73a89456734::t_9c01717ace749e 195-197,199-204,206-219,221-223
+  s_bef73a89456734::t_f7fc092a60379f 198
+packages/technitium-dns-server/nuget-deps-server.json
+  s_bef73a89456734::t_4c706143fa1986 1-62
+update.sh
+  s_bef73a89456734::t_f2f520a9bb666f 193-212
+  s_bef73a89456734::t_5891089c062f4c 192
+packages/technitium-dns-server/.source-version
+  s_bef73a89456734::t_e4d9fbafb15c23 1
+.github/workflows/technitium-dns-server.yaml
+  s_bef73a89456734::t_7ff6999917ac55 54-56
+  s_bef73a89456734::t_e92aecf5db3394 1-53
+  s_bef73a89456734::t_9c01717ace749e 57-59
+nvfetcher.toml
+  s_bef73a89456734::t_8e235ef41be964 41,45
+  s_bef73a89456734::t_9c01717ace749e 42-43
+  s_bef73a89456734::t_14c5ab9cf1607d 39
+  s_bef73a89456734::t_f2f520a9bb666f 40,44
+  s_bef73a89456734::t_abee1bfd7274d8 46
+packages/technitium-dns-server/default.nix
+  s_bef73a89456734::t_f2f520a9bb666f 76-79
+  s_bef73a89456734::t_4c706143fa1986 1-75
+  s_bef73a89456734::t_5ad5db3d287768 80
+packages/technitium-dns-server/latest-common-version.sh
+  s_bef73a89456734::t_f2f520a9bb666f 1-16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "4f9c2a1b4962dfc050efcab03e901982c74f0507",
+  "prompts": {},
+  "sessions": {
+    "s_bef73a89456734": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f91fd-d27f-7441-b49e-10a7f3b4f2ad",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
