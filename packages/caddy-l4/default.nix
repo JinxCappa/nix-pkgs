@@ -5,5 +5,5 @@ caddy.withPlugins {
     "github.com/mholt/caddy-l4@${sources.caddy-l4.version}"
   ];
 
-  hash = "sha256-5rSXcltiRaAG253V1ytKF/UBXWWIHAPRK2KPHdRnJrA=";
+  hash = "sha256-UIv8PxtJMlX7qClnPazFsSSl7G1BzsTT8VjrMIfB46Q=";
 }
