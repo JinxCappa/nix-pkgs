@@ -1,0 +1,14 @@
+.gitignore
+  h_30afaad5482ce1 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "2d3251341fcc1889be3ab8eac91c6d71735ac239",
+  "prompts": {},
+  "humans": {
+    "h_30afaad5482ce1": {
+      "author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
