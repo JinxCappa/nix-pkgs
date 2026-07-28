@@ -7,6 +7,7 @@
   fetchPnpmDeps,
   go,
   installShellFiles,
+  makeWrapper,
   writeShellScript,
   nodejs,
   pnpm_10,
@@ -123,6 +124,8 @@ buildGoModule (finalAttrs: {
     pnpmConfigHook
     pkg-config
     wails3
+  ] ++ lib.optionals (stdenv.hostPlatform.isLinux && componentName == "ui") [
+    makeWrapper
   ];
 
   buildInputs = lib.optionals (stdenv.hostPlatform.isLinux && componentName == "ui") [
@@ -195,11 +198,16 @@ buildGoModule (finalAttrs: {
         ''
     # assemble & adjust netbird.desktop files for the GUI
     + lib.optionalString (stdenv.hostPlatform.isLinux && componentName == "ui") ''
+      wrapProgram "$out/bin/${component.binaryName}" \
+        --set-default WEBKIT_DISABLE_DMABUF_RENDERER 1
+
       install -Dm644 "$src/client/ui/assets/netbird-systemtray-connected.png" "$out/share/pixmaps/netbird.png"
       install -Dm644 "$src/client/ui/build/linux/netbird.desktop" "$out/share/applications/netbird.desktop"
 
       substituteInPlace $out/share/applications/netbird.desktop \
-        --replace-fail "/usr/bin/netbird-ui" "$out/bin/${component.binaryName}"
+        --replace-fail \
+          "Exec=env WEBKIT_DISABLE_DMABUF_RENDERER=1 /usr/bin/netbird-ui" \
+          "Exec=${component.binaryName}"
     '';
 
   nativeInstallCheckInputs = lib.lists.optionals (component ? versionCheckProgramArg) [
