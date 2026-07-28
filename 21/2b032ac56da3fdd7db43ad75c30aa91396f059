@@ -1,0 +1,19 @@
+packages/netbird/default.nix
+  s_e7a20f277c555a::t_591816fce3f0c3 202
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "212b032ac56da3fdd7db43ad75c30aa91396f059",
+  "prompts": {},
+  "sessions": {
+    "s_e7a20f277c555a": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f812b-1ce1-7d62-8f9b-74eddd846019",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
