@@ -27,13 +27,13 @@
   };
   deploy-rs = {
     pname = "deploy-rs";
-    version = "145da05e26235784581a31ba83beb9949b24da84";
+    version = "b974715a27b49fadbf3bf6d85e26bcb3109daa6d";
     src = fetchFromGitHub {
       owner = "serokell";
       repo = "deploy-rs";
-      rev = "145da05e26235784581a31ba83beb9949b24da84";
+      rev = "b974715a27b49fadbf3bf6d85e26bcb3109daa6d";
       fetchSubmodules = false;
-      sha256 = "sha256-pD8rBn57pNLOnWCz07D2HLzVE/DUFuuh0bzdEhc/dkw=";
+      sha256 = "sha256-anlq3YQDCsNrkNlu3HTg4dEIpRugwnyAVUxoPcBmA/U=";
     };
     date = "2026-07-31";
   };
