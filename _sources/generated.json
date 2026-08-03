@@ -70,16 +70,16 @@
             "name": null,
             "owner": "netbirdio",
             "repo": "netbird",
-            "rev": "v0.76.0",
-            "sha256": "sha256-gICLAHmsn5Ylrm4tGaOQNr9ieuaSf3jt2KLDFrd08c0=",
+            "rev": "v0.76.1",
+            "sha256": "sha256-gxcb1CQ2f8g8wYEt1z2rvJrcoXy2k7pSSMaLmfqmISc=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.76.0"
+        "version": "v0.76.1"
     },
     "oh-my-zsh": {
         "cargoLock": null,
-        "date": "2026-08-02",
+        "date": "2026-08-03",
         "extract": null,
         "name": "oh-my-zsh",
         "passthru": null,
@@ -91,12 +91,12 @@
             "name": null,
             "owner": "ohmyzsh",
             "repo": "ohmyzsh",
-            "rev": "6adfef3a8b25ca5ccf429bb87e10547ed444eaa1",
-            "sha256": "sha256-ypaW9eQ99g6HW16uQ33wcwnFAQ+5FeDm9Q1fl8u5eH4=",
+            "rev": "ad586ffecaaeb695cc73ced4d643c6727d47f535",
+            "sha256": "sha256-3o0G6f5kyetOx7brvqZTim3eQBMTpi2wU2vgQ54cvlk=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "6adfef3a8b25ca5ccf429bb87e10547ed444eaa1"
+        "version": "ad586ffecaaeb695cc73ced4d643c6727d47f535"
     },
     "openbao": {
         "cargoLock": null,
