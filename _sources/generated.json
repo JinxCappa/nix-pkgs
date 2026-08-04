@@ -235,12 +235,12 @@
             "name": null,
             "owner": "hashicorp",
             "repo": "vault",
-            "rev": "v2.0.3",
-            "sha256": "sha256-s6Muogxe+jvre1qZYRiSGTDgMf0+BVsSOwyxF6+Aa2o=",
+            "rev": "v2.0.4",
+            "sha256": "sha256-2x25SH2Maq5opCpRr5LVflmHhxHHWj0T60uGW/reeco=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2.0.3"
+        "version": "v2.0.4"
     },
     "vector": {
         "cargoLock": null,
