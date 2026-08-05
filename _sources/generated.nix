@@ -27,15 +27,15 @@
   };
   deploy-rs = {
     pname = "deploy-rs";
-    version = "5059116c0bae73dbd9277cbc340f5b8a21ccaaa9";
+    version = "f6f2359a6cb7e3c51ea673bcb39933ac2622350d";
     src = fetchFromGitHub {
       owner = "serokell";
       repo = "deploy-rs";
-      rev = "5059116c0bae73dbd9277cbc340f5b8a21ccaaa9";
+      rev = "f6f2359a6cb7e3c51ea673bcb39933ac2622350d";
       fetchSubmodules = false;
-      sha256 = "sha256-uuwNrx8lOb/w2TUllumBSyW/3eH8Zx5An0ZgD8slPHY=";
+      sha256 = "sha256-1JTy9/LyITSBP1a4WZ9tmOv2yDh9OTbA3YUJbQHiMYc=";
     };
-    date = "2026-08-04";
+    date = "2026-08-05";
   };
   netbird = {
     pname = "netbird";
