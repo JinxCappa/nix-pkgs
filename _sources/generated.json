@@ -29,15 +29,15 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-GfNEQ0RphXMiWFxenRfRtZNCVCjjKCTqtUj+2/Nx+cY=",
+            "sha256": "sha256-oobKxjeLM3mTaiFyK5M5MePcRxl36TlrbLLkQGaxWY8=",
             "type": "url",
-            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.221.tgz"
+            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.222.tgz"
         },
-        "version": "2.1.221"
+        "version": "2.1.222"
     },
     "deploy-rs": {
         "cargoLock": null,
-        "date": "2026-07-31",
+        "date": "2026-08-04",
         "extract": null,
         "name": "deploy-rs",
         "passthru": null,
@@ -49,12 +49,12 @@
             "name": null,
             "owner": "serokell",
             "repo": "deploy-rs",
-            "rev": "b974715a27b49fadbf3bf6d85e26bcb3109daa6d",
-            "sha256": "sha256-anlq3YQDCsNrkNlu3HTg4dEIpRugwnyAVUxoPcBmA/U=",
+            "rev": "5059116c0bae73dbd9277cbc340f5b8a21ccaaa9",
+            "sha256": "sha256-uuwNrx8lOb/w2TUllumBSyW/3eH8Zx5An0ZgD8slPHY=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "b974715a27b49fadbf3bf6d85e26bcb3109daa6d"
+        "version": "5059116c0bae73dbd9277cbc340f5b8a21ccaaa9"
     },
     "netbird": {
         "cargoLock": null,
