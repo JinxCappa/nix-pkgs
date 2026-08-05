@@ -50,15 +50,15 @@
   };
   oh-my-zsh = {
     pname = "oh-my-zsh";
-    version = "ad586ffecaaeb695cc73ced4d643c6727d47f535";
+    version = "a4a224b3fe4c945bb28e6d96b46dc2d300748123";
     src = fetchFromGitHub {
       owner = "ohmyzsh";
       repo = "ohmyzsh";
-      rev = "ad586ffecaaeb695cc73ced4d643c6727d47f535";
+      rev = "a4a224b3fe4c945bb28e6d96b46dc2d300748123";
       fetchSubmodules = false;
-      sha256 = "sha256-3o0G6f5kyetOx7brvqZTim3eQBMTpi2wU2vgQ54cvlk=";
+      sha256 = "sha256-OMVFBB3/t0DHWulGaiOZci04c6m4ZgSPSqeyvUuKs0c=";
     };
-    date = "2026-08-03";
+    date = "2026-08-05";
   };
   openbao = {
     pname = "openbao";
@@ -73,10 +73,10 @@
   };
   remotepc-host = {
     pname = "remotepc-host";
-    version = "6.12.1";
+    version = "6.12.2";
     src = fetchurl {
       url = "https://static.remotepc.com/downloads/rpc/310320/remotepc-host.deb";
-      sha256 = "sha256-QTqhfS+eJpgAfYOBP9emUwubzibQbryB0mMyAeKj7mE=";
+      sha256 = "sha256-TIlrGQkd4FXt7uUyEjbATBDhEvCI/1zDND6Z4/6fW5Q=";
     };
   };
   remotepc-host-pi64 = {
@@ -150,13 +150,13 @@
   };
   victoriametrics-cluster = {
     pname = "victoriametrics-cluster";
-    version = "v1.148.0-cluster";
+    version = "v1.149.0-cluster";
     src = fetchFromGitHub {
       owner = "VictoriaMetrics";
       repo = "VictoriaMetrics";
-      rev = "v1.148.0-cluster";
+      rev = "v1.149.0-cluster";
       fetchSubmodules = false;
-      sha256 = "sha256-Xx2K0eFk5Gylav+HtIuz4XFTU8GUc+wW3i0raE+BZ8Q=";
+      sha256 = "sha256-ywHDOJRhr1tk9F3z5FjUH8oWs7OajdKB1iO5RH3MCqc=";
     };
   };
   zabbix74 = {

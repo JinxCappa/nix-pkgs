@@ -79,7 +79,7 @@
     },
     "oh-my-zsh": {
         "cargoLock": null,
-        "date": "2026-08-03",
+        "date": "2026-08-05",
         "extract": null,
         "name": "oh-my-zsh",
         "passthru": null,
@@ -91,12 +91,12 @@
             "name": null,
             "owner": "ohmyzsh",
             "repo": "ohmyzsh",
-            "rev": "ad586ffecaaeb695cc73ced4d643c6727d47f535",
-            "sha256": "sha256-3o0G6f5kyetOx7brvqZTim3eQBMTpi2wU2vgQ54cvlk=",
+            "rev": "a4a224b3fe4c945bb28e6d96b46dc2d300748123",
+            "sha256": "sha256-OMVFBB3/t0DHWulGaiOZci04c6m4ZgSPSqeyvUuKs0c=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "ad586ffecaaeb695cc73ced4d643c6727d47f535"
+        "version": "a4a224b3fe4c945bb28e6d96b46dc2d300748123"
     },
     "openbao": {
         "cargoLock": null,
@@ -128,11 +128,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-QTqhfS+eJpgAfYOBP9emUwubzibQbryB0mMyAeKj7mE=",
+            "sha256": "sha256-TIlrGQkd4FXt7uUyEjbATBDhEvCI/1zDND6Z4/6fW5Q=",
             "type": "url",
             "url": "https://static.remotepc.com/downloads/rpc/310320/remotepc-host.deb"
         },
-        "version": "6.12.1"
+        "version": "6.12.2"
     },
     "remotepc-host-pi64": {
         "cargoLock": null,
@@ -277,12 +277,12 @@
             "name": null,
             "owner": "VictoriaMetrics",
             "repo": "VictoriaMetrics",
-            "rev": "v1.148.0-cluster",
-            "sha256": "sha256-Xx2K0eFk5Gylav+HtIuz4XFTU8GUc+wW3i0raE+BZ8Q=",
+            "rev": "v1.149.0-cluster",
+            "sha256": "sha256-ywHDOJRhr1tk9F3z5FjUH8oWs7OajdKB1iO5RH3MCqc=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v1.148.0-cluster"
+        "version": "v1.149.0-cluster"
     },
     "zabbix74": {
         "cargoLock": null,
