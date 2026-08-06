@@ -263,7 +263,10 @@ in
       path = servicePath;
       serviceConfig = {
         Type = "simple";
-        ExecStart = "${appDir}/bin/writeConfig";
+        # The vendor ships writeConfig without an executable bit (0444).
+        # Invoke it through Bash so the GUI fallback can publish DISPLAY for
+        # login/deploy commands launched from an SSH session.
+        ExecStart = "${pkgs.bashNonInteractive}/bin/bash ${appDir}/bin/writeConfig";
       };
     };
   };

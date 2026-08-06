@@ -177,14 +177,6 @@ stdenv.mkDerivation (finalAttrs: {
       --add-flags "--disable-gpu-sandbox" \
       --add-flags "--disable-dev-shm-usage"
 
-    makeWrapper $out/opt/remotepc-host/remotepc-host $out/bin/.remotepc-host-cli \
-      --prefix PATH : ${runtimePath} \
-      --prefix LD_LIBRARY_PATH : ${runtimeLibraryPath} \
-      --set ELECTRON_RUN_AS_NODE 1 \
-      --set APP remotepc-cli \
-      --set-default NODE_NO_WARNINGS 1 \
-      --add-flags "$out/opt/remotepc-host/resources/app.asar"
-
     makeWrapper $out/opt/remotepc-host/remotepc-host $out/bin/.remotepc-host-daemon \
       --prefix PATH : ${runtimePath} \
       --prefix LD_LIBRARY_PATH : ${runtimeLibraryPath} \
@@ -194,14 +186,17 @@ stdenv.mkDerivation (finalAttrs: {
       --set-default NODE_NO_WARNINGS 1 \
       --add-flags "$out/opt/remotepc-host/resources/app.asar/node_modules/daemon/"
 
-    cat > $out/bin/remotepc-host <<EOF
-    #!${stdenv.shell}
-    case "\''${1-}" in
-      ""|-*) exec "$out/bin/.remotepc-host-wrapped" "\$@" ;;
-      *) exec "$out/bin/.remotepc-host-cli" "\$@" ;;
-    esac
-    EOF
-    chmod +x $out/bin/remotepc-host
+    # Keep the vendor dispatcher: it detects graphical sessions and sends
+    # commands such as `login` through the Electron UI, while reserving the
+    # ELECTRON_RUN_AS_NODE path for hosts that were explicitly set up for CLI
+    # access. Routing every word command directly to Node mode breaks modules
+    # that import Electron's built-in `electron` module.
+    substituteInPlace $out/opt/remotepc-host/bin/remotepc-host-setup \
+      --replace-fail "/opt/remotepc-host/remotepc-host" "$out/bin/.remotepc-host-wrapped"
+
+    makeWrapper $out/opt/remotepc-host/bin/remotepc-host-setup $out/bin/remotepc-host \
+      --prefix PATH : ${runtimePath} \
+      --prefix LD_LIBRARY_PATH : ${runtimeLibraryPath}
 
     # desktop file and icons
     cp -r usr/share/applications $out/share/
