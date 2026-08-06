@@ -1,0 +1,30 @@
+.gitignore
+  h_30afaad5482ce1 1
+_sources/generated.json
+  s_69e473a8c24aaa::t_1c37d6a3dcdce6 82,94-95,99,131
+_sources/generated.nix
+  s_69e473a8c24aaa::t_d0bf2cbf92a5e5 53,57,59,61,79
+packages/oh-my-zsh/.source-version
+  s_69e473a8c24aaa::t_7f1441917854c6 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "762302aa12fa93c5e9ea162f482fe41246713b05",
+  "prompts": {},
+  "humans": {
+    "h_30afaad5482ce1": {
+      "author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  },
+  "sessions": {
+    "s_69e473a8c24aaa": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fd90f-c7f3-7493-a7ea-afde4937e16a",
+        "model": "unknown"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
