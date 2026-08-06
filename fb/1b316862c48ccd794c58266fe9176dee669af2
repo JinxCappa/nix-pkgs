@@ -1,0 +1,23 @@
+.gitignore
+  s_69e473a8c24aaa::t_d823a7d2ccf0a4 1
+packages/remotepc-host/default.nix
+  s_69e473a8c24aaa::t_b428c9a1408601 189-199
+modules/nixos/remotepc-host/default.nix
+  s_69e473a8c24aaa::t_e4af828dd070e6 266-269
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "fb1b316862c48ccd794c58266fe9176dee669af2",
+  "prompts": {},
+  "sessions": {
+    "s_69e473a8c24aaa": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fd90f-c7f3-7493-a7ea-afde4937e16a",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
