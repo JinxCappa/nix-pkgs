@@ -1,0 +1,47 @@
+name: SBC kernels
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - packages/linux-armbian-cix-p1/**
+      - packages/linux-armbian-rockchip64/**
+      - flake.nix
+      - flake.lock
+      - .github/workflows/kernels.yaml
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04-arm
+    permissions:
+      contents: read
+    env:
+      CELLAR_SERVER: ${{ secrets.CELLAR_SERVER }}
+      CELLAR_TOKEN: ${{ secrets.CELLAR_TOKEN }}
+      CELLAR_CACHE_ID: ${{ secrets.CELLAR_CACHE_ID }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v22
+        with:
+          determinate: false
+
+      - name: Install cellarctl
+        uses: jinxcappa/cellar-action@v1
+        with:
+          configure-nix: "true"
+
+      - name: Build and push kernel outputs
+        run: |
+          for package in \
+            linux-armbian-cix-p1 \
+            linux-armbian-cix-p1-dev \
+            linux-armbian-cix-p1-modules \
+            linux-armbian-rockchip64 \
+            linux-armbian-rockchip64-modules
+          do
+            cellarctl push --flake ".#${package}"
+          done

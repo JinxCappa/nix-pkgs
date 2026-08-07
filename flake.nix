@@ -4,6 +4,10 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    armbian-build = {
+      url = "github:armbian/build/4451999a153c8cf48ae5ff35541b1d994d5903c2";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ self, flake-parts, ... }:
@@ -45,7 +49,11 @@
               inherit system;
               config = nixpkgsConfig;
             };
-          in import ./packages { lib = pkgs.lib; prev = pkgs; };
+          in import ./packages {
+            armbianBuild = inputs.armbian-build;
+            lib = pkgs.lib;
+            prev = pkgs;
+          };
         }) [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" ]);
 
         # Overlay that merges packages directly into pkgs
@@ -53,7 +61,11 @@
         overlays.default = overlays.merged;
 
         overlays.merged = final: prev:
-          import ./packages { lib = prev.lib; inherit prev; };
+          import ./packages {
+            armbianBuild = inputs.armbian-build;
+            lib = prev.lib;
+            inherit prev;
+          };
 
         lib.cachedTopLevelAliases = jinx: {
           "caddy-l4" = jinx."caddy-l4";
@@ -75,7 +87,11 @@
           "victoriametrics-cluster" = jinx."victoriametrics-cluster";
           zabbix74 = jinx.zabbix74;
           zabbix80pre = jinx.zabbix80pre;
-        };
+        }
+        // (if jinx ? "linux-armbian-cix-p1" then {
+          "linux-armbian-cix-p1" = jinx."linux-armbian-cix-p1";
+          "linux-armbian-rockchip64" = jinx."linux-armbian-rockchip64";
+        } else { });
 
         # List of overlays that merge pre-built packages into pkgs, using this
         # flake input's nixpkgs as resolved by the consuming flake lock.
@@ -111,7 +127,11 @@
             inherit system;
             config = nixpkgsConfig;
           };
-          customPackages = import ./packages { lib = pkgs.lib; prev = pkgs; };
+          customPackages = import ./packages {
+            armbianBuild = inputs.armbian-build;
+            lib = pkgs.lib;
+            prev = pkgs;
+          };
 
           # Helper to check if something is a derivation
           isDerivation = x: x ? type && x.type == "derivation";

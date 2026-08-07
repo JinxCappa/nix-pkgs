@@ -1,4 +1,8 @@
-{ lib, prev }:
+{
+  armbianBuild,
+  lib,
+  prev,
+}:
 
 let
   # Load nvfetcher-generated sources
@@ -24,25 +28,31 @@ let
   # merge directly (e.g., openbao -> { openbao, openbao-ui, ... })
   # Otherwise nest under the directory name (e.g., zabbix74 -> { zabbix74.server, ... })
   packages = lib.foldl' (acc: name:
-    let
-      pkg = prev.callPackage (./. + "/${name}") { inherit sources; };
-    in
-    if isDerivation pkg then
-      acc // { ${name} = pkg; }
-    else if builtins.isAttrs pkg then
-      let
-        # Only check derivation keys (ignore override, overrideDerivation, etc.)
-        derivationAttrs = lib.filterAttrs (_: isDerivation) pkg;
-        keys = builtins.attrNames derivationAttrs;
-        # Check if all derivation keys start with the directory name (merge pattern)
-        shouldMerge = keys != [] && builtins.all (k: lib.hasPrefix name k) keys;
-      in
-      if shouldMerge then
-        acc // derivationAttrs  # Merge derivations directly
-      else
-        acc // { ${name} = pkg; }  # Nest under directory name
-    else
+    if lib.hasPrefix "linux-armbian-" name && prev.stdenv.hostPlatform.system != "aarch64-linux" then
       acc
+    else
+      let
+        pkg = prev.callPackage (./. + "/${name}") (
+          { inherit sources; }
+          // lib.optionalAttrs (name == "linux-armbian-cix-p1") { inherit armbianBuild; }
+        );
+      in
+      if isDerivation pkg then
+        acc // { ${name} = pkg; }
+      else if builtins.isAttrs pkg then
+        let
+          # Only check derivation keys (ignore override, overrideDerivation, etc.)
+          derivationAttrs = lib.filterAttrs (_: isDerivation) pkg;
+          keys = builtins.attrNames derivationAttrs;
+          # Check if all derivation keys start with the directory name (merge pattern)
+          shouldMerge = keys != [] && builtins.all (k: lib.hasPrefix name k) keys;
+        in
+        if shouldMerge then
+          acc // derivationAttrs  # Merge derivations directly
+        else
+          acc // { ${name} = pkg; }  # Nest under directory name
+      else
+        acc
   ) {} packageNames;
 in
 packages
