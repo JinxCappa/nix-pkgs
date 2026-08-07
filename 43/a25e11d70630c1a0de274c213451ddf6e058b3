@@ -1,0 +1,33 @@
+packages/linux-armbian-rockchip64/default.nix
+  s_cc59df5f0caf4e::t_4f2efa849bf845 1-5,7-97
+  s_cc59df5f0caf4e::t_a5734ceb542dbc 6
+packages/default.nix
+  s_cc59df5f0caf4e::t_4f2efa849bf845 1-5
+  s_cc59df5f0caf4e::t_b07505d3fd303e 31-33,35-38,40-53,55
+flake.nix
+  s_cc59df5f0caf4e::t_4f2efa849bf845 7-10,52-56,64-68,130-134
+  s_cc59df5f0caf4e::t_b07505d3fd303e 90-94
+packages/linux-armbian-cix-p1/default.nix
+  s_cc59df5f0caf4e::t_4f2efa849bf845 1-5,7-54
+  s_cc59df5f0caf4e::t_a5734ceb542dbc 6
+.github/workflows/kernels.yaml
+  s_cc59df5f0caf4e::t_4f2efa849bf845 1-47
+flake.lock
+  s_cc59df5f0caf4e::t_1bed6cfafa30f9 3-19,71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "43a25e11d70630c1a0de274c213451ddf6e058b3",
+  "prompts": {},
+  "sessions": {
+    "s_cc59df5f0caf4e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fdc56-f663-72e1-b0a8-d25a815f7e69",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
