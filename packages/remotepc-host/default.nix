@@ -186,6 +186,14 @@ stdenv.mkDerivation (finalAttrs: {
       --set-default NODE_NO_WARNINGS 1 \
       --add-flags "$out/opt/remotepc-host/resources/app.asar/node_modules/daemon/"
 
+    makeWrapper $out/opt/remotepc-host/remotepc-host $out/bin/.remotepc-host-cli \
+      --prefix PATH : ${runtimePath} \
+      --prefix LD_LIBRARY_PATH : ${runtimeLibraryPath} \
+      --set ELECTRON_RUN_AS_NODE 1 \
+      --set APP remotepc-cli \
+      --set-default NODE_NO_WARNINGS 1 \
+      --add-flags "$out/opt/remotepc-host/resources/app.asar"
+
     # Keep the vendor dispatcher: it detects graphical sessions and sends
     # commands such as `login` through the Electron UI, while reserving the
     # ELECTRON_RUN_AS_NODE path for hosts that were explicitly set up for CLI
@@ -193,6 +201,15 @@ stdenv.mkDerivation (finalAttrs: {
     # that import Electron's built-in `electron` module.
     substituteInPlace $out/opt/remotepc-host/bin/remotepc-host-setup \
       --replace-fail "/opt/remotepc-host/remotepc-host" "$out/bin/.remotepc-host-wrapped"
+
+    # The vendor GUI currently crashes before displaying its login window.
+    # Its CLI implementation is fully functional, but must run with APP set to
+    # remotepc-cli (using remotepc-host makes its bytecode import Electron from
+    # Node mode). Keep the GUI dispatcher for desktop launches and route only
+    # the interactive login command through the supported CLI application.
+    substituteInPlace $out/opt/remotepc-host/bin/remotepc-host-setup \
+      --replace-fail 'launchApp $@' \
+        "if [ \"\$1\" = login ]; then exec \"$out/bin/.remotepc-host-cli\" \"\$@\"; else launchApp \"\$@\"; fi"
 
     makeWrapper $out/opt/remotepc-host/bin/remotepc-host-setup $out/bin/remotepc-host \
       --prefix PATH : ${runtimePath} \
