@@ -48,6 +48,9 @@ let
     };
   };
   component = availableComponents.${componentName};
+  # Keep this indirect so the package updater does not replace Wails' pinned
+  # module hash when NetBird's own vendorHash changes with a source update.
+  wails3GoModulesHash = "sha256-50pbaGdwsZLZegeU423gAjoZtXoDAsSrSEWEQ9ivDdc=";
   wails3 = buildGoModule {
     pname = "wails3";
     version = "3.0.0-alpha2.117";
@@ -61,7 +64,7 @@ let
 
     modRoot = "v3";
     subPackages = [ "cmd/wails3" ];
-    vendorHash = "sha256-50pbaGdwsZLZegeU423gAjoZtXoDAsSrSEWEQ9ivDdc=";
+    vendorHash = wails3GoModulesHash;
     proxyVendor = true;
     env.GOWORK = "off";
     nativeBuildInputs = [ pkg-config ];
@@ -88,7 +91,7 @@ buildGoModule (finalAttrs: {
 
   # vendorHash needs to be updated when source changes
   # Build will fail with correct hash if outdated
-  vendorHash = "sha256-KVGCV89qGHrg2GQVw6MnftQswbdihcqozptjf5vs5BA=";
+  vendorHash = "sha256-36XD5NxkDoEwfFeZwHmqVJBy2RonaU1g1Sjy8GgZAD4=";
   # Wails v3's module zip omits Windows-only embedded DLLs. Avoid
   # `go mod vendor`, which resolves those embeds even on non-Windows hosts.
   proxyVendor = true;
