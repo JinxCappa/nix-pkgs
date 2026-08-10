@@ -37,7 +37,7 @@
     },
     "deploy-rs": {
         "cargoLock": null,
-        "date": "2026-08-08",
+        "date": "2026-08-10",
         "extract": null,
         "name": "deploy-rs",
         "passthru": null,
@@ -49,12 +49,12 @@
             "name": null,
             "owner": "serokell",
             "repo": "deploy-rs",
-            "rev": "4dcc87bbf8b3e63ecbe2bf3bb77d729ced7d91d8",
-            "sha256": "sha256-/b79w+zO/+sJ1ADXUfkemP+0kBV+HPxmZVY7xlPI2ag=",
+            "rev": "16901271e5b30b591e56f7a84f25f186fb20f3e1",
+            "sha256": "sha256-IxaZkb9rCGEZ+yGndxKXONeIEcKMzoFUsvLTB5G/caw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "4dcc87bbf8b3e63ecbe2bf3bb77d729ced7d91d8"
+        "version": "16901271e5b30b591e56f7a84f25f186fb20f3e1"
     },
     "netbird": {
         "cargoLock": null,
