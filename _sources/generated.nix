@@ -39,13 +39,13 @@
   };
   netbird = {
     pname = "netbird";
-    version = "v0.76.3";
+    version = "v0.77.0";
     src = fetchFromGitHub {
       owner = "netbirdio";
       repo = "netbird";
-      rev = "v0.76.3";
+      rev = "v0.77.0";
       fetchSubmodules = true;
-      sha256 = "sha256-ebzv1s1r9RPmaysthlRX6isYWDCpSegnp04QKRaGWs0=";
+      sha256 = "sha256-w72ylRblfC20X4h1E7vuycWziLfWE+cCHuIaf7czFb8=";
     };
   };
   oh-my-zsh = {
@@ -100,15 +100,15 @@
   };
   sops-install-secrets = {
     pname = "sops-install-secrets";
-    version = "d1337e05ba0a8e88a75d2c0e1595d82f3b3e2ac4";
+    version = "a8627b21b9107c5711c96b84f32a9a4b3d45295f";
     src = fetchFromGitHub {
       owner = "Mic92";
       repo = "sops-nix";
-      rev = "d1337e05ba0a8e88a75d2c0e1595d82f3b3e2ac4";
+      rev = "a8627b21b9107c5711c96b84f32a9a4b3d45295f";
       fetchSubmodules = false;
-      sha256 = "sha256-G7qDAT98nywA4EFmJCwIRO5wKvDlBBN3BWpsOnjAto8=";
+      sha256 = "sha256-gkig4nPi1CWc4Z50GBsjE4ygSE7hMpl/TwID2an2Cck=";
     };
-    date = "2026-08-10";
+    date = "2026-08-13";
   };
   technitium-dns-server = {
     pname = "technitium-dns-server";
