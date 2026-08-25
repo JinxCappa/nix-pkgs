@@ -29,11 +29,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-dSJS/5plQxw1bOGuVLfe10oTiqp7kxSFc9l/9UGi5+Y=",
+            "sha256": "sha256-g/+pyOMkTOjLW+ue7QBLbT5b34SxnV8mzLzsLH9lf+s=",
             "type": "url",
-            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.241.tgz"
+            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.243.tgz"
         },
-        "version": "2.1.241"
+        "version": "2.1.243"
     },
     "deploy-rs": {
         "cargoLock": null,
