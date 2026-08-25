@@ -79,7 +79,7 @@
     },
     "oh-my-zsh": {
         "cargoLock": null,
-        "date": "2026-08-24",
+        "date": "2026-08-25",
         "extract": null,
         "name": "oh-my-zsh",
         "passthru": null,
@@ -91,12 +91,12 @@
             "name": null,
             "owner": "ohmyzsh",
             "repo": "ohmyzsh",
-            "rev": "ec03bc620c8a9e30f74e6fcc6dc171a35cd82b1f",
-            "sha256": "sha256-vu0Wv2+yT2tW/q0bfEW/YSYikmAC9mhTO56Demnyqp0=",
+            "rev": "146461f7c6d95f4ba1220559d66eb113418b40a8",
+            "sha256": "sha256-yLveICt+SPGDg2a9J/gPt+/vOCQBS5l3OFUSgQ0UHJI=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "ec03bc620c8a9e30f74e6fcc6dc171a35cd82b1f"
+        "version": "146461f7c6d95f4ba1220559d66eb113418b40a8"
     },
     "openbao": {
         "cargoLock": null,
@@ -298,12 +298,12 @@
             "name": null,
             "owner": "zabbix",
             "repo": "zabbix",
-            "rev": "7.4.13",
-            "sha256": "sha256-Ici14DOM790wfzIrpX6y/T4CD5Yc2kYli5nDHdCHGwY=",
+            "rev": "7.4.14",
+            "sha256": "sha256-hO10/BagyT3txxH+IwWSlRPrOK9Rn31tmRL4RqJHh1E=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "7.4.13"
+        "version": "7.4.14"
     },
     "zabbix80pre": {
         "cargoLock": null,
