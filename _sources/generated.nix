@@ -19,23 +19,23 @@
   };
   claude-code = {
     pname = "claude-code";
-    version = "2.1.252";
+    version = "2.1.257";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.252.tgz";
-      sha256 = "sha256-5eBER9Ov33D3V4+dIiF8UwoO+MWa4veOMtGm6i+zyvo=";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.257.tgz";
+      sha256 = "sha256-4RGIuSphmJRTKeTiZX6/8gb7wBSz5fyVZE92tiMArV0=";
     };
   };
   deploy-rs = {
     pname = "deploy-rs";
-    version = "16901271e5b30b591e56f7a84f25f186fb20f3e1";
+    version = "c7890645c660f3789cc8f616c5db407766f91507";
     src = fetchFromGitHub {
       owner = "serokell";
       repo = "deploy-rs";
-      rev = "16901271e5b30b591e56f7a84f25f186fb20f3e1";
+      rev = "c7890645c660f3789cc8f616c5db407766f91507";
       fetchSubmodules = false;
-      sha256 = "sha256-IxaZkb9rCGEZ+yGndxKXONeIEcKMzoFUsvLTB5G/caw=";
+      sha256 = "sha256-LISF6pdADVdxdBOQU459xkzKIHdeDzLR27b7zLYGxYw=";
     };
-    date = "2026-08-10";
+    date = "2026-09-01";
   };
   netbird = {
     pname = "netbird";
@@ -128,13 +128,13 @@
   };
   vault = {
     pname = "vault";
-    version = "v2.0.4";
+    version = "v2.1.0";
     src = fetchFromGitHub {
       owner = "hashicorp";
       repo = "vault";
-      rev = "v2.0.4";
+      rev = "v2.1.0";
       fetchSubmodules = false;
-      sha256 = "sha256-2x25SH2Maq5opCpRr5LVflmHhxHHWj0T60uGW/reeco=";
+      sha256 = "sha256-ZBvkrMW+aecMOa/xgvLizVbPmHRnryd5k50hW7c3gnU=";
     };
   };
   vector = {

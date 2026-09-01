@@ -29,15 +29,15 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-5eBER9Ov33D3V4+dIiF8UwoO+MWa4veOMtGm6i+zyvo=",
+            "sha256": "sha256-4RGIuSphmJRTKeTiZX6/8gb7wBSz5fyVZE92tiMArV0=",
             "type": "url",
-            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.252.tgz"
+            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.257.tgz"
         },
-        "version": "2.1.252"
+        "version": "2.1.257"
     },
     "deploy-rs": {
         "cargoLock": null,
-        "date": "2026-08-10",
+        "date": "2026-09-01",
         "extract": null,
         "name": "deploy-rs",
         "passthru": null,
@@ -49,12 +49,12 @@
             "name": null,
             "owner": "serokell",
             "repo": "deploy-rs",
-            "rev": "16901271e5b30b591e56f7a84f25f186fb20f3e1",
-            "sha256": "sha256-IxaZkb9rCGEZ+yGndxKXONeIEcKMzoFUsvLTB5G/caw=",
+            "rev": "c7890645c660f3789cc8f616c5db407766f91507",
+            "sha256": "sha256-LISF6pdADVdxdBOQU459xkzKIHdeDzLR27b7zLYGxYw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "16901271e5b30b591e56f7a84f25f186fb20f3e1"
+        "version": "c7890645c660f3789cc8f616c5db407766f91507"
     },
     "netbird": {
         "cargoLock": null,
@@ -235,12 +235,12 @@
             "name": null,
             "owner": "hashicorp",
             "repo": "vault",
-            "rev": "v2.0.4",
-            "sha256": "sha256-2x25SH2Maq5opCpRr5LVflmHhxHHWj0T60uGW/reeco=",
+            "rev": "v2.1.0",
+            "sha256": "sha256-ZBvkrMW+aecMOa/xgvLizVbPmHRnryd5k50hW7c3gnU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2.0.4"
+        "version": "v2.1.0"
     },
     "vector": {
         "cargoLock": null,
