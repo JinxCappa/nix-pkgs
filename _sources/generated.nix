@@ -19,21 +19,21 @@
   };
   claude-code = {
     pname = "claude-code";
-    version = "2.1.258";
+    version = "2.1.259";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.258.tgz";
-      sha256 = "sha256-aVpty/R16iTyDSxNy21UCobejIyZatiMGXLQtx0ZH/w=";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.259.tgz";
+      sha256 = "sha256-T5555MHeIs2252DJl05U/Dr5kqUAUs7HReZDCvggYrw=";
     };
   };
   deploy-rs = {
     pname = "deploy-rs";
-    version = "c03082a563c010c03a5c3d5e1507ccd9dd53d341";
+    version = "a591d4600e8ada8b22489093ebf50337f4d98065";
     src = fetchFromGitHub {
       owner = "serokell";
       repo = "deploy-rs";
-      rev = "c03082a563c010c03a5c3d5e1507ccd9dd53d341";
+      rev = "a591d4600e8ada8b22489093ebf50337f4d98065";
       fetchSubmodules = false;
-      sha256 = "sha256-bd0u33vaHEUE09rt10Qb8p6xXltuee3z+kZBi3z7y9A=";
+      sha256 = "sha256-7sprixDLchHgjQt1yNoc91d0L0lnbd1VUb3OPZpsIJk=";
     };
     date = "2026-09-02";
   };
