@@ -128,11 +128,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-QAkMcz0jwZusgqz1bEtbDQCvR0vTHiVNJpkD6AmxmKU=",
+            "sha256": "sha256-4YmRzC6lNfD4Id1V6ERv9XBpvyvEw6jGrAzatB3XP1c=",
             "type": "url",
             "url": "https://static.remotepc.com/downloads/rpc/310320/remotepc-host.deb"
         },
-        "version": "6.12.2"
+        "version": "6.12.3"
     },
     "remotepc-host-pi64": {
         "cargoLock": null,
