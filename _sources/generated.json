@@ -29,11 +29,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-T5555MHeIs2252DJl05U/Dr5kqUAUs7HReZDCvggYrw=",
+            "sha256": "sha256-tCnLMA+54a3UQDMAGWlftuwJNoTkqDrM1b0j4uqrZ8w=",
             "type": "url",
-            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.259.tgz"
+            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.260.tgz"
         },
-        "version": "2.1.259"
+        "version": "2.1.260"
     },
     "deploy-rs": {
         "cargoLock": null,
@@ -70,12 +70,12 @@
             "name": null,
             "owner": "netbirdio",
             "repo": "netbird",
-            "rev": "v0.77.1",
-            "sha256": "sha256-uGyo2J/3berl6yBCs+Qy0mXKMZNRM8o6gclBeiDxon8=",
+            "rev": "v0.78.0",
+            "sha256": "sha256-WZ6F/BY2zP0fqQzuHjCE0+CrjXPV7yH+wZdPKIlaDVc=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.77.1"
+        "version": "v0.78.0"
     },
     "oh-my-zsh": {
         "cargoLock": null,
