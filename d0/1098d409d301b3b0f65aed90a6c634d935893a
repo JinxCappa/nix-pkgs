@@ -1,0 +1,29 @@
+_sources/generated.json
+  s_949990c8fa14a5::t_1d161feb0486bf 32,34,36,73-74,78
+_sources/generated.nix
+  s_949990c8fa14a5::t_b671fa430598a6 22,24-25,42,46,48
+packages/claude-code/.source-version
+  s_949990c8fa14a5::t_f99da6c2ae5e33 1
+packages/claude-code/default.nix
+  s_949990c8fa14a5::t_695a66c2905672 16
+packages/claude-code/package-lock.json
+  s_949990c8fa14a5::t_92b557c8c599be 8,12-14,24-31,35-37,48-50,61-63,77-79,93-95,109-111,125-127,138-140
+packages/netbird/.source-version
+  s_949990c8fa14a5::t_9f15905918de07 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "d01098d409d301b3b0f65aed90a6c634d935893a",
+  "prompts": {},
+  "sessions": {
+    "s_949990c8fa14a5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a04421-0d63-73c3-91b5-9ca6db260ad8",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
