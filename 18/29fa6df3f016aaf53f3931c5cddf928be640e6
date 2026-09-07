@@ -3,17 +3,20 @@ packages/technitium-dns-server/latest-common-version.sh
 _sources/generated.nix
   s_bef73a89456734::t_9c01717ace749e 115-128
   s_bef73a89456734::t_d5a999501a4645 113-114
+  s_bef73a89456734::t_fb9fc191f56931 113-116,127-128
 packages/technitium-dns-server/nuget-deps-library.json
   s_bef73a89456734::t_4c706143fa1986 1-22
 packages/technitium-dns-server/default.nix
   s_bef73a89456734::t_f2f520a9bb666f 76-79
   s_bef73a89456734::t_4c706143fa1986 1-75
   s_bef73a89456734::t_5ad5db3d287768 80
+  s_bef73a89456734::t_fb9fc191f56931 1,3-5,6,7-9,12,16,20,26,34,38,42,55,71,80
 nvfetcher.toml
   s_bef73a89456734::t_f2f520a9bb666f 40,44
   s_bef73a89456734::t_9c01717ace749e 41-43,45
   s_bef73a89456734::t_14c5ab9cf1607d 39
   s_bef73a89456734::t_abee1bfd7274d8 46
+  s_bef73a89456734::t_fb9fc191f56931 39,46
 packages/technitium-dns-server/nuget-deps-server.json
   s_bef73a89456734::t_4c706143fa1986 1-62
 update.sh
@@ -24,14 +27,18 @@ _sources/generated.json
   s_bef73a89456734::t_4edcf99f0ca961 194
   s_bef73a89456734::t_f7fc092a60379f 198
   s_bef73a89456734::t_ad769f905ab48c 329
+  s_bef73a89456734::t_348e55fdb531ef 194-202,204,221-223,329
 .github/workflows/technitium-dns-server.yaml
   s_bef73a89456734::t_9c01717ace749e 57-59
   s_bef73a89456734::t_7ff6999917ac55 54-56
   s_bef73a89456734::t_e92aecf5db3394 1-53
+  s_bef73a89456734::t_fb9fc191f56931 1-56
 flake.nix
   s_bef73a89456734::t_e139429a8497a3 72
+  s_bef73a89456734::t_fb9fc191f56931 72
 packages/technitium-dns-server/.source-version
   s_bef73a89456734::t_e4d9fbafb15c23 1
+  s_bef73a89456734::t_fb9fc191f56931 1
 ---
 {
   "schema_version": "authorship/3.0.0",
