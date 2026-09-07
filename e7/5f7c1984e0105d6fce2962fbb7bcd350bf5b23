@@ -3,7 +3,7 @@ packages/remotepc-host/default.nix
 ---
 {
   "schema_version": "authorship/3.0.0",
-  "git_ai_version": "1.6.20",
+  "git_ai_version": "1.7.2",
   "base_commit_sha": "e75f7c1984e0105d6fce2962fbb7bcd350bf5b23",
   "prompts": {},
   "sessions": {
