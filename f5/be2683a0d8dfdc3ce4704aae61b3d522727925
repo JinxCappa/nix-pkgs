@@ -1,9 +1,9 @@
-.github/workflows/vector.yaml
-  s_4b2515b2aeddf4::t_02acb8da98d556 37
-flake.nix
-  s_4b2515b2aeddf4::t_425d8df6571d33 11,32
 add-package.sh
   s_4b2515b2aeddf4::t_16662b10568d80 32
+flake.nix
+  s_4b2515b2aeddf4::t_425d8df6571d33 11,32
+.github/workflows/vector.yaml
+  s_4b2515b2aeddf4::t_02acb8da98d556 37
 ---
 {
   "schema_version": "authorship/3.0.0",
