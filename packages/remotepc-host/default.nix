@@ -23,6 +23,7 @@
   libdrm,
   libglvnd,
   libnotify,
+  libpulseaudio,
   libxcrypt-legacy,
   libxscrnsaver,
   libxkbcommon,
@@ -113,6 +114,8 @@ stdenv.mkDerivation (finalAttrs: {
     libdrm
     libglvnd
     libnotify
+    # remotepc-audio links directly against libpulse.so.0.
+    libpulseaudio
     # libcrypt.so.1 for the vendored node-gyp python3 helpers (arm64 deb).
     libxcrypt-legacy
     libxscrnsaver
@@ -151,8 +154,8 @@ stdenv.mkDerivation (finalAttrs: {
 
     ${lib.optionalString (!isAarch64) ''
       # RemotePC's PipeWire configuration does not load these optional generic
-      # modules. Drop them instead of retaining dependencies on EOL OpenSSL 1.1
-      # and PulseAudio solely for unused RAOP and PulseAudio tunnel support.
+      # modules. Drop unused RAOP and PulseAudio tunnel support, avoiding the
+      # RAOP module's dependency on EOL OpenSSL 1.1.
       rm $out/opt/remotepc-host/pipewire-modules/libpipewire-module-raop-sink.so
       rm $out/opt/remotepc-host/pipewire-modules/libpipewire-module-pulse-tunnel.so
     ''}
