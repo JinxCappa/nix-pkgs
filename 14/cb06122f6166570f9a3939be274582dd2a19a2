@@ -1,0 +1,19 @@
+flake.lock
+  s_949990c8fa14a5::t_5b2762031ed394 23-24,27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "14cb06122f6166570f9a3939be274582dd2a19a2",
+  "prompts": {},
+  "sessions": {
+    "s_949990c8fa14a5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a04421-0d63-73c3-91b5-9ca6db260ad8",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
