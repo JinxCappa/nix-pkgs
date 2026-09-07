@@ -1,0 +1,23 @@
+_sources/generated.json
+  s_949990c8fa14a5::t_f951e90235d3fc 73-74,78
+_sources/generated.nix
+  s_949990c8fa14a5::t_42c8392fb84724 42,46,48
+packages/netbird/.source-version
+  s_949990c8fa14a5::t_55451b90e93b54 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "6a404e43bf999c7c9fa76cfc4f057cbfec187c2c",
+  "prompts": {},
+  "sessions": {
+    "s_949990c8fa14a5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a04421-0d63-73c3-91b5-9ca6db260ad8",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
