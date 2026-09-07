@@ -1,0 +1,33 @@
+packages/technitium-dns-server/default.nix
+  s_bef73a89456734::t_a0329073d8a69f 42
+  s_bef73a89456734::t_fb9fc191f56931 1-33,37-41,43-47
+  s_bef73a89456734::t_334b8658802cc1 34-36
+_sources/generated.json
+  s_bef73a89456734::t_348e55fdb531ef 194-208,314
+.github/workflows/technitium-dns-server.yaml
+  s_bef73a89456734::t_fb9fc191f56931 1-57
+nvfetcher.toml
+  s_bef73a89456734::t_fb9fc191f56931 39-42
+flake.nix
+  s_bef73a89456734::t_fb9fc191f56931 72
+_sources/generated.nix
+  s_bef73a89456734::t_fb9fc191f56931 113-120
+packages/technitium-dns-server/.source-version
+  s_bef73a89456734::t_fb9fc191f56931 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "74027f2d6bed54ad9ca3a6aaad77764ddb2839a9",
+  "prompts": {},
+  "sessions": {
+    "s_bef73a89456734": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f91fd-d27f-7441-b49e-10a7f3b4f2ad",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
