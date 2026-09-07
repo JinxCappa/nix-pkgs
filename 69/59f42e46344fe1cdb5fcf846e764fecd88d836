@@ -1,16 +1,32 @@
 _sources/generated.json
   s_949990c8fa14a5::t_fb91625b2ec3d5 82,94-95,99,131
+  s_69e473a8c24aaa::t_1c37d6a3dcdce6 82,94-95,99,131
 _sources/generated.nix
   s_949990c8fa14a5::t_f812f3934cf2ae 53,57,59,61,79
+  s_69e473a8c24aaa::t_d0bf2cbf92a5e5 53,57,59,61,79
 packages/oh-my-zsh/.source-version
   s_949990c8fa14a5::t_d6d76789017a89 1
+  s_69e473a8c24aaa::t_7f1441917854c6 1
 ---
 {
   "schema_version": "authorship/3.0.0",
   "git_ai_version": "1.7.2",
   "base_commit_sha": "6959f42e46344fe1cdb5fcf846e764fecd88d836",
   "prompts": {},
+  "humans": {
+    "h_30afaad5482ce1": {
+      "author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  },
   "sessions": {
+    "s_69e473a8c24aaa": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019fd90f-c7f3-7493-a7ea-afde4937e16a",
+        "model": "unknown"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    },
     "s_949990c8fa14a5": {
       "agent_id": {
         "tool": "codex",
