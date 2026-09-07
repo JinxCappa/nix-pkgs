@@ -1,5 +1,5 @@
 packages/remotepc-host/default.nix
-  s_949990c8fa14a5::t_2a38d932328e8b 26,117-118,157-158
+  s_8313d83eb9afeb::t_36a91aa228a0eb 26,117-118,157-158
 ---
 {
   "schema_version": "authorship/3.0.0",
@@ -7,10 +7,10 @@ packages/remotepc-host/default.nix
   "base_commit_sha": "912238a20bd5249eaac3a0a8ae218cdcc77c548c",
   "prompts": {},
   "sessions": {
-    "s_949990c8fa14a5": {
+    "s_8313d83eb9afeb": {
       "agent_id": {
         "tool": "codex",
-        "id": "01a04421-0d63-73c3-91b5-9ca6db260ad8",
+        "id": "01a0796f-ac51-7440-ab3c-5350968173df",
         "model": "gpt-6-astra"
       },
       "human_author": "JinxCappa <git@jinxcappa.dev>"
