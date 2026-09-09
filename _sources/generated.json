@@ -29,11 +29,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-syWqr3SAZevOEWxQiTEgOEzm7FbBEz9C9FF3+NEDDGY=",
+            "sha256": "sha256-ut34YcRofVdB0UE2FLuaSklHTJt88pysh6TYX726UGo=",
             "type": "url",
-            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.263.tgz"
+            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.266.tgz"
         },
-        "version": "2.1.263"
+        "version": "2.1.266"
     },
     "deploy-rs": {
         "cargoLock": null,
@@ -91,12 +91,12 @@
             "name": null,
             "owner": "ohmyzsh",
             "repo": "ohmyzsh",
-            "rev": "6aa16696d508f368586c5dc215b0f73a41d9ff16",
-            "sha256": "sha256-UqHxfWGRQCPzvBSPeiDTVkWhlmfZB2bA0LU5OPhWooE=",
+            "rev": "bd77419b2ab106006f3982055cb92f029af92e49",
+            "sha256": "sha256-l+EikX+1itf+7cqHHLqgvwOgqDNX89VkFFEIP6Q2qjQ=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "6aa16696d508f368586c5dc215b0f73a41d9ff16"
+        "version": "bd77419b2ab106006f3982055cb92f029af92e49"
     },
     "openbao": {
         "cargoLock": null,
@@ -172,7 +172,7 @@
     },
     "sops-install-secrets": {
         "cargoLock": null,
-        "date": "2026-09-02",
+        "date": "2026-09-09",
         "extract": null,
         "name": "sops-install-secrets",
         "passthru": null,
@@ -184,12 +184,12 @@
             "name": null,
             "owner": "Mic92",
             "repo": "sops-nix",
-            "rev": "fbf759290e0cb0a98dfc813a4eb7d53ad1dacb57",
-            "sha256": "sha256-gkSH8VUtCo6hnysNmb9DbTuDepH2t5pv+QWjP75xKAk=",
+            "rev": "13616fff713a9f94055c66f15687ebdc17a335df",
+            "sha256": "sha256-4GuMPW90JSxXWDPUB9M+1m7fYbe3H0apOd86/zBQ2Kw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "fbf759290e0cb0a98dfc813a4eb7d53ad1dacb57"
+        "version": "13616fff713a9f94055c66f15687ebdc17a335df"
     },
     "technitium-dns-server": {
         "cargoLock": null,
