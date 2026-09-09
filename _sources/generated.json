@@ -91,12 +91,12 @@
             "name": null,
             "owner": "ohmyzsh",
             "repo": "ohmyzsh",
-            "rev": "bd77419b2ab106006f3982055cb92f029af92e49",
-            "sha256": "sha256-l+EikX+1itf+7cqHHLqgvwOgqDNX89VkFFEIP6Q2qjQ=",
+            "rev": "129de5a05f9f234a3202fa5c8a13e15891149adc",
+            "sha256": "sha256-f2kr7s5OnRrbUAfVWaaLjaamWD5z6a3VpgzSs9MTcnY=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "bd77419b2ab106006f3982055cb92f029af92e49"
+        "version": "129de5a05f9f234a3202fa5c8a13e15891149adc"
     },
     "openbao": {
         "cargoLock": null,
