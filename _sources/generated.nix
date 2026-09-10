@@ -50,15 +50,15 @@
   };
   oh-my-zsh = {
     pname = "oh-my-zsh";
-    version = "cd320b5506998f32284d37799592cb2ba43a3188";
+    version = "24d629f7f1eda1eaa4c8918e5c838b330ff96f28";
     src = fetchFromGitHub {
       owner = "ohmyzsh";
       repo = "ohmyzsh";
-      rev = "cd320b5506998f32284d37799592cb2ba43a3188";
+      rev = "24d629f7f1eda1eaa4c8918e5c838b330ff96f28";
       fetchSubmodules = false;
-      sha256 = "sha256-CwUhGo+y6Fky4BGt3Ri5ES24E0ODxnuxqTHzW3JjpIQ=";
+      sha256 = "sha256-SiJ9d9aFtXBRwSb8GvdB0USmid/aJYJfZCMvSzohQUo=";
     };
-    date = "2026-09-09";
+    date = "2026-09-10";
   };
   openbao = {
     pname = "openbao";
