@@ -27,36 +27,36 @@
   };
   deploy-rs = {
     pname = "deploy-rs";
-    version = "414ac5f35d79aabe5a0bf52451d8cf61eadf6c88";
+    version = "e760371d631165e7d8de5b0dcf148e21ec4c16f0";
     src = fetchFromGitHub {
       owner = "serokell";
       repo = "deploy-rs";
-      rev = "414ac5f35d79aabe5a0bf52451d8cf61eadf6c88";
+      rev = "e760371d631165e7d8de5b0dcf148e21ec4c16f0";
       fetchSubmodules = false;
-      sha256 = "sha256-qb9sL86UCUEd3SYAda4ItN1NV0vhMSdbpA64WckvVI0=";
+      sha256 = "sha256-UXFQ7tFiwn8sPz0EV4CBB2PCf/ZiGIHWn/6MXk81Lxs=";
     };
-    date = "2026-09-08";
+    date = "2026-09-14";
   };
   netbird = {
     pname = "netbird";
-    version = "v0.78.1";
+    version = "v0.78.2";
     src = fetchFromGitHub {
       owner = "netbirdio";
       repo = "netbird";
-      rev = "v0.78.1";
+      rev = "v0.78.2";
       fetchSubmodules = true;
-      sha256 = "sha256-YWLorAu71hG5BJLXsZwtQf86o51KCn2/1wI1DRg/aCg=";
+      sha256 = "sha256-VDYwuo7qMq01QrbV422yd/KAZhnqP9ymrqrgJbDqMGg=";
     };
   };
   oh-my-zsh = {
     pname = "oh-my-zsh";
-    version = "ee78d3aeddf11d624d4fb50468cc579fcca4c063";
+    version = "1b72d609b4edf2667c6c684bedc228b0ae19e7ce";
     src = fetchFromGitHub {
       owner = "ohmyzsh";
       repo = "ohmyzsh";
-      rev = "ee78d3aeddf11d624d4fb50468cc579fcca4c063";
+      rev = "1b72d609b4edf2667c6c684bedc228b0ae19e7ce";
       fetchSubmodules = false;
-      sha256 = "sha256-DSeMfKyP4/kPJOOrF2BrPlDe5NgCUi2aJk1qwe45xU0=";
+      sha256 = "sha256-x9fpOVCNLZA8MuEinO5YRs9SY345aLMVjor+FkeIHJk=";
     };
     date = "2026-09-14";
   };
