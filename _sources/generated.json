@@ -29,11 +29,11 @@
     "pinned": false,
     "src": {
       "name": null,
-      "sha256": "sha256-Q21DFd01y7hnJaGd6GkRcKw2EMFC0xjL8cALlSne33s=",
+      "sha256": "sha256-bi//++XC+SMYbBeMTxJZnTFbsInoy9iaJdTk/Yzsj2U=",
       "type": "url",
-      "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.273.tgz"
+      "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.274.tgz"
     },
-    "version": "2.1.273"
+    "version": "2.1.274"
   },
   "deploy-rs": {
     "cargoLock": null,
@@ -235,12 +235,12 @@
       "name": null,
       "owner": "hashicorp",
       "repo": "vault",
-      "rev": "v2.1.0",
-      "sha256": "sha256-ZBvkrMW+aecMOa/xgvLizVbPmHRnryd5k50hW7c3gnU=",
+      "rev": "v2.1.1",
+      "sha256": "sha256-pbPK3pFAlBCoioJNZaCI61GxFZt6SeCmn+8yoVmUJe4=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "v2.1.0"
+    "version": "v2.1.1"
   },
   "vector": {
     "cargoLock": null,
