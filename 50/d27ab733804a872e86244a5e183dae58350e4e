@@ -1,0 +1,21 @@
+flake.nix
+  s_8893b9c92b6488::t_9594497e4e068d 8
+flake.lock
+  s_8893b9c92b6488::t_6bc4e944f578f4 6-7,10,16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "50d27ab733804a872e86244a5e183dae58350e4e",
+  "prompts": {},
+  "sessions": {
+    "s_8893b9c92b6488": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c0b3-b3ed-7df3-a378-565dfeb77452",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
