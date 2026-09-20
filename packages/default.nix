@@ -28,7 +28,8 @@ let
   # merge directly (e.g., openbao -> { openbao, openbao-ui, ... })
   # Otherwise nest under the directory name (e.g., zabbix74 -> { zabbix74.server, ... })
   packages = lib.foldl' (acc: name:
-    if lib.hasPrefix "linux-armbian-" name && prev.stdenv.hostPlatform.system != "aarch64-linux" then
+    if (lib.hasPrefix "linux-armbian-" name && prev.stdenv.hostPlatform.system != "aarch64-linux")
+      || (name == "technitium-dns-server" && !prev.stdenv.hostPlatform.isLinux) then
       acc
     else
       let
