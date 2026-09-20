@@ -1,0 +1,20 @@
+packages/sops-install-secrets/default.nix
+  s_8893b9c92b6488::t_22ce1c4f782308 23,29
+  s_8893b9c92b6488::t_43bb2d3bc0031e 3,9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "6b94dbc8a9525a6f6e4f7e60807ce036aaca2296",
+  "prompts": {},
+  "sessions": {
+    "s_8893b9c92b6488": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c0b3-b3ed-7df3-a378-565dfeb77452",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
