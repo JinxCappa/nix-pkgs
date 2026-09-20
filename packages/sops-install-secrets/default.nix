@@ -1,12 +1,12 @@
 {
   lib,
-  buildGo125Module,
+  buildGo126Module,
   stdenv,
   go,
   sources,
 }:
 
-buildGo125Module {
+buildGo126Module {
   pname = "sops-install-secrets";
   version = "0.0.1";
 
@@ -20,13 +20,13 @@ buildGo125Module {
 
   doCheck = false;
 
-  outputs = [ "out" ] ++ lib.optional stdenv.isLinux "unittest";
+  outputs = [ "out" ] ++ lib.optional stdenv.hostPlatform.isLinux "unittest";
 
   postInstall =
     ''
       go test -c ./pkgs/sops-install-secrets
     ''
-    + lib.optionalString stdenv.isLinux ''
+    + lib.optionalString stdenv.hostPlatform.isLinux ''
       install -D ./sops-install-secrets.test $unittest/bin/sops-install-secrets.test
       if command -v remove-references-to >/dev/null; then
         remove-references-to -t ${go} $unittest/bin/sops-install-secrets.test
