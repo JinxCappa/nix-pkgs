@@ -1,0 +1,19 @@
+packages/default.nix
+  s_8893b9c92b6488::t_43bb2d3bc0031e 31-32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "20ed134e1aafc149be92ce9fc1d720eacf40d4f6",
+  "prompts": {},
+  "sessions": {
+    "s_8893b9c92b6488": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c0b3-b3ed-7df3-a378-565dfeb77452",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
