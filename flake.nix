@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     armbian-build = {
-      url = "github:armbian/build/4451999a153c8cf48ae5ff35541b1d994d5903c2";
+      url = "github:armbian/build/faa8a6664c5181646962f857e30e354b5ac72cfe";
       flake = false;
     };
   };
