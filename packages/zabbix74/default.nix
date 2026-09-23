@@ -26,7 +26,7 @@
   sqlite,
   sources,
   zabbixSource ? sources.zabbix74,
-  agent2VendorHash ? "sha256-59Q6dnpQTYZ7oYPz56ukew8BU7Bo7gfcDvIXD9KvkME=",
+  agent2VendorHash ? "sha256-nw5l5mu/nJD+QsbRtg9SjiZIq86CTAU5F9unrn9hDik=",
   agent2Platforms ? lib.platforms.unix,
   agent2PostPatch ? "",
 }:
