@@ -50,13 +50,13 @@
   };
   oh-my-zsh = {
     pname = "oh-my-zsh";
-    version = "40bddc3c1a100feafccb01403f74c1d4e7380380";
+    version = "74965c96098134b192f00084f966b4b02438a739";
     src = fetchFromGitHub {
       owner = "ohmyzsh";
       repo = "ohmyzsh";
-      rev = "40bddc3c1a100feafccb01403f74c1d4e7380380";
+      rev = "74965c96098134b192f00084f966b4b02438a739";
       fetchSubmodules = false;
-      sha256 = "sha256-vMHjXmMtVmlEU3kEI2YUCT4381ImHdl227ytqbp1Hfk=";
+      sha256 = "sha256-ZC69pI5AV1QZcn1pAvfx4N9UuOjjYzz7wCNnCta6gNY=";
     };
     date = "2026-09-22";
   };
