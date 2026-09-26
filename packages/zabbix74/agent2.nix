@@ -1,5 +1,6 @@
 {
   lib,
+  stdenv,
   buildGoModule,
   autoconf,
   automake,
@@ -47,6 +48,19 @@ buildGoModule {
       --replace '`go env GOARCH`' "$GOARCH" \
       --replace '`date +%H:%M:%S`' "00:00:00" \
       --replace '`date +"%b %_d %Y"`' "Jan 1 1970"
+
+    ${lib.optionalString stdenv.hostPlatform.isDarwin ''
+      # Zabbix 7.4.15 added cancelAccept implementations for Linux and
+      # Windows, but omitted Darwin. UnixListener supports the same deadline
+      # cancellation used by the Linux implementation. Zabbix 8.0 no longer
+      # ships this in-tree plugin, so only apply the compatibility copy when
+      # its source file is present.
+      if [[ -e src/go/plugins/external/connection_linux.go ]]; then
+        cp src/go/plugins/external/connection_linux.go \
+          src/go/plugins/external/connection_darwin.go
+      fi
+    ''}
+
     ${agent2PostPatch}
   '';
 
