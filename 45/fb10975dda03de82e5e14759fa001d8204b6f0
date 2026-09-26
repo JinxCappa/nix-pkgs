@@ -1,0 +1,19 @@
+packages/zabbix74/agent2.nix
+  s_6462780007194d::t_8a61481326589f 3,51-59
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "45fb10975dda03de82e5e14759fa001d8204b6f0",
+  "prompts": {},
+  "sessions": {
+    "s_6462780007194d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0ded0-f68c-7701-b16c-ade83704c3f7",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": null
+    }
+  }
+}
