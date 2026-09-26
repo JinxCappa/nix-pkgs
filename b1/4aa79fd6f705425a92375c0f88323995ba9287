@@ -1,0 +1,37 @@
+packages/zabbix74/default.nix
+  s_6462780007194d::t_1a21ba3930771b 4,9,11-20
+packages/zabbix80pre/default.nix
+  s_6462780007194d::t_52dcea48810cea 1,4,8,10-13,69
+packages/zabbix/common.nix
+  s_6462780007194d::t_7ac4a4510dccdd 1-23
+packages/zabbix/agent2.nix
+  s_6462780007194d::t_98405f4dbbfd04 12-13
+packages/zabbix/proxy-sqlite.nix
+  s_6462780007194d::t_98405f4dbbfd04 27
+packages/zabbix/proxy-pgsql.nix
+  s_6462780007194d::t_98405f4dbbfd04 27
+packages/zabbix/server.nix
+  s_6462780007194d::t_98405f4dbbfd04 31
+packages/zabbix/web.nix
+  s_6462780007194d::t_98405f4dbbfd04 5
+.github/workflows/zabbix74.yml
+  s_6462780007194d::t_98405f4dbbfd04 7,14
+.github/workflows/zabbix80pre.yml
+  s_6462780007194d::t_98405f4dbbfd04 7,14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b14aa79fd6f705425a92375c0f88323995ba9287",
+  "prompts": {},
+  "sessions": {
+    "s_6462780007194d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0ded0-f68c-7701-b16c-ade83704c3f7",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
