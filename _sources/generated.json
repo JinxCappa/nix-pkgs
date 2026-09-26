@@ -200,11 +200,11 @@
     "pinned": false,
     "src": {
       "name": null,
-      "sha256": "sha256-E1dC41l5g00zKam7sKZc0BRcU6XGSsMxpeQ9+XB2aD4=",
+      "sha256": "sha256-z+ZvnKEq8Fg1GgIrMd4ovY4bh28Hl1y7pzAOXwLanBY=",
       "type": "url",
-      "url": "https://github.com/TechnitiumSoftware/DnsServer/archive/refs/tags/v15.5.0.tar.gz"
+      "url": "https://github.com/TechnitiumSoftware/DnsServer/archive/refs/tags/v15.5.1.tar.gz"
     },
-    "version": "15.5.0"
+    "version": "15.5.1"
   },
   "technitium-dns-server-library": {
     "cargoLock": null,
@@ -215,11 +215,11 @@
     "pinned": false,
     "src": {
       "name": null,
-      "sha256": "sha256-yPY1w+Ry2uZ36RBExuQA2LOdZZNl9ACvj1Yw+poJwgw=",
+      "sha256": "sha256-eD3QOqoKBrnWynzOi2TVV9yOrPqFTHYbFfDqUWbscio=",
       "type": "url",
-      "url": "https://github.com/TechnitiumSoftware/TechnitiumLibrary/archive/refs/tags/dns-server-v15.5.0.tar.gz"
+      "url": "https://github.com/TechnitiumSoftware/TechnitiumLibrary/archive/refs/tags/dns-server-v15.5.1.tar.gz"
     },
-    "version": "15.5.0"
+    "version": "15.5.1"
   },
   "vault": {
     "cargoLock": null,
