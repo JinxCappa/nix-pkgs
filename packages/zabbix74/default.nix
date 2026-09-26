@@ -1,76 +1,21 @@
 {
   lib,
   stdenv,
-  buildGoModule,
-  buildPackages,
-  autoconf,
-  automake,
-  perl,
-  pkg-config,
-  writeText,
-  curl,
-  libevent,
-  libiconv,
-  libxml2,
-  openssl,
-  pcre2,
-  zlib,
-  iksemel,
-  openldap,
-  unixODBC,
-  net-snmp,
-  libssh2,
-  libmysqlclient,
-  libpq,
-  openipmi,
-  sqlite,
+  callPackage,
   sources,
-  zabbixSource ? sources.zabbix74,
-  agent2VendorHash ? "sha256-nw5l5mu/nJD+QsbRtg9SjiZIq86CTAU5F9unrn9hDik=",
-  agent2Platforms ? lib.platforms.unix,
-  agent2PostPatch ? "",
 }:
 
 let
-  callPackage = lib.callPackageWith {
-    inherit
-      lib
-      stdenv
-      buildGoModule
-      buildPackages
-      autoconf
-      automake
-      perl
-      pkg-config
-      writeText
-      curl
-      libevent
-      libiconv
-      libxml2
-      openssl
-      pcre2
-      zlib
-      iksemel
-      openldap
-      unixODBC
-      net-snmp
-      libssh2
-      libmysqlclient
-      libpq
-      openipmi
-      sqlite
-      sources
-      zabbixSource
-      agent2VendorHash
-      agent2Platforms
-      agent2PostPatch
-      ;
-  };
+  agent2VendorHash = "sha256-nw5l5mu/nJD+QsbRtg9SjiZIq86CTAU5F9unrn9hDik=";
 in
-{
-  server = callPackage ./server.nix { };
-  proxy-sqlite = callPackage ./proxy-sqlite.nix { };
-  proxy-pgsql = callPackage ./proxy-pgsql.nix { };
-  agent2 = callPackage ./agent2.nix { };
-  web = callPackage ./web.nix { };
+callPackage ../zabbix/common.nix {
+  zabbixSource = sources.zabbix74;
+  inherit agent2VendorHash;
+  agent2PostPatch = lib.optionalString stdenv.hostPlatform.isDarwin ''
+    # Zabbix 7.4.15 added cancelAccept implementations for Linux and
+    # Windows, but omitted Darwin. UnixListener supports the same deadline
+    # cancellation used by the Linux implementation.
+    cp src/go/plugins/external/connection_linux.go \
+      src/go/plugins/external/connection_darwin.go
+  '';
 }

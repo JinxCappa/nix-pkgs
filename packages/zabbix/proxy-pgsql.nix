@@ -18,14 +18,13 @@
   net-snmp,
   sshSupport ? true,
   libssh2,
-  sqliteSupport ? true,
+  sqliteSupport ? false,
   sqlite,
   mysqlSupport ? false,
   libmysqlclient,
-  postgresqlSupport ? false,
+  postgresqlSupport ? true,
   libpq,
-  sources,
-  zabbixSource ? sources.zabbix74,
+  zabbixSource,
 }:
 
 # ensure exactly one database type is selected

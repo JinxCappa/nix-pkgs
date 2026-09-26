@@ -1,35 +1,16 @@
-args@{
+{
   lib,
   stdenv,
-  buildGoModule,
-  buildPackages,
-  autoconf,
-  automake,
-  perl,
-  pkg-config,
-  writeText,
-  curl,
-  libevent,
-  libiconv,
-  libxml2,
-  openssl,
-  pcre2,
-  zlib,
-  iksemel,
-  openldap,
-  unixODBC,
-  net-snmp,
-  libssh2,
-  libmysqlclient,
-  libpq,
-  openipmi,
-  sqlite,
+  callPackage,
   sources,
 }:
 
-import ../zabbix74 (args // {
-  zabbixSource = sources.zabbix80pre;
+let
   agent2VendorHash = "sha256-nyGklNLZVJeIGq4d0iATfP7k+zI56a7GdOmHksemFpA=";
+in
+callPackage ../zabbix/common.nix {
+  zabbixSource = sources.zabbix80pre;
+  inherit agent2VendorHash;
   agent2PostPatch = lib.optionalString stdenv.hostPlatform.isDarwin ''
     # Zabbix 8.0's Darwin CGO flags still reference the Agent 1 variants of
     # libraries that an --enable-agent2-only build does not produce.
@@ -85,4 +66,4 @@ libzbxagent2specsysinfo_a_SOURCES = \
 	uptime.c
 EOF
   '';
-})
+}

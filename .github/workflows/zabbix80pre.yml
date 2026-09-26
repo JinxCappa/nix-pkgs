@@ -4,14 +4,14 @@ on:
     branches:
       - main
     paths:
-      - packages/zabbix74/**
+      - packages/zabbix/**
       - packages/zabbix80pre/**
       - .github/workflows/zabbix80pre.yml
   pull_request:
     branches:
       - main
     paths:
-      - packages/zabbix74/**
+      - packages/zabbix/**
       - packages/zabbix80pre/**
       - .github/workflows/zabbix80pre.yml
   workflow_dispatch:

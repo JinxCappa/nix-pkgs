@@ -2,8 +2,7 @@
   lib,
   stdenv,
   writeText,
-  sources,
-  zabbixSource ? sources.zabbix74,
+  zabbixSource,
 }:
 
 let

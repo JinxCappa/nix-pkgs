@@ -8,44 +8,38 @@
   curl,
   libevent,
   libiconv,
+  libxml2,
   openssl,
   pcre2,
   zlib,
-  buildPackages,
+  jabberSupport ? true,
+  iksemel,
+  ldapSupport ? true,
+  openldap,
   odbcSupport ? true,
   unixODBC,
-  snmpSupport ? stdenv.buildPlatform == stdenv.hostPlatform,
+  snmpSupport ? true,
   net-snmp,
   sshSupport ? true,
   libssh2,
-  sqliteSupport ? false,
-  sqlite,
   mysqlSupport ? false,
   libmysqlclient,
   postgresqlSupport ? true,
   libpq,
-  sources,
-  zabbixSource ? sources.zabbix74,
+  ipmiSupport ? false,
+  openipmi,
+  zabbixSource,
 }:
 
-# ensure exactly one database type is selected
-assert mysqlSupport -> !postgresqlSupport && !sqliteSupport;
-assert postgresqlSupport -> !mysqlSupport && !sqliteSupport;
-assert sqliteSupport -> !mysqlSupport && !postgresqlSupport;
+# ensure exactly one primary database type is selected
+assert mysqlSupport -> !postgresqlSupport;
+assert postgresqlSupport -> !mysqlSupport;
 
 let
   inherit (lib) optional optionalString;
-
-  fake_mysql_config = buildPackages.writeShellScript "mysql_config" ''
-    if [[ "$1" == "--version" ]]; then
-      $PKG_CONFIG mysqlclient --modversion
-    else
-      $PKG_CONFIG mysqlclient $@
-    fi
-  '';
 in
 stdenv.mkDerivation {
-  pname = "zabbix-proxy";
+  pname = "zabbix-server";
   inherit (zabbixSource) version src;
 
   enableParallelBuilding = true;
@@ -64,34 +58,40 @@ stdenv.mkDerivation {
       curl
       libevent
       libiconv
+      libxml2
       openssl
       pcre2
       zlib
     ]
     ++ optional odbcSupport unixODBC
+    ++ optional jabberSupport iksemel
+    ++ optional ldapSupport openldap
     ++ optional snmpSupport net-snmp
-    ++ optional sqliteSupport sqlite
     ++ optional sshSupport libssh2
     ++ optional mysqlSupport libmysqlclient
-    ++ optional postgresqlSupport libpq;
+    ++ optional postgresqlSupport libpq
+    ++ optional ipmiSupport openipmi;
 
   configureFlags =
     [
       "--enable-ipv6"
-      "--enable-proxy"
+      "--enable-server"
       "--with-iconv"
       "--with-libcurl"
       "--with-libevent"
       "--with-libpcre"
+      "--with-libxml2"
       "--with-openssl=${openssl.dev}"
       "--with-zlib=${zlib}"
     ]
     ++ optional odbcSupport "--with-unixodbc"
+    ++ optional jabberSupport "--with-jabber"
+    ++ optional ldapSupport "--with-ldap=${openldap.dev}"
     ++ optional snmpSupport "--with-net-snmp"
-    ++ optional sqliteSupport "--with-sqlite3=${sqlite.dev}"
     ++ optional sshSupport "--with-ssh2=${libssh2.dev}"
-    ++ optional mysqlSupport "--with-mysql=${fake_mysql_config}"
-    ++ optional postgresqlSupport "--with-postgresql";
+    ++ optional mysqlSupport "--with-mysql"
+    ++ optional postgresqlSupport "--with-postgresql"
+    ++ optional ipmiSupport "--with-openipmi=${openipmi.dev}";
 
   prePatch = ''
     find database -name data.sql -exec sed -i 's|/usr/bin/||g' {} +
@@ -99,14 +99,11 @@ stdenv.mkDerivation {
   '';
 
   postBuild =
-    optionalString sqliteSupport ''
-      make -C database/sqlite3 schema.sql
-    ''
-    + optionalString postgresqlSupport ''
-      make -C database/postgresql schema.sql
+    optionalString postgresqlSupport ''
+      make -C database/postgresql schema.sql data.sql
     ''
     + optionalString mysqlSupport ''
-      make -C database/mysql schema.sql
+      make -C database/mysql schema.sql data.sql
     '';
 
   preConfigure = ''
@@ -117,18 +114,10 @@ stdenv.mkDerivation {
     ./bootstrap.sh
   '';
 
-  makeFlags = [
-    "AR:=$(AR)"
-    "RANLIB:=$(RANLIB)"
-  ];
-
   postInstall =
     ''
       mkdir -p $out/share/zabbix/database/
-    ''
-    + optionalString sqliteSupport ''
-      mkdir -p $out/share/zabbix/database/sqlite3
-      cp -prvd database/sqlite3/*.sql $out/share/zabbix/database/sqlite3/
+      cp -r include $out/
     ''
     + optionalString mysqlSupport ''
       mkdir -p $out/share/zabbix/database/mysql
@@ -140,12 +129,13 @@ stdenv.mkDerivation {
     '';
 
   meta = {
-    description = "Enterprise-class open source distributed monitoring solution (client-server proxy)";
+    description = "Enterprise-class open source distributed monitoring solution";
     homepage = "https://www.zabbix.com/";
     license = lib.licenses.agpl3Only;
     maintainers = with lib.maintainers; [
       bstanderline
       mmahut
+      psyanticy
     ];
     platforms = lib.platforms.linux;
   };
