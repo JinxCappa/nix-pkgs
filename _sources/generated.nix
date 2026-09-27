@@ -100,15 +100,15 @@
   };
   sops-install-secrets = {
     pname = "sops-install-secrets";
-    version = "2bd00bd9bb35fe6d114888c8f1c2e946c541dd8f";
+    version = "5efb5a6f4f5ab192817d28557dd4d650fa14d866";
     src = fetchFromGitHub {
       owner = "Mic92";
       repo = "sops-nix";
-      rev = "2bd00bd9bb35fe6d114888c8f1c2e946c541dd8f";
+      rev = "5efb5a6f4f5ab192817d28557dd4d650fa14d866";
       fetchSubmodules = false;
-      sha256 = "sha256-TNfgoHsqsYYvaJImlWctfRkh4PseTagzegU1Dgdbehw=";
+      sha256 = "sha256-rs9meAYxW3zzrh43yaW7htrqCD+X9+pupDPHN86fumI=";
     };
-    date = "2026-09-24";
+    date = "2026-09-27";
   };
   technitium-dns-server = {
     pname = "technitium-dns-server";
