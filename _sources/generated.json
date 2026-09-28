@@ -79,7 +79,7 @@
   },
   "oh-my-zsh": {
     "cargoLock": null,
-    "date": "2026-09-27",
+    "date": "2026-09-28",
     "extract": null,
     "name": "oh-my-zsh",
     "passthru": null,
@@ -91,12 +91,12 @@
       "name": null,
       "owner": "ohmyzsh",
       "repo": "ohmyzsh",
-      "rev": "95ba6ae7649ccd6520cee6279ea1c90aea2b3cdb",
-      "sha256": "sha256-qcKQVRMBDtx9kvCeO7J15ISquWbHvpryjMk5nEtVY3w=",
+      "rev": "83a0ec79ee3b1f64c6ae2e80dcb1fb27a55e5952",
+      "sha256": "sha256-i74sBALpdrBl3pjxH9Kv0CARHfFXqCNEONbf+41h++A=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "95ba6ae7649ccd6520cee6279ea1c90aea2b3cdb"
+    "version": "83a0ec79ee3b1f64c6ae2e80dcb1fb27a55e5952"
   },
   "openbao": {
     "cargoLock": null,
@@ -128,11 +128,11 @@
     "pinned": false,
     "src": {
       "name": null,
-      "sha256": "sha256-4YmRzC6lNfD4Id1V6ERv9XBpvyvEw6jGrAzatB3XP1c=",
+      "sha256": "sha256-XW6DzShN60Bjngv+qzinV8g+JTsQxgGPjkOk6tdYaqU=",
       "type": "url",
       "url": "https://static.remotepc.com/downloads/rpc/310320/remotepc-host.deb"
     },
-    "version": "6.12.3"
+    "version": "6.12.4"
   },
   "remotepc-host-pi64": {
     "cargoLock": null,
