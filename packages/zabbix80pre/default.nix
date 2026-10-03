@@ -12,6 +12,16 @@ callPackage ../zabbix/common.nix {
   zabbixSource = sources.zabbix80pre;
   inherit agent2VendorHash;
   agent2PostPatch = lib.optionalString stdenv.hostPlatform.isDarwin ''
+    # 8.0.0rc1 introduced cancelAccept for Linux and Windows but omitted
+    # Darwin. The Linux implementation uses listener deadlines, which are
+    # also supported by Darwin's UnixListener. Earlier prereleases do not
+    # have this helper yet.
+    if [ -f src/go/plugins/external/connection_linux.go ] &&
+       [ ! -e src/go/plugins/external/connection_darwin.go ]; then
+      cp src/go/plugins/external/connection_linux.go \
+        src/go/plugins/external/connection_darwin.go
+    fi
+
     # Zabbix 8.0's Darwin CGO flags still reference the Agent 1 variants of
     # libraries that an --enable-agent2-only build does not produce.
     substituteInPlace src/go/pkg/zbxlib/globals_darwin.go \
