@@ -172,7 +172,7 @@
   },
   "sops-install-secrets": {
     "cargoLock": null,
-    "date": "2026-09-27",
+    "date": "2026-10-04",
     "extract": null,
     "name": "sops-install-secrets",
     "passthru": null,
@@ -184,12 +184,12 @@
       "name": null,
       "owner": "Mic92",
       "repo": "sops-nix",
-      "rev": "5efb5a6f4f5ab192817d28557dd4d650fa14d866",
-      "sha256": "sha256-rs9meAYxW3zzrh43yaW7htrqCD+X9+pupDPHN86fumI=",
+      "rev": "dcd241ba97088c22569d1573286e1b9daad340c0",
+      "sha256": "sha256-nFxM+pKoZ8LJAEnUXARyCaOAloWgaW9kZQOSjWzKcTE=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "5efb5a6f4f5ab192817d28557dd4d650fa14d866"
+    "version": "dcd241ba97088c22569d1573286e1b9daad340c0"
   },
   "technitium-dns-server": {
     "cargoLock": null,
