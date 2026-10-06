@@ -19,10 +19,10 @@
   };
   claude-code = {
     pname = "claude-code";
-    version = "2.1.289";
+    version = "2.1.290";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.289.tgz";
-      sha256 = "sha256-1ysKlLhOUfvlaGV38yJIion4RMJ1mF6AVOFpUcbdPmQ=";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.290.tgz";
+      sha256 = "sha256-pycBmqqMHCEDKthtyC6myp4MwqtVlCJJ2a1h7IPNrRA=";
     };
   };
   deploy-rs = {
