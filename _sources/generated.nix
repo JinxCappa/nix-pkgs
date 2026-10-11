@@ -50,15 +50,15 @@
   };
   oh-my-zsh = {
     pname = "oh-my-zsh";
-    version = "42a4ccb1b14dbeffe81259105a5243b4f4cb618e";
+    version = "48feb570f7b7d80cc7554629ba428c520ea8a3d5";
     src = fetchFromGitHub {
       owner = "ohmyzsh";
       repo = "ohmyzsh";
-      rev = "42a4ccb1b14dbeffe81259105a5243b4f4cb618e";
+      rev = "48feb570f7b7d80cc7554629ba428c520ea8a3d5";
       fetchSubmodules = false;
-      sha256 = "sha256-uH64MqoZDdxMiwpvp//mTgaLTpr3NntwYk3ERM3IqFg=";
+      sha256 = "sha256-M2WyDsu5//I4sEFFkG3sQhUkQBUsfK8Yb0cGN5h/few=";
     };
-    date = "2026-10-09";
+    date = "2026-10-11";
   };
   openbao = {
     pname = "openbao";
@@ -100,15 +100,15 @@
   };
   sops-install-secrets = {
     pname = "sops-install-secrets";
-    version = "a8be3b14935d3532604c51c8dfe3021c73d1a885";
+    version = "ee48786c6f9160d2c1a084aac841f68195b8420c";
     src = fetchFromGitHub {
       owner = "Mic92";
       repo = "sops-nix";
-      rev = "a8be3b14935d3532604c51c8dfe3021c73d1a885";
+      rev = "ee48786c6f9160d2c1a084aac841f68195b8420c";
       fetchSubmodules = false;
-      sha256 = "sha256-51gxD0eLcJkxH2TYdhE+Qsf04yg3PRV7anCAqOFX70E=";
+      sha256 = "sha256-mVD4XIc5JkqMW2K04IkFUzHgHmyJZlzw5ktfgMDCbKU=";
     };
-    date = "2026-10-10";
+    date = "2026-10-11";
   };
   technitium-dns-server = {
     pname = "technitium-dns-server";
