@@ -1,0 +1,21 @@
+lib.sh
+  s_42e6c16362292d::t_796428daa6fabb 4-15
+update.sh
+  s_42e6c16362292d::t_e9b29529b20c05 123-131,133,298,384,473
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "756a1046a23ec163048ffc3dc9895fc8616d8a17",
+  "prompts": {},
+  "sessions": {
+    "s_42e6c16362292d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a13ad7-9fb2-7a63-bdaf-6bfbe63ac4f0",
+        "model": "unknown"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
