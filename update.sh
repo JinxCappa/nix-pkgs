@@ -93,13 +93,6 @@ restore_cached_package_source() {
   fi
 }
 
-is_toolchain_too_old() {
-  local build_output="$1"
-
-  echo "$build_output" | grep -qiE \
-    'requires go >= [0-9]+\.[0-9]+(\.[0-9]+)? \(running go [0-9]+\.[0-9]+(\.[0-9]+)?; GOTOOLCHAIN=local\)|requires rustc [0-9]+\.[0-9]+(\.[0-9]+)? or newer|rustc [0-9]+\.[0-9]+(\.[0-9]+)? is not supported|EBADENGINE|Unsupported engine|The engine "node" is incompatible|Requires-Python[[:space:]]*[>=<~!]+[[:space:]]*[0-9]+\.[0-9]+|requires Python[[:space:]]*[>=<~!]+[[:space:]]*[0-9]+\.[0-9]+|requires Java[[:space:]]*[0-9]+|invalid source release:[[:space:]]*[0-9]+|Unsupported class file major version'
-}
-
 emit_github_warning() {
   local pkg="$1"
   local message="$2"
@@ -127,12 +120,17 @@ emit_github_warning() {
 }
 
 skip_update_until_toolchain_updates() {
-  local pkg="$1"
-  local message="upstream requires a newer toolchain than nixpkgs currently provides; restored the previous source pin and skipped this update"
+  local pkg="$1" build_output="$2"
+  local old_version="${OLD_VERSIONS[$pkg]:-unknown}" new_version details message
+  new_version=$(jq -r --arg pkg "$pkg" '.[$pkg].version // "unknown"' _sources/generated.json)
+  details=$(toolchain_error_details "$build_output")
+  message="$pkg: skipped update $old_version -> $new_version: the selected build toolchain does not satisfy upstream requirements; restored the previous source pin"
 
-  echo "  $pkg: upstream requires a newer toolchain than nixpkgs currently provides"
+  echo "  $pkg: cannot update $old_version -> $new_version with the selected build toolchain"
+  printf '%s\n' "$details"
+  echo "  $pkg: select a compatible package builder, or update the pinned nixpkgs if needed"
   echo "  $pkg: restoring previous source pin and skipping this update for now"
-  emit_github_warning "$pkg" "$message"
+  emit_github_warning "$pkg" "$message"$'\n'"$details"
   restore_cached_package_source "$pkg"
 }
 
@@ -297,7 +295,7 @@ update_cargo_hash() {
     echo "  $pkg: updating cargoHash to $new_hash"
     sed -i -E "s#cargoHash = (\"sha256-[^\"]*\"|null)#cargoHash = \"$new_hash\"#" "$pkg_file"
   elif is_toolchain_too_old "$build_output"; then
-    skip_update_until_toolchain_updates "$pkg"
+    skip_update_until_toolchain_updates "$pkg" "$build_output"
     return 0
   else
     echo "  $pkg: build failed for unknown reason"
@@ -383,7 +381,7 @@ update_one_vendor_hash() {
       sed -i -E "s#((^|[[:space:]])${var}[[:space:]]*[?=][[:space:]]*)(\"sha256-[^\"]*\"|null)#\\1\"${new_hash}\"#g" "$f"
     done
   elif is_toolchain_too_old "$build_output"; then
-    skip_update_until_toolchain_updates "$pkg"
+    skip_update_until_toolchain_updates "$pkg" "$build_output"
   else
     echo "  $pkg: build failed for unknown reason while checking $var"
     echo "$build_output" | tail -20
@@ -472,7 +470,7 @@ update_npm_hash() {
     else
       rm -f "$pkg_dir/package-lock.json"
     fi
-    skip_update_until_toolchain_updates "$pkg"
+    skip_update_until_toolchain_updates "$pkg" "$npm_output"
   else
     if [ -f "$lock_backup" ]; then
       cp "$lock_backup" "$pkg_dir/package-lock.json"

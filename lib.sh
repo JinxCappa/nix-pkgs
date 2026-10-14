@@ -1,6 +1,18 @@
 #!/usr/bin/env bash
 # Shared functions for nix-pkgs scripts
 
+# Keep the original diagnostic (and nearby version details for npm) so skipped
+# updates explain which toolchain requirement the selected builder cannot meet.
+# Read all input: grep -q can cause a producer to fail with SIGPIPE under pipefail.
+toolchain_error_details() {
+  grep -iE -A3 \
+    'requires go >= [0-9]+\.[0-9]+(\.[0-9]+)?|requires rustc [0-9]+\.[0-9]+(\.[0-9]+)? or newer|rustc [0-9]+\.[0-9]+(\.[0-9]+)? is not supported|EBADENGINE|Unsupported engine|The engine "node" is incompatible|Requires-Python[[:space:]]*[>=<~!]+[[:space:]]*[0-9]+\.[0-9]+|requires Python[[:space:]]*[>=<~!]+[[:space:]]*[0-9]+\.[0-9]+|requires Java[[:space:]]*[0-9]+|invalid source release:[[:space:]]*[0-9]+|Unsupported class file major version' <<< "$1"
+}
+
+is_toolchain_too_old() {
+  toolchain_error_details "$1" >/dev/null
+}
+
 # Find a usable nix-prefetch-git executable path.
 # Supports both classic "nix-prefetch-git" and version-suffixed binaries.
 find_nix_prefetch_git_exe() {
