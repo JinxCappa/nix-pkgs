@@ -1,6 +1,6 @@
 {
   lib,
-  buildGoModule,
+  buildGo127Module,
   installShellFiles,
   callPackage,
   yarn-berry_3,
@@ -14,7 +14,7 @@ let
   version = lib.removePrefix "v" source.version;
 
   mkOpenbao = { withUi ? false, withHsm ? false }:
-    buildGoModule {
+    buildGo127Module {
       pname = "openbao" + lib.optionalString withUi "-ui" + lib.optionalString withHsm "-hsm";
       inherit version;
       inherit (source) src;
