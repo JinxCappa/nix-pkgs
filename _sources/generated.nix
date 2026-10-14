@@ -62,13 +62,13 @@
   };
   openbao = {
     pname = "openbao";
-    version = "v2.6.2";
+    version = "v2.7.1";
     src = fetchFromGitHub {
       owner = "openbao";
       repo = "openbao";
-      rev = "v2.6.2";
+      rev = "v2.7.1";
       fetchSubmodules = false;
-      sha256 = "sha256-iFOah7LkuiL4MGhi6ANpgCYDYQl33gF+F4agdKLEFTk=";
+      sha256 = "sha256-SPmFX4gApN49399Yi8r+1TEJS8i9GD2KGy621axRNPk=";
     };
   };
   remotepc-host = {
@@ -150,13 +150,13 @@
   };
   victoriametrics-cluster = {
     pname = "victoriametrics-cluster";
-    version = "v1.151.0-cluster";
+    version = "v1.154.0-cluster";
     src = fetchFromGitHub {
       owner = "VictoriaMetrics";
       repo = "VictoriaMetrics";
-      rev = "v1.151.0-cluster";
+      rev = "v1.154.0-cluster";
       fetchSubmodules = false;
-      sha256 = "sha256-VK5bzIldzafQKJR2snj0mxk1YZUf0rhavtXWCQRlqH4=";
+      sha256 = "sha256-G19vHqujYDjX8p5PEs43J8ZnqVArqXFY9hcUDCpsnbs=";
     };
   };
   zabbix74 = {
