@@ -18,7 +18,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     inherit (finalAttrs) pname version src sourceRoot;
     pnpm = pnpm_10;
     fetcherVersion = 4;
-    hash = "sha256-9Q5celZSwMgSS8qcj8sDH/JLv48lgDMOylANvXSnhsU=";
+    hash = "sha256-1xGtrzvB1mVh5kKxmANNcj9NJ7mIIEtKyvfunMuiiAM=";
   };
 
   nativeBuildInputs = [
@@ -38,7 +38,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
   postConfigure = ''
     substituteInPlace .ember-cli \
-      --replace-fail "../http/web_ui" "$out"
+      --replace-fail "../internal/http/web_ui" "$out"
   '';
 
   buildPhase = ''

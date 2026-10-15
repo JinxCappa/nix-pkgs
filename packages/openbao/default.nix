@@ -29,13 +29,13 @@ let
 
       ldflags = [
         "-s"
-        "-X github.com/openbao/openbao/version.GitCommit=${source.src.rev}"
-        "-X github.com/openbao/openbao/version.fullVersion=${version}"
-        "-X github.com/openbao/openbao/version.buildDate=1970-01-01T00:00:00Z"
+        "-X github.com/openbao/openbao/v2/internal/version.GitCommit=${source.src.rev}"
+        "-X github.com/openbao/openbao/v2/internal/version.fullVersion=${version}"
+        "-X github.com/openbao/openbao/v2/internal/version.CommitDate=1970-01-01T00:00:00Z"
       ];
 
       postConfigure = lib.optionalString withUi ''
-        cp -r --no-preserve=mode ${callPackage ./ui.nix { inherit version; inherit (source) src; }} http/web_ui
+        cp -r --no-preserve=mode ${callPackage ./ui.nix { inherit version; inherit (source) src; }} internal/http/web_ui
       '';
 
       nativeBuildInputs = [
