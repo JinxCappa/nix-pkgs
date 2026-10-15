@@ -1,0 +1,21 @@
+packages/openbao/default.nix
+  s_42e6c16362292d::t_898e16a5bd9ba2 32-34,38
+packages/openbao/ui.nix
+  s_42e6c16362292d::t_e23085f32c33ba 21,41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f4af073e27e3f9b3f4ead4500d21c51a533c917b",
+  "prompts": {},
+  "sessions": {
+    "s_42e6c16362292d": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a13ad7-9fb2-7a63-bdaf-6bfbe63ac4f0",
+        "model": "unknown"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
