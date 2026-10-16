@@ -28,6 +28,17 @@ let
   kernel = linuxManualConfig {
     inherit (linux_6_18) modDirVersion src version;
 
+    # nixpkgs builds from the retained source tree in the dev output. Keep
+    # those absolute paths out of the uncompressed ARM64 image and its BTF
+    # data; dev propagates out, so an out -> dev reference creates a cycle.
+    extraMakeFlags = let
+      sourcePath = "${builtins.placeholder "dev"}/lib/modules/${linux_6_18.modDirVersion}/source";
+      remap = "-ffile-prefix-map=${sourcePath}=.";
+    in [
+      "KCFLAGS=${remap}"
+      "KAFLAGS=${remap}"
+    ];
+
     configfile = kernelConfig;
     # builtins.toFile returns a store-path string. linuxManualConfig only
     # parses string-valued configs when this is enabled; otherwise it treats
