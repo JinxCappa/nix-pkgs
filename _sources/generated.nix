@@ -19,10 +19,10 @@
   };
   claude-code = {
     pname = "claude-code";
-    version = "2.1.300";
+    version = "2.1.301";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.300.tgz";
-      sha256 = "sha256-IHzSFGCle103ClRSoLkha1sFgycfFI8k9pszUmJK1oA=";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.301.tgz";
+      sha256 = "sha256-psM1h7xcqwYPfrapqh2rEDD5/l3RvXP/36xKbHGYfmc=";
     };
   };
   deploy-rs = {
@@ -39,13 +39,13 @@
   };
   netbird = {
     pname = "netbird";
-    version = "v0.81.0";
+    version = "v0.81.1";
     src = fetchFromGitHub {
       owner = "netbirdio";
       repo = "netbird";
-      rev = "v0.81.0";
+      rev = "v0.81.1";
       fetchSubmodules = true;
-      sha256 = "sha256-YIbnOLsccXJrm1+YTcxaAFtmpP27w8suCWE9nLRYeug=";
+      sha256 = "sha256-zXuOun7cplqMEQNUuX/qv7uUlII+OdOsEVcgjjSMo/M=";
     };
   };
   oh-my-zsh = {
