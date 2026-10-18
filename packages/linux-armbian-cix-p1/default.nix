@@ -3,6 +3,7 @@
   lib,
   linux_6_18,
   linuxManualConfig,
+  removeReferencesTo,
   sources,
 }:
 
@@ -25,7 +26,7 @@ let
     CONFIG_ARCH_MMAP_RND_COMPAT_BITS_MAX=16
   '';
 
-  kernel = linuxManualConfig {
+  kernel = (linuxManualConfig {
     inherit (linux_6_18) modDirVersion src version;
 
     # nixpkgs builds from the retained source tree in the dev output. Keep
@@ -56,7 +57,23 @@ let
       license = lib.licenses.gpl2Only;
       platforms = [ "aarch64-linux" ];
     };
-  };
+  }).overrideAttrs (old: {
+    nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ removeReferencesTo ];
+
+    # Compiler prefix maps do not cover every path embedded by the kernel
+    # build tools. The installed image needs no source tree at runtime, so
+    # remove residual references without changing binary sizes or offsets.
+    # Keep dev (including vmlinux/BTF) and modules untouched for module builds.
+    postFixup = (old.postFixup or "") + ''
+      find "$out" -type f -exec remove-references-to -t "$dev" '{}' +
+    '';
+
+    outputChecks = (old.outputChecks or { }) // {
+      out = (old.outputChecks.out or { }) // {
+        disallowedReferences = (old.outputChecks.out.disallowedReferences or [ ]) ++ [ "dev" ];
+      };
+    };
+  });
 in
 {
   linux-armbian-cix-p1 = kernel;
