@@ -112,18 +112,18 @@
   };
   technitium-dns-server = {
     pname = "technitium-dns-server";
-    version = "15.6.1";
+    version = "15.6.2";
     src = fetchurl {
-      url = "https://github.com/TechnitiumSoftware/DnsServer/archive/refs/tags/v15.6.1.tar.gz";
-      sha256 = "sha256-HiiOtJIgZqb7BKq5KxCB/xu0OENRsFQTqcoDITQjZJE=";
+      url = "https://github.com/TechnitiumSoftware/DnsServer/archive/refs/tags/v15.6.2.tar.gz";
+      sha256 = "sha256-f+Fip8Hbgoyjzg11Tpc5EY5dZm3axSbSMCUJtHw9UTs=";
     };
   };
   technitium-dns-server-library = {
     pname = "technitium-dns-server-library";
-    version = "15.6.1";
+    version = "15.6.2";
     src = fetchurl {
-      url = "https://github.com/TechnitiumSoftware/TechnitiumLibrary/archive/refs/tags/dns-server-v15.6.1.tar.gz";
-      sha256 = "sha256-mBxUpoAH9NfG5K8J+vjrjP5hPdR2CrXa69UEdW+39PE=";
+      url = "https://github.com/TechnitiumSoftware/TechnitiumLibrary/archive/refs/tags/dns-server-v15.6.2.tar.gz";
+      sha256 = "sha256-5/Wt2S2lVfwxIJkfq9gCwGBaucRctLVhN9+waZoAbOw=";
     };
   };
   vault = {
