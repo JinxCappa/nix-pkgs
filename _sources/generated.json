@@ -37,7 +37,7 @@
   },
   "deploy-rs": {
     "cargoLock": null,
-    "date": "2026-10-07",
+    "date": "2026-10-19",
     "extract": null,
     "name": "deploy-rs",
     "passthru": null,
@@ -49,12 +49,12 @@
       "name": null,
       "owner": "serokell",
       "repo": "deploy-rs",
-      "rev": "45ba3f8c5cb28396fff71671806e2550b464ac86",
-      "sha256": "sha256-TQiEqCAQ4bWppfeRGX4O3lwopsgsd2OvcOHTEQRRwEQ=",
+      "rev": "26e0f241b1b7c6b1717fc7babc4852192886bbc0",
+      "sha256": "sha256-i5dTwfPglZYE1zpg2IvBq+n0wDxMdrLwgHuRxZmO6Tw=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "45ba3f8c5cb28396fff71671806e2550b464ac86"
+    "version": "26e0f241b1b7c6b1717fc7babc4852192886bbc0"
   },
   "netbird": {
     "cargoLock": null,
@@ -70,12 +70,12 @@
       "name": null,
       "owner": "netbirdio",
       "repo": "netbird",
-      "rev": "v0.81.2",
-      "sha256": "sha256-khQ3BXvHkPfHfy9+bk/dKFPvUAT3l4pj8SoQIDS+yLA=",
+      "rev": "v0.81.3",
+      "sha256": "sha256-MGlUFuF11CQClB5kmJ4TTLpO3rwuCeNmjgKfOUxVvE8=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "v0.81.2"
+    "version": "v0.81.3"
   },
   "oh-my-zsh": {
     "cargoLock": null,
@@ -256,12 +256,12 @@
       "name": null,
       "owner": "vectordotdev",
       "repo": "vector",
-      "rev": "v0.59.0",
-      "sha256": "sha256-lnNlywrGMWaaLw+03m9qVGZoctcSdyw2zWl+5RaUBGg=",
+      "rev": "v0.60.0",
+      "sha256": "sha256-cV1BXvdMiHvm7igf0qSvECPtPvOzTQNadOGMkpcHYS8=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "v0.59.0"
+    "version": "v0.60.0"
   },
   "victoriametrics-cluster": {
     "cargoLock": null,

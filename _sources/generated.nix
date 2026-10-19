@@ -27,25 +27,25 @@
   };
   deploy-rs = {
     pname = "deploy-rs";
-    version = "45ba3f8c5cb28396fff71671806e2550b464ac86";
+    version = "26e0f241b1b7c6b1717fc7babc4852192886bbc0";
     src = fetchFromGitHub {
       owner = "serokell";
       repo = "deploy-rs";
-      rev = "45ba3f8c5cb28396fff71671806e2550b464ac86";
+      rev = "26e0f241b1b7c6b1717fc7babc4852192886bbc0";
       fetchSubmodules = false;
-      sha256 = "sha256-TQiEqCAQ4bWppfeRGX4O3lwopsgsd2OvcOHTEQRRwEQ=";
+      sha256 = "sha256-i5dTwfPglZYE1zpg2IvBq+n0wDxMdrLwgHuRxZmO6Tw=";
     };
-    date = "2026-10-07";
+    date = "2026-10-19";
   };
   netbird = {
     pname = "netbird";
-    version = "v0.81.2";
+    version = "v0.81.3";
     src = fetchFromGitHub {
       owner = "netbirdio";
       repo = "netbird";
-      rev = "v0.81.2";
+      rev = "v0.81.3";
       fetchSubmodules = true;
-      sha256 = "sha256-khQ3BXvHkPfHfy9+bk/dKFPvUAT3l4pj8SoQIDS+yLA=";
+      sha256 = "sha256-MGlUFuF11CQClB5kmJ4TTLpO3rwuCeNmjgKfOUxVvE8=";
     };
   };
   oh-my-zsh = {
@@ -139,13 +139,13 @@
   };
   vector = {
     pname = "vector";
-    version = "v0.59.0";
+    version = "v0.60.0";
     src = fetchFromGitHub {
       owner = "vectordotdev";
       repo = "vector";
-      rev = "v0.59.0";
+      rev = "v0.60.0";
       fetchSubmodules = false;
-      sha256 = "sha256-lnNlywrGMWaaLw+03m9qVGZoctcSdyw2zWl+5RaUBGg=";
+      sha256 = "sha256-cV1BXvdMiHvm7igf0qSvECPtPvOzTQNadOGMkpcHYS8=";
     };
   };
   victoriametrics-cluster = {

@@ -91,7 +91,7 @@ buildGoModule (finalAttrs: {
 
   # vendorHash needs to be updated when source changes
   # Build will fail with correct hash if outdated
-  vendorHash = "sha256-YI49z1Yiji8I0zzlMIuXHLOGlqak546ONbqN+Ux2f7c=";
+  vendorHash = "sha256-e6gG99OhfYcygQIqKyC9M4TajbH/6+L/IoMa3lzoq5k=";
   # Wails v3's module zip omits Windows-only embedded DLLs. Avoid
   # `go mod vendor`, which resolves those embeds even on non-Windows hosts.
   proxyVendor = true;

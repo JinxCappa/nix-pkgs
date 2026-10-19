@@ -11,7 +11,7 @@ rustPlatform.buildRustPackage {
 
   # cargoHash needs to be updated when source changes
   # Build will fail with correct hash if outdated
-  cargoHash = "sha256-ONGMdmkKGPJ+6KF2hkZQBefkug/C5ZEqPidKR6OkCbU=";
+  cargoHash = "sha256-bgx2aKAYtq/8A2fa8xlhSjh2Jd6Pas5rUF+IiYEoxXQ=";
 
   meta = {
     description = "Multi-profile Nix-flake deploy tool";
