@@ -1,0 +1,19 @@
+packages/vector/default.nix
+  s_366de0235b797e::t_17b1a2e8fb9879 108-118
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8fea261bb6ca3d2566b101acb63a1aafa50b4a41",
+  "prompts": {},
+  "sessions": {
+    "s_366de0235b797e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1572b-7b91-76c2-9ea2-caa8a46c9756",
+        "model": "unknown"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
