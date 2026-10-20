@@ -1,13 +1,22 @@
 {
   armbianBuild,
+  fetchurl,
   lib,
-  linux_6_18,
   linuxManualConfig,
   removeReferencesTo,
   sources,
 }:
 
 let
+  # Keep the source paired with the pinned Armbian patch set. Linux 6.18.57
+  # changes SCMI code that these patches modify, causing patch rejects.
+  # Update this version and the Armbian input together after validating patches.
+  version = "6.18.56";
+  src = fetchurl {
+    url = "mirror://kernel/linux/kernel/v6.x/linux-${version}.tar.xz";
+    hash = "sha256-RjO72iq5Xq8qevQEEjZFHWdZxy5pRiZVMa9LOqzvv4k=";
+  };
+
   patchDirectory = "${armbianBuild}/patch/kernel/archive/cix-6.18";
   armbianConfig = "${armbianBuild}/config/kernel/linux-cix-p1-current.config";
   patchNames = lib.sort builtins.lessThan (
@@ -27,13 +36,14 @@ let
   '';
 
   kernel = (linuxManualConfig {
-    inherit (linux_6_18) modDirVersion src version;
+    inherit src version;
+    modDirVersion = version;
 
     # nixpkgs builds from the retained source tree in the dev output. Keep
     # those absolute paths out of the uncompressed ARM64 image and its BTF
     # data; dev propagates out, so an out -> dev reference creates a cycle.
     extraMakeFlags = let
-      sourcePath = "${builtins.placeholder "dev"}/lib/modules/${linux_6_18.modDirVersion}/source";
+      sourcePath = "${builtins.placeholder "dev"}/lib/modules/${version}/source";
       remap = "-ffile-prefix-map=${sourcePath}=.";
     in [
       "KCFLAGS=${remap}"
@@ -52,7 +62,7 @@ let
 
     extraMeta = {
       branch = "6.18";
-      description = "Linux ${linux_6_18.version} with Armbian CIX P1 ACPI support";
+      description = "Linux ${version} with Armbian CIX P1 ACPI support";
       homepage = "https://github.com/armbian/build";
       license = lib.licenses.gpl2Only;
       platforms = [ "aarch64-linux" ];
