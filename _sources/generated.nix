@@ -19,23 +19,23 @@
   };
   claude-code = {
     pname = "claude-code";
-    version = "2.1.303";
+    version = "2.1.304";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.303.tgz";
-      sha256 = "sha256-UwjyaFfZpHlX3v6uiq+RyIbts+wZU+tTNAQWr9qGRG4=";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.304.tgz";
+      sha256 = "sha256-lNzIQ0G5nQtfdtbGyiT+tBCSUKK9unKPohY663+6AKw=";
     };
   };
   deploy-rs = {
     pname = "deploy-rs";
-    version = "26e0f241b1b7c6b1717fc7babc4852192886bbc0";
+    version = "1cec0527bd09074bbee6d4461900ce5d58267217";
     src = fetchFromGitHub {
       owner = "serokell";
       repo = "deploy-rs";
-      rev = "26e0f241b1b7c6b1717fc7babc4852192886bbc0";
+      rev = "1cec0527bd09074bbee6d4461900ce5d58267217";
       fetchSubmodules = false;
-      sha256 = "sha256-i5dTwfPglZYE1zpg2IvBq+n0wDxMdrLwgHuRxZmO6Tw=";
+      sha256 = "sha256-eINUtQW48bf9G3EYprthHMll8VDKxaXQP52TZFuwMmE=";
     };
-    date = "2026-10-19";
+    date = "2026-10-20";
   };
   netbird = {
     pname = "netbird";
@@ -50,15 +50,15 @@
   };
   oh-my-zsh = {
     pname = "oh-my-zsh";
-    version = "964ddf789b022b6958b27d02d7fa54f552de21e9";
+    version = "0650a250405af1e480b1ecf8c33bc960b9f333f5";
     src = fetchFromGitHub {
       owner = "ohmyzsh";
       repo = "ohmyzsh";
-      rev = "964ddf789b022b6958b27d02d7fa54f552de21e9";
+      rev = "0650a250405af1e480b1ecf8c33bc960b9f333f5";
       fetchSubmodules = false;
-      sha256 = "sha256-RG32nAZOP7nLNSy+OFIB2C15tpx/x9KN9QQVqck57Ow=";
+      sha256 = "sha256-/zoteCFybIyKlybPbhxXMm3TeIWMs0rBTHbIPB0Zlfk=";
     };
-    date = "2026-10-13";
+    date = "2026-10-19";
   };
   openbao = {
     pname = "openbao";
