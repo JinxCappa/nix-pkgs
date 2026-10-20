@@ -1,0 +1,14 @@
+packages/linux-armbian-cix-p1/default.nix
+  h_30afaad5482ce1 3,11-19,39-40,46,65
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "edb553bdb2a035e5aaf5933dccfba14a99b3586d",
+  "prompts": {},
+  "humans": {
+    "h_30afaad5482ce1": {
+      "author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
