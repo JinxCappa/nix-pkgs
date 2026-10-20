@@ -50,15 +50,15 @@
   };
   oh-my-zsh = {
     pname = "oh-my-zsh";
-    version = "0650a250405af1e480b1ecf8c33bc960b9f333f5";
+    version = "0eeaa529bb1442c2934930a5820f596e678458d4";
     src = fetchFromGitHub {
       owner = "ohmyzsh";
       repo = "ohmyzsh";
-      rev = "0650a250405af1e480b1ecf8c33bc960b9f333f5";
+      rev = "0eeaa529bb1442c2934930a5820f596e678458d4";
       fetchSubmodules = false;
-      sha256 = "sha256-/zoteCFybIyKlybPbhxXMm3TeIWMs0rBTHbIPB0Zlfk=";
+      sha256 = "sha256-nA60q85CInZ9Ob4Olz2MkKZQqZb1UNUO6yr6eOCyYwg=";
     };
-    date = "2026-10-19";
+    date = "2026-10-20";
   };
   openbao = {
     pname = "openbao";
@@ -150,13 +150,13 @@
   };
   victoriametrics-cluster = {
     pname = "victoriametrics-cluster";
-    version = "v1.154.0-cluster";
+    version = "v1.154.1-cluster";
     src = fetchFromGitHub {
       owner = "VictoriaMetrics";
       repo = "VictoriaMetrics";
-      rev = "v1.154.0-cluster";
+      rev = "v1.154.1-cluster";
       fetchSubmodules = false;
-      sha256 = "sha256-G19vHqujYDjX8p5PEs43J8ZnqVArqXFY9hcUDCpsnbs=";
+      sha256 = "sha256-II1mWxAMPDvd6Vew+o8sfIT0SALpbUIArEisVGNyxf0=";
     };
   };
   zabbix74 = {

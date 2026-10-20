@@ -79,7 +79,7 @@
   },
   "oh-my-zsh": {
     "cargoLock": null,
-    "date": "2026-10-19",
+    "date": "2026-10-20",
     "extract": null,
     "name": "oh-my-zsh",
     "passthru": null,
@@ -91,12 +91,12 @@
       "name": null,
       "owner": "ohmyzsh",
       "repo": "ohmyzsh",
-      "rev": "0650a250405af1e480b1ecf8c33bc960b9f333f5",
-      "sha256": "sha256-/zoteCFybIyKlybPbhxXMm3TeIWMs0rBTHbIPB0Zlfk=",
+      "rev": "0eeaa529bb1442c2934930a5820f596e678458d4",
+      "sha256": "sha256-nA60q85CInZ9Ob4Olz2MkKZQqZb1UNUO6yr6eOCyYwg=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "0650a250405af1e480b1ecf8c33bc960b9f333f5"
+    "version": "0eeaa529bb1442c2934930a5820f596e678458d4"
   },
   "openbao": {
     "cargoLock": null,
@@ -277,12 +277,12 @@
       "name": null,
       "owner": "VictoriaMetrics",
       "repo": "VictoriaMetrics",
-      "rev": "v1.154.0-cluster",
-      "sha256": "sha256-G19vHqujYDjX8p5PEs43J8ZnqVArqXFY9hcUDCpsnbs=",
+      "rev": "v1.154.1-cluster",
+      "sha256": "sha256-II1mWxAMPDvd6Vew+o8sfIT0SALpbUIArEisVGNyxf0=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "v1.154.0-cluster"
+    "version": "v1.154.1-cluster"
   },
   "zabbix74": {
     "cargoLock": null,
