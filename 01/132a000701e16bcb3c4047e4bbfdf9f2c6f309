@@ -1,0 +1,16 @@
+modules/nixos/remotepc-host/default.nix
+  h_30afaad5482ce1 76-79
+packages/remotepc-host/default.nix
+  h_30afaad5482ce1 86-90,178,206-213,217-218,220-236
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "01132a000701e16bcb3c4047e4bbfdf9f2c6f309",
+  "prompts": {},
+  "humans": {
+    "h_30afaad5482ce1": {
+      "author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
