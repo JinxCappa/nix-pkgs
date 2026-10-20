@@ -105,6 +105,17 @@ rustPlatform.buildRustPackage {
   ];
 
   postPatch = ''
+    # Rust 1.99 deprecates atomic fetch_update. Keep the two affected methods
+    # compatible with older toolchains despite these crates' deny(warnings),
+    # without suppressing deprecations elsewhere.
+    substituteInPlace ./lib/vector-common/src/atomic.rs \
+      --replace-fail '    pub fn fetch_update(' \
+      $'    #[allow(deprecated)]\n    pub fn fetch_update('
+
+    substituteInPlace ./lib/vector-buffers/src/variants/disk_v2/ledger.rs \
+      --replace-fail '    pub fn increment_acked_reader_file_id(' \
+      $'    #[allow(deprecated)]\n    pub fn increment_acked_reader_file_id('
+
     substituteInPlace ./src/dns.rs \
       --replace-fail "#[tokio::test]" ""
 
