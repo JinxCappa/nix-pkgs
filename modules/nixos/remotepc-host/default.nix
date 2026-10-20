@@ -73,6 +73,16 @@ let
   commonEnvironment = {
     NODE_NO_WARNINGS = "1";
     LD_LIBRARY_PATH = lib.makeLibraryPath [
+      # These services invoke Electron directly, bypassing package wrappers.
+      pkgs.linux-pam
+      pkgs.stdenv.cc.cc.lib
+      pkgs.systemd
+      pkgs.udev
+      pkgs.dbus
+      pkgs.libx11
+      pkgs.libxrandr
+      pkgs.libxtst
+      pkgs.libxfixes
       pkgs.libglvnd
       pkgs.mesa
     ];

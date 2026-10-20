@@ -3,6 +3,7 @@
   stdenv,
   dpkg,
   autoPatchelfHook,
+  asar,
   makeWrapper,
   bash,
   alsa-lib,
@@ -35,6 +36,7 @@
   procps,
   sudo,
   systemd,
+  udev,
   util-linux,
   libx11,
   libxcomposite,
@@ -76,6 +78,7 @@ let
     procps
     sudo
     systemd
+    udev
     util-linux
     xdotool
     xinput
@@ -83,6 +86,15 @@ let
     xsel
   ];
   runtimeLibraryPath = lib.makeLibraryPath [
+    # Also expose libraries to vendor helpers that load them dynamically.
+    linux-pam
+    stdenv.cc.cc.lib
+    systemd
+    dbus
+    libx11
+    libxrandr
+    libxtst
+    libxfixes
     libglvnd
     mesa
   ];
@@ -97,6 +109,7 @@ stdenv.mkDerivation (finalAttrs: {
   nativeBuildInputs = [
     dpkg
     autoPatchelfHook
+    asar
     makeWrapper
   ];
 
@@ -126,6 +139,7 @@ stdenv.mkDerivation (finalAttrs: {
     nss
     pango
     systemd
+    udev
     libx11
     libxcomposite
     libxdamage
@@ -152,6 +166,14 @@ stdenv.mkDerivation (finalAttrs: {
 
     cp -r opt/remotepc-host $out/opt/remotepc-host
 
+    # Session children do not reliably preserve LD_LIBRARY_PATH. Unpack native
+    # modules so autoPatchelfHook can give each one its own library search path
+    # and fail the build if a dependency is missing.
+    asar extract "$out/opt/remotepc-host/resources/app.asar" remotepc-app
+    asar pack remotepc-app "$out/opt/remotepc-host/resources/app.asar" \
+      --unpack '*.node'
+    rm -rf remotepc-app
+
     ${lib.optionalString (!isAarch64) ''
       # RemotePC's PipeWire configuration does not load these optional generic
       # modules. Drop unused RAOP and PulseAudio tunnel support, avoiding the
@@ -170,6 +192,7 @@ stdenv.mkDerivation (finalAttrs: {
     done
 
     makeWrapper $out/opt/remotepc-host/remotepc-host $out/bin/.remotepc-host-wrapped \
+      --unset ELECTRON_RUN_AS_NODE \
       --prefix PATH : ${runtimePath} \
       --prefix LD_LIBRARY_PATH : ${runtimeLibraryPath} \
       --set-default APP remotepc-host \
@@ -197,22 +220,37 @@ stdenv.mkDerivation (finalAttrs: {
       --set-default NODE_NO_WARNINGS 1 \
       --add-flags "$out/opt/remotepc-host/resources/app.asar"
 
-    # Keep the vendor dispatcher: it detects graphical sessions and sends
-    # commands such as `login` through the Electron UI, while reserving the
-    # ELECTRON_RUN_AS_NODE path for hosts that were explicitly set up for CLI
-    # access. Routing every word command directly to Node mode breaks modules
-    # that import Electron's built-in `electron` module.
+    # The headless fallback must use the CLI wrapper rather than passing GUI
+    # flags to Electron in Node mode. Patch it before rewriting GUI launches.
+    substituteInPlace $out/opt/remotepc-host/bin/remotepc-host-setup \
+      --replace-fail \
+        'APP=remotepc-cli ELECTRON_RUN_AS_NODE=1 NODE_NO_WARNINGS=1 /opt/remotepc-host/remotepc-host /opt/remotepc-host/resources/app.asar $@' \
+        '"@cli@" "$@"' \
+      --replace-fail '@cli@' "$out/bin/.remotepc-host-cli"
+
     substituteInPlace $out/opt/remotepc-host/bin/remotepc-host-setup \
       --replace-fail "/opt/remotepc-host/remotepc-host" "$out/bin/.remotepc-host-wrapped"
 
-    # The vendor GUI currently crashes before displaying its login window.
-    # Its CLI implementation is fully functional, but must run with APP set to
-    # remotepc-cli (using remotepc-host makes its bytecode import Electron from
-    # Node mode). Keep the GUI dispatcher for desktop launches and route only
-    # the interactive login command through the supported CLI application.
+    # Use APP=remotepc-cli for supported commands even on graphical hosts.
+    # Keep the vendor session detection for desktop launches and setup.
     substituteInPlace $out/opt/remotepc-host/bin/remotepc-host-setup \
-      --replace-fail 'launchApp $@' \
-        "if [ \"\$1\" = login ]; then exec \"$out/bin/.remotepc-host-cli\" \"\$@\"; else launchApp \"\$@\"; fi"
+      --replace-fail 'launchApp $@' '
+        case "$1" in
+          --help|-h) shift; exec "@cli@" help "$@" ;;
+          --version|-v) shift; exec "@cli@" version "$@" ;;
+          login)
+            if ! systemctl is-active --quiet remotepc-host.service; then
+              echo "RemotePC service is not running. Check: journalctl -u remotepc-host -b" >&2
+              exit 1
+            fi
+            exec "@cli@" "$@"
+            ;;
+          help|status|version|deploy|logout|enable|disable|rename|set-personal-key|remove-personal-key|change-personal-key|send-error-report|exit)
+            exec "@cli@" "$@"
+            ;;
+          *) launchApp "$@" ;;
+        esac' \
+      --replace-fail '@cli@' "$out/bin/.remotepc-host-cli"
 
     makeWrapper $out/opt/remotepc-host/bin/remotepc-host-setup $out/bin/remotepc-host \
       --prefix PATH : ${runtimePath} \
