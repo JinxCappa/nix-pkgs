@@ -50,15 +50,15 @@
   };
   oh-my-zsh = {
     pname = "oh-my-zsh";
-    version = "0eeaa529bb1442c2934930a5820f596e678458d4";
+    version = "2100c630ba4bd67bb48802c3e7da893a4fdaa1a0";
     src = fetchFromGitHub {
       owner = "ohmyzsh";
       repo = "ohmyzsh";
-      rev = "0eeaa529bb1442c2934930a5820f596e678458d4";
+      rev = "2100c630ba4bd67bb48802c3e7da893a4fdaa1a0";
       fetchSubmodules = false;
-      sha256 = "sha256-nA60q85CInZ9Ob4Olz2MkKZQqZb1UNUO6yr6eOCyYwg=";
+      sha256 = "sha256-Y6S7urrtsdUN7A7lgWF2FkIWZpA1HNkjf1eWwfkjzUQ=";
     };
-    date = "2026-10-20";
+    date = "2026-10-21";
   };
   openbao = {
     pname = "openbao";
@@ -172,13 +172,13 @@
   };
   zabbix80pre = {
     pname = "zabbix80pre";
-    version = "8.0.0rc1";
+    version = "8.0.0rc2";
     src = fetchFromGitHub {
       owner = "zabbix";
       repo = "zabbix";
-      rev = "8.0.0rc1";
+      rev = "8.0.0rc2";
       fetchSubmodules = false;
-      sha256 = "sha256-SSlyP/kfkfj07y5JZH2ry/b43FVZG6QEqzJ1jzSFH2A=";
+      sha256 = "sha256-EO/hfEOxQ8lsQrWg1XgP9s0KUzRimi3FM6jx+sMaS3k=";
     };
   };
 }

@@ -6,7 +6,7 @@
 }:
 
 let
-  agent2VendorHash = "sha256-82jEV6IVRsI1163PaAoVJAN+f+yP+T1nwCEqbH7CbEU=";
+  agent2VendorHash = "sha256-aCX7XV0ip11ZRNnL/mVPigzOVsj2Iynyxs8exaZ/6VE=";
 in
 callPackage ../zabbix/common.nix {
   zabbixSource = sources.zabbix80pre;
