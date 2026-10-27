@@ -19,10 +19,10 @@
   };
   claude-code = {
     pname = "claude-code";
-    version = "2.1.310";
+    version = "2.1.311";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.310.tgz";
-      sha256 = "sha256-1pYxQHYRTfSZuojhFwAKJKnXq09QLcrvulLIP9Iqz70=";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.311.tgz";
+      sha256 = "sha256-2X/qCGlfMrE7PewHJofyrMVQSEyuyvUAXU662Gxb8Zk=";
     };
   };
   deploy-rs = {
@@ -39,13 +39,13 @@
   };
   netbird = {
     pname = "netbird";
-    version = "v0.81.4";
+    version = "v0.81.5";
     src = fetchFromGitHub {
       owner = "netbirdio";
       repo = "netbird";
-      rev = "v0.81.4";
+      rev = "v0.81.5";
       fetchSubmodules = true;
-      sha256 = "sha256-TeogciNE+STwCaE99smcWXrgKwAkkg79LcrkSDWLpWA=";
+      sha256 = "sha256-Ma5ngsTqcblG6uLCn7IcSvI9vUhbIs4gr2nD4ZBdTAo=";
     };
   };
   oh-my-zsh = {
@@ -62,13 +62,13 @@
   };
   openbao = {
     pname = "openbao";
-    version = "v2.7.1";
+    version = "v2.7.2";
     src = fetchFromGitHub {
       owner = "openbao";
       repo = "openbao";
-      rev = "v2.7.1";
+      rev = "v2.7.2";
       fetchSubmodules = false;
-      sha256 = "sha256-SPmFX4gApN49399Yi8r+1TEJS8i9GD2KGy621axRNPk=";
+      sha256 = "sha256-Z9CwB85fRuAFqAKFcyyEm3qapmsB2qayjorqtu7IrI4=";
     };
   };
   remotepc-host = {
@@ -100,15 +100,15 @@
   };
   sops-install-secrets = {
     pname = "sops-install-secrets";
-    version = "442449fa7b1fe6c692d0103ac9fc8f9e82931cf3";
+    version = "60182817ee048ac94b4c68ea76d5ef2e8aac730d";
     src = fetchFromGitHub {
       owner = "Mic92";
       repo = "sops-nix";
-      rev = "442449fa7b1fe6c692d0103ac9fc8f9e82931cf3";
+      rev = "60182817ee048ac94b4c68ea76d5ef2e8aac730d";
       fetchSubmodules = false;
-      sha256 = "sha256-KV+CaZX7QS0hcdKxwGKehDb1jmUgx6lbkTPpaoIW5Nw=";
+      sha256 = "sha256-Y/JIHTnMlOabDfyaSBubWGLDIVGihLEUuoMhFvQKaDo=";
     };
-    date = "2026-10-24";
+    date = "2026-10-26";
   };
   technitium-dns-server = {
     pname = "technitium-dns-server";

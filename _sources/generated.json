@@ -29,11 +29,11 @@
     "pinned": false,
     "src": {
       "name": null,
-      "sha256": "sha256-1pYxQHYRTfSZuojhFwAKJKnXq09QLcrvulLIP9Iqz70=",
+      "sha256": "sha256-2X/qCGlfMrE7PewHJofyrMVQSEyuyvUAXU662Gxb8Zk=",
       "type": "url",
-      "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.310.tgz"
+      "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.311.tgz"
     },
-    "version": "2.1.310"
+    "version": "2.1.311"
   },
   "deploy-rs": {
     "cargoLock": null,
@@ -70,12 +70,12 @@
       "name": null,
       "owner": "netbirdio",
       "repo": "netbird",
-      "rev": "v0.81.4",
-      "sha256": "sha256-TeogciNE+STwCaE99smcWXrgKwAkkg79LcrkSDWLpWA=",
+      "rev": "v0.81.5",
+      "sha256": "sha256-Ma5ngsTqcblG6uLCn7IcSvI9vUhbIs4gr2nD4ZBdTAo=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "v0.81.4"
+    "version": "v0.81.5"
   },
   "oh-my-zsh": {
     "cargoLock": null,
@@ -112,12 +112,12 @@
       "name": null,
       "owner": "openbao",
       "repo": "openbao",
-      "rev": "v2.7.1",
-      "sha256": "sha256-SPmFX4gApN49399Yi8r+1TEJS8i9GD2KGy621axRNPk=",
+      "rev": "v2.7.2",
+      "sha256": "sha256-Z9CwB85fRuAFqAKFcyyEm3qapmsB2qayjorqtu7IrI4=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "v2.7.1"
+    "version": "v2.7.2"
   },
   "remotepc-host": {
     "cargoLock": null,
@@ -172,7 +172,7 @@
   },
   "sops-install-secrets": {
     "cargoLock": null,
-    "date": "2026-10-24",
+    "date": "2026-10-26",
     "extract": null,
     "name": "sops-install-secrets",
     "passthru": null,
@@ -184,12 +184,12 @@
       "name": null,
       "owner": "Mic92",
       "repo": "sops-nix",
-      "rev": "442449fa7b1fe6c692d0103ac9fc8f9e82931cf3",
-      "sha256": "sha256-KV+CaZX7QS0hcdKxwGKehDb1jmUgx6lbkTPpaoIW5Nw=",
+      "rev": "60182817ee048ac94b4c68ea76d5ef2e8aac730d",
+      "sha256": "sha256-Y/JIHTnMlOabDfyaSBubWGLDIVGihLEUuoMhFvQKaDo=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "442449fa7b1fe6c692d0103ac9fc8f9e82931cf3"
+    "version": "60182817ee048ac94b4c68ea76d5ef2e8aac730d"
   },
   "technitium-dns-server": {
     "cargoLock": null,
