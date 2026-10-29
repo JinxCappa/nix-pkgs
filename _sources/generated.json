@@ -70,12 +70,12 @@
       "name": null,
       "owner": "netbirdio",
       "repo": "netbird",
-      "rev": "v0.81.5",
-      "sha256": "sha256-Ma5ngsTqcblG6uLCn7IcSvI9vUhbIs4gr2nD4ZBdTAo=",
+      "rev": "v0.82.0",
+      "sha256": "sha256-NIYOIc0Q7FLLKZCKVhCfGSojbS3Rux8dxPg6Mq0A/cs=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "v0.81.5"
+    "version": "v0.82.0"
   },
   "oh-my-zsh": {
     "cargoLock": null,
@@ -256,12 +256,12 @@
       "name": null,
       "owner": "vectordotdev",
       "repo": "vector",
-      "rev": "v0.60.0",
-      "sha256": "sha256-cV1BXvdMiHvm7igf0qSvECPtPvOzTQNadOGMkpcHYS8=",
+      "rev": "v0.61.0",
+      "sha256": "sha256-mbfD8mcn3O+dewq7VG9l3es6za0C47pk1xxBRDm2ybs=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "v0.60.0"
+    "version": "v0.61.0"
   },
   "victoriametrics-cluster": {
     "cargoLock": null,

@@ -39,13 +39,13 @@
   };
   netbird = {
     pname = "netbird";
-    version = "v0.81.5";
+    version = "v0.82.0";
     src = fetchFromGitHub {
       owner = "netbirdio";
       repo = "netbird";
-      rev = "v0.81.5";
+      rev = "v0.82.0";
       fetchSubmodules = true;
-      sha256 = "sha256-Ma5ngsTqcblG6uLCn7IcSvI9vUhbIs4gr2nD4ZBdTAo=";
+      sha256 = "sha256-NIYOIc0Q7FLLKZCKVhCfGSojbS3Rux8dxPg6Mq0A/cs=";
     };
   };
   oh-my-zsh = {
@@ -139,13 +139,13 @@
   };
   vector = {
     pname = "vector";
-    version = "v0.60.0";
+    version = "v0.61.0";
     src = fetchFromGitHub {
       owner = "vectordotdev";
       repo = "vector";
-      rev = "v0.60.0";
+      rev = "v0.61.0";
       fetchSubmodules = false;
-      sha256 = "sha256-cV1BXvdMiHvm7igf0qSvECPtPvOzTQNadOGMkpcHYS8=";
+      sha256 = "sha256-mbfD8mcn3O+dewq7VG9l3es6za0C47pk1xxBRDm2ybs=";
     };
   };
   victoriametrics-cluster = {
