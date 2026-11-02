@@ -89,13 +89,13 @@
   };
   rustdesk = {
     pname = "rustdesk";
-    version = "1.5.0";
+    version = "1.5.1";
     src = fetchFromGitHub {
       owner = "rustdesk";
       repo = "rustdesk";
-      rev = "1.5.0";
+      rev = "1.5.1";
       fetchSubmodules = true;
-      sha256 = "sha256-1xa7X+swBIb8Lz3c6m8SeNZAiJWNCUpw+UbdSsMkeSk=";
+      sha256 = "sha256-AFX6p0L2BWNLlLC+H/dmo5jduLLs7htUnwOAdNg9WHE=";
     };
   };
   sops-install-secrets = {
