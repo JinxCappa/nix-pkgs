@@ -1,8 +1,7 @@
 {
   stdenv,
   lib,
-  buildGoModule,
-  go_1_26,
+  buildGo127Module,
   installShellFiles,
   nixosTests,
   makeWrapper,
@@ -11,13 +10,13 @@
   sources,
 }:
 
-(buildGoModule.override { go = go_1_26; }) rec {
+buildGo127Module rec {
   pname = "vault";
   version = lib.removePrefix "v" sources.vault.version;
 
   src = sources.vault.src;
 
-  vendorHash = "sha256-v1YyQqPmFqFLk7e+CmOT6belqzP4p+crmSbgJ7SLVOI=";
+  vendorHash = "sha256-u5YW+2PwUWML4l48Z4QJWe6jlTexSzZmPUUBhwYuf6I=";
 
   proxyVendor = true;
 
@@ -25,10 +24,6 @@
     # Remove defunct github.com/hashicorp/go-cmp dependency
     sed -i '/github\.com\/hashicorp\/go-cmp/d' go.mod
     sed -i '/github\.com\/hashicorp\/go-cmp/d' go.sum
-
-    # Keep Vault buildable when upstream bumps the patch-level Go requirement
-    # before nixpkgs' go_1_26 has caught up.
-    sed -i -E 's/^(go[[:space:]]+)[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+$/\1${go_1_26.version}/' go.mod
   '';
 
   subPackages = [ "." ];
