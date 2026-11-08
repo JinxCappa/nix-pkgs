@@ -1,0 +1,19 @@
+packages/vault/default.nix
+  s_3be03f49475b2b::t_1a4e7b7a26042f 4,13,19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "dcdcfe2bcab183fb3e1e9248d656b3e74e451b7d",
+  "prompts": {},
+  "sessions": {
+    "s_3be03f49475b2b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1bce4-a3eb-73d3-8ba4-a58cfc13aeed",
+        "model": "unknown"
+      },
+      "human_author": "JinxCappa <git@jinxcappa.dev>"
+    }
+  }
+}
