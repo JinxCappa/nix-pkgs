@@ -1,5 +1,6 @@
 {
   armbianBuild,
+  fetchpatch,
   fetchurl,
   lib,
   linuxManualConfig,
@@ -58,7 +59,17 @@ let
     kernelPatches = map (name: {
       inherit name;
       patch = "${patchDirectory}/${name}";
-    }) patchNames;
+    }) patchNames ++ [
+      {
+        # Linux 7.3's arm64 system headers use __u128 in signal structures.
+        # Older kernel tools must define it too when building resolve_btfids.
+        name = "tools-add-128-bit-integer-types-for-aarch64";
+        patch = fetchpatch {
+          url = "https://github.com/torvalds/linux/commit/10a47fb67340bca274276faf855d7d460afd9a7a.patch";
+          hash = "sha256-w6ZnvodW2kS3bqtZVvVN5qDt1Zc7fJvnywki3MBsER0=";
+        };
+      }
+    ];
 
     extraMeta = {
       branch = "6.18";
