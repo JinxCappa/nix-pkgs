@@ -5,6 +5,8 @@
   buildGoModule,
   fetchFromGitHub,
   fetchPnpmDeps,
+  cacert,
+  gitMinimal,
   go,
   installShellFiles,
   makeWrapper,
@@ -108,7 +110,7 @@ buildGoModule (finalAttrs: {
         sourceRoot = "${finalAttrs.src.name}/client/ui/frontend";
         pnpm = pnpm_10;
         fetcherVersion = 3;
-        hash = "sha256-014ngMpfGEchr+XWOp+pRpPkKzHxCcANfjlQpGW6fLQ=";
+        hash = "sha256-AIdIwl7rO6pMGP9ornl1Ndc9l5eh2aRa16jJZXf2C0Q=";
       }
     else
       null;
@@ -145,8 +147,12 @@ buildGoModule (finalAttrs: {
   tags = lib.optional (componentName == "ui") "production";
 
   overrideModAttrs = lib.optionalAttrs (componentName == "ui") {
+    # Skip frontend build tools during module fetching, but retain the Git
+    # and CA inputs supplied by buildGoModule for authenticated downloads.
     nativeBuildInputs = [
       go
+      gitMinimal
+      cacert
       pkg-config
     ];
     preBuild = "";
