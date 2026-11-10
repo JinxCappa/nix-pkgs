@@ -29,11 +29,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-czqSbBnfHITzWo5ChaY37c578t4TZyz+E6E5fv0L+CM=",
+            "sha256": "sha256-AK43uOFlviX/xAaLppgxewf6LTv1YUayH7gqyVDb8WE=",
             "type": "url",
-            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.319.tgz"
+            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.321.tgz"
         },
-        "version": "2.1.319"
+        "version": "2.1.321"
     },
     "deploy-rs": {
         "cargoLock": null,
@@ -79,7 +79,7 @@
     },
     "oh-my-zsh": {
         "cargoLock": null,
-        "date": "2026-11-06",
+        "date": "2026-11-09",
         "extract": null,
         "name": "oh-my-zsh",
         "passthru": null,
@@ -91,12 +91,12 @@
             "name": null,
             "owner": "ohmyzsh",
             "repo": "ohmyzsh",
-            "rev": "cca3bdfbef8c52ef8939ce7911ff68852b949daa",
-            "sha256": "sha256-RwuU3bRMxRtdH+TbETZRIHcQYyXaItR4H7ufWL3U4wY=",
+            "rev": "6010fb6260f359e71d99ba25f05f9215809b3ed2",
+            "sha256": "sha256-c9JLbCQ6uzew9itwyXTNW4lAP96hBe45AIdtJ6BjppY=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "cca3bdfbef8c52ef8939ce7911ff68852b949daa"
+        "version": "6010fb6260f359e71d99ba25f05f9215809b3ed2"
     },
     "openbao": {
         "cargoLock": null,
@@ -172,7 +172,7 @@
     },
     "sops-install-secrets": {
         "cargoLock": null,
-        "date": "2026-11-06",
+        "date": "2026-11-09",
         "extract": null,
         "name": "sops-install-secrets",
         "passthru": null,
@@ -184,12 +184,12 @@
             "name": null,
             "owner": "Mic92",
             "repo": "sops-nix",
-            "rev": "89a234ce2daf6e568a7d4b4fe250afdd23d84e20",
-            "sha256": "sha256-ZlE4BtMjWhfC6rFXLO9Qimn36Ene1INqCgKDDvazjhc=",
+            "rev": "fe7b4228405aeac2ce7192c2049a6e2bc8637082",
+            "sha256": "sha256-Ivif/kuD68yEOKcZZG3zSwNMFUuIgzUgeJuzcHrQy+8=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "89a234ce2daf6e568a7d4b4fe250afdd23d84e20"
+        "version": "fe7b4228405aeac2ce7192c2049a6e2bc8637082"
     },
     "technitium-dns-server": {
         "cargoLock": null,
