@@ -163,12 +163,12 @@
             "name": null,
             "owner": "rustdesk",
             "repo": "rustdesk",
-            "rev": "1.5.1",
-            "sha256": "sha256-AFX6p0L2BWNLlLC+H/dmo5jduLLs7htUnwOAdNg9WHE=",
+            "rev": "1.5.3",
+            "sha256": "sha256-XeVg8dIIabvQddRxU2Doqj+vQCJTXHwYSHL8G5UlAWc=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "1.5.1"
+        "version": "1.5.3"
     },
     "sops-install-secrets": {
         "cargoLock": null,
