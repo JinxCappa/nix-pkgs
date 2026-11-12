@@ -8,13 +8,13 @@
 {
   caddy-l4 = {
     pname = "caddy-l4";
-    version = "v0.1.2";
+    version = "v0.1.3";
     src = fetchFromGitHub {
       owner = "mholt";
       repo = "caddy-l4";
-      rev = "v0.1.2";
+      rev = "v0.1.3";
       fetchSubmodules = false;
-      sha256 = "sha256-xys5S1QAGGHF/XHXWxjfjeplVr1Aq1wks37lRNJkmKM=";
+      sha256 = "sha256-2xpHjE2434pyUXFCi2MmVW6ADPhYL2baZFGR6uArfHE=";
     };
   };
   claude-code = {
@@ -39,13 +39,13 @@
   };
   netbird = {
     pname = "netbird";
-    version = "v0.82.1";
+    version = "v0.83.0";
     src = fetchFromGitHub {
       owner = "netbirdio";
       repo = "netbird";
-      rev = "v0.82.1";
+      rev = "v0.83.0";
       fetchSubmodules = true;
-      sha256 = "sha256-+sjh2uW+YrK4H6yNcZ1sU6EaU7N9pQoyliMs6deqzM4=";
+      sha256 = "sha256-IvJOA+JGfWi2RK4zf4k8gw+pinYzFnfafNHfZmybdzU=";
     };
   };
   oh-my-zsh = {

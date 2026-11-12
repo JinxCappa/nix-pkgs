@@ -13,12 +13,12 @@
       "name": null,
       "owner": "mholt",
       "repo": "caddy-l4",
-      "rev": "v0.1.2",
-      "sha256": "sha256-xys5S1QAGGHF/XHXWxjfjeplVr1Aq1wks37lRNJkmKM=",
+      "rev": "v0.1.3",
+      "sha256": "sha256-2xpHjE2434pyUXFCi2MmVW6ADPhYL2baZFGR6uArfHE=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "v0.1.2"
+    "version": "v0.1.3"
   },
   "claude-code": {
     "cargoLock": null,
@@ -70,12 +70,12 @@
       "name": null,
       "owner": "netbirdio",
       "repo": "netbird",
-      "rev": "v0.82.1",
-      "sha256": "sha256-+sjh2uW+YrK4H6yNcZ1sU6EaU7N9pQoyliMs6deqzM4=",
+      "rev": "v0.83.0",
+      "sha256": "sha256-IvJOA+JGfWi2RK4zf4k8gw+pinYzFnfafNHfZmybdzU=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "v0.82.1"
+    "version": "v0.83.0"
   },
   "oh-my-zsh": {
     "cargoLock": null,
