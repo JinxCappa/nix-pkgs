@@ -32,6 +32,9 @@ rustPlatform.buildRustPackage {
   inherit version;
   src = sources.vector.src;
 
+  # cargo-auditable 0.7.7 panics while collecting Vector's dependency metadata.
+  auditable = false;
+
   # cargoHash needs to be updated when source changes
   # Build will fail with correct hash if outdated
   cargoHash = "sha256-EVHFBkgFgKhV8mdHPQLHsjKX4Q/laBCTPRO7GHJRPHI=";
