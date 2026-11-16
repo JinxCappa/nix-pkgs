@@ -2,6 +2,8 @@
   stdenv,
   lib,
   buildGo127Module,
+  fetchurl,
+  go_1_27,
   installShellFiles,
   nixosTests,
   makeWrapper,
@@ -10,13 +12,27 @@
   sources,
 }:
 
-buildGo127Module rec {
+let
+  # Vault 2.2.2 requires Go 1.27.4. Use nixpkgs again once it catches up.
+  go =
+    if lib.versionAtLeast go_1_27.version "1.27.4" then
+      go_1_27
+    else
+      go_1_27.overrideAttrs (finalAttrs: _: {
+        version = "1.27.4";
+        src = fetchurl {
+          url = "https://go.dev/dl/go${finalAttrs.version}.src.tar.gz";
+          hash = "sha256-c8+4VxrsDAEXdofbhxY9Rqog6XeWcncokaoXZU2aYJk=";
+        };
+      });
+in
+(buildGo127Module.override { inherit go; }) rec {
   pname = "vault";
   version = lib.removePrefix "v" sources.vault.version;
 
   src = sources.vault.src;
 
-  vendorHash = "sha256-u5YW+2PwUWML4l48Z4QJWe6jlTexSzZmPUUBhwYuf6I=";
+  vendorHash = "sha256-SsrKAscgdaMGD8Xrau0+hHczIIZwxXG5NPB9Eeudco0=";
 
   proxyVendor = true;
 
