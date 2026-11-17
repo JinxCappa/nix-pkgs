@@ -33,7 +33,7 @@ buildGo126Module {
       fi
     '';
 
-  vendorHash = "sha256-D6h4dKep10zye7TDxES+wGF/MqmO9dO+G4GbFY5P6DM=";
+  vendorHash = "sha256-5cItEpjESOn7kd9el/zGVx5BlNSaO/ebwuO2le4iuHs=";
 
   meta = {
     description = "Atomic secret provisioning based on sops";

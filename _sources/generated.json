@@ -29,11 +29,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-6ELe8fVTeO63NvQ/fhcqfrD+dnua5FIqnOcX/VQe4n8=",
+            "sha256": "sha256-V0lf2I/+CKkRl+N9oouMpZc6dG+o7k66nNPVPCNyXQw=",
             "type": "url",
-            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.325.tgz"
+            "url": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.326.tgz"
         },
-        "version": "2.1.325"
+        "version": "2.1.326"
     },
     "deploy-rs": {
         "cargoLock": null,
@@ -172,7 +172,7 @@
     },
     "sops-install-secrets": {
         "cargoLock": null,
-        "date": "2026-11-14",
+        "date": "2026-11-16",
         "extract": null,
         "name": "sops-install-secrets",
         "passthru": null,
@@ -184,12 +184,12 @@
             "name": null,
             "owner": "Mic92",
             "repo": "sops-nix",
-            "rev": "11e5885d241743ff0193465d533b20e754bc3ce0",
-            "sha256": "sha256-3q/hxp/flW1PnV3Dx+H3p8kHGEHJ7251BqVMNsAAB9E=",
+            "rev": "7c637afdccdf9bcf35c4a2d67b58a77c1fd843a4",
+            "sha256": "sha256-Y28AMB8lyKjASdJ0BVsR2AqR1cUsVuo8RVVpzHoECho=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "11e5885d241743ff0193465d533b20e754bc3ce0"
+        "version": "7c637afdccdf9bcf35c4a2d67b58a77c1fd843a4"
     },
     "technitium-dns-server": {
         "cargoLock": null,
