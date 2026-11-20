@@ -19,10 +19,10 @@
   };
   claude-code = {
     pname = "claude-code";
-    version = "2.1.328";
+    version = "2.1.329";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.328.tgz";
-      sha256 = "sha256-RBwJBhN6yrr8sgmnE5Xmav53ACMBf11NNGiwyeTbXjI=";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.329.tgz";
+      sha256 = "sha256-iLAIoTtL4iVrDd3JQQHcEfv1PzDsECInGzf1wZCalv8=";
     };
   };
   deploy-rs = {
@@ -62,13 +62,13 @@
   };
   openbao = {
     pname = "openbao";
-    version = "v2.7.2";
+    version = "v2.7.3";
     src = fetchFromGitHub {
       owner = "openbao";
       repo = "openbao";
-      rev = "v2.7.2";
+      rev = "v2.7.3";
       fetchSubmodules = false;
-      sha256 = "sha256-Z9CwB85fRuAFqAKFcyyEm3qapmsB2qayjorqtu7IrI4=";
+      sha256 = "sha256-gUF25hjy6DOAqjlMhUvyzhu8rhSU5eQm6qhxI8KVp1o=";
     };
   };
   remotepc-host = {
