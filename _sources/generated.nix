@@ -19,10 +19,10 @@
   };
   claude-code = {
     pname = "claude-code";
-    version = "2.1.330";
+    version = "2.1.331";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.330.tgz";
-      sha256 = "sha256-U+hd6BnwgC/6hVDt3sJINCjEx5sO9b0W3dE+qRbFpQc=";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.331.tgz";
+      sha256 = "sha256-ULj7tG9BVf2QjtW4ffOL5aawnpR7AQz1XkxnWtvHGzM=";
     };
   };
   deploy-rs = {
@@ -50,15 +50,15 @@
   };
   oh-my-zsh = {
     pname = "oh-my-zsh";
-    version = "87aa1a9b892a3b150f93c53b577a2ec67e617f30";
+    version = "c52efbc75612649adadaa1e869c1e87b863e8af5";
     src = fetchFromGitHub {
       owner = "ohmyzsh";
       repo = "ohmyzsh";
-      rev = "87aa1a9b892a3b150f93c53b577a2ec67e617f30";
+      rev = "c52efbc75612649adadaa1e869c1e87b863e8af5";
       fetchSubmodules = false;
-      sha256 = "sha256-EtOwFu1d85Hpz1WNygDogF/xp1mdATxCi3XaDPcgKZs=";
+      sha256 = "sha256-keSUM8jzvLSimMbT50WefB+feSds86ma3s0fDxxY+qg=";
     };
-    date = "2026-11-22";
+    date = "2026-11-23";
   };
   openbao = {
     pname = "openbao";
@@ -100,15 +100,15 @@
   };
   sops-install-secrets = {
     pname = "sops-install-secrets";
-    version = "7c637afdccdf9bcf35c4a2d67b58a77c1fd843a4";
+    version = "d5abe5e53200ad48254e8e6bd95e6cef94e66577";
     src = fetchFromGitHub {
       owner = "Mic92";
       repo = "sops-nix";
-      rev = "7c637afdccdf9bcf35c4a2d67b58a77c1fd843a4";
+      rev = "d5abe5e53200ad48254e8e6bd95e6cef94e66577";
       fetchSubmodules = false;
-      sha256 = "sha256-Y28AMB8lyKjASdJ0BVsR2AqR1cUsVuo8RVVpzHoECho=";
+      sha256 = "sha256-2p8/wnENYHU2Z79Ir/rpq+V1sMI9mSD6xGAlvlbVBUY=";
     };
-    date = "2026-11-16";
+    date = "2026-11-23";
   };
   technitium-dns-server = {
     pname = "technitium-dns-server";
