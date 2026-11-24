@@ -73,7 +73,7 @@ snapshot before
 echo "Updating flake inputs" >&2
 nix flake update
 
-if [ -x packages/caddy-l4/update.sh ]; then
+if ! git diff --quiet -- flake.lock && [ -x packages/caddy-l4/update.sh ]; then
   echo "Refreshing Caddy L4 package metadata" >&2
   nix develop --command ./packages/caddy-l4/update.sh
 fi

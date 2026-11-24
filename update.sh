@@ -327,6 +327,12 @@ for pkg_dir in packages/*/; do
   [ -f "$pkg_file" ] || continue
   grep -q "caddy.withPlugins" "$pkg_file" || continue
 
+  # Flake input changes are handled by Update Flake Inputs.
+  if ! version_changed "$pkg"; then
+    echo "  $pkg: version unchanged, skipping caddy.withPlugins hash check"
+    continue
+  fi
+
   if [ -x "$pkg_dir/update.sh" ]; then
     "$pkg_dir/update.sh"
   else
