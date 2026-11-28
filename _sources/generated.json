@@ -132,7 +132,7 @@
             "type": "url",
             "url": "https://static.remotepc.com/downloads/rpc/310320/remotepc-host.deb"
         },
-        "version": "6.12.6"
+        "version": "6.12.5"
     },
     "remotepc-host-pi64": {
         "cargoLock": null,

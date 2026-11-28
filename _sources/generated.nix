@@ -73,7 +73,7 @@
   };
   remotepc-host = {
     pname = "remotepc-host";
-    version = "6.12.6";
+    version = "6.12.5";
     src = fetchurl {
       url = "https://static.remotepc.com/downloads/rpc/310320/remotepc-host.deb";
       sha256 = "sha256-YkZBXBjT1joUIGsfm89MWMD5RtD4Q1jVSoQKLs87kfk=";
